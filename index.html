@@ -1,195 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>StaticQuasar931 – Unblocked Games Hub | Minecraft, Slope, Snow Rider & More</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StaticQuasar931 - Free Unblocked Games Hub | 600+ Games Updated Weekly</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Play Minecraft, Slope, Snow Rider, and Subway Surfers free and unblocked at StaticQuasar931! Enjoy fullscreen gaming, mobile friendly, and visit our main site for more.">
-  <meta name="keywords" content="StaticQuasar931, Minecraft unblocked, Subway Surfers unblocked, Slope game, Snow Rider, free unblocked games, Google Sites games, GitHub games">
+  <meta name="description" content="Play Minecraft, Slope, Drift Hunters, Subway Surfers, Snow Rider and more free unblocked games at StaticQuasar931! 600+ school-safe games, updated daily-weekly.">
+  <meta name="keywords" content="StaticQuasar931, unblocked games, play at school, Minecraft unblocked, Drift Hunters, Subway Surfers, Block Blast, Snow Rider, Slope game, free unblocked games">
   <meta name="author" content="StaticQuasar931">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="Q0JppYFHqNml_qBtmME2bbogn7ObRLMKgi71gvzGsR0" />
-
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Pixelated-joystick-icon.png">
-
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "StaticQuasar931",
-    "url": "https://staticquasar931.github.io/",
-    "sameAs": [
-      "https://sites.google.com/view/staticquasar931",
-      "https://discord.gg/DP2hM7RRhR"
-    ]
-  }
-  </script>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Pixelated-joystick-icon.png" />
 
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background: #0d0d0d;
       font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
       color: white;
+      scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
-    header {
-      padding: 20px;
-      background: rgba(0,0,0,0.7);
-      font-size: 2em;
-      font-weight: bold;
+    header, nav, footer {
       text-align: center;
+      padding: 15px;
     }
 
-    nav {
-      margin: 20px;
-      text-align: center;
-    }
-
-    nav a {
+    nav a, .discord-button {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 24px;
+      margin: 5px;
+      padding: 10px 20px;
       background: #4CAF50;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      transition: 0.3s;
+    }
+    nav a:hover, .discord-button:hover {
+      background: #388e3c;
+    }
+
+    .top-announcement {
+      background: #2196F3;
+      padding: 10px;
       font-size: 1em;
-      transition: background 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 5px #4CAF50;
+      color: white;
     }
 
-    nav a:hover {
-      background: #45a049;
-      box-shadow: 0 0 15px #4CAF50;
+    .top-announcement a {
+      color: yellow;
+      font-weight: bold;
     }
 
-    .game-container {
-      margin: 40px auto;
-      width: 90%;
-      max-width: 1000px;
+    .game-section {
       background: rgba(0,0,0,0.6);
+      margin: 20px auto;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-      text-align: center;
+      width: 90%;
+      max-width: 1000px;
     }
 
     .play-button {
-      background: #2196F3;
-      border: none;
-      color: white;
-      padding: 12px 24px;
+      padding: 12px 25px;
       margin: 10px;
       font-size: 1.2em;
-      border-radius: 8px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background 0.3s, box-shadow 0.3s;
+      transition: background 0.3s;
     }
 
     .play-button:hover {
-      background: #0b7dda;
-      box-shadow: 0 0 15px #2196F3;
-    }
-
-    .google-link {
-      display: block;
-      margin-top: 10px;
-      color: #ffeb3b;
-      text-decoration: none;
-      font-weight: bold;
+      background: #0097a7;
     }
 
     iframe {
       width: 100%;
       height: 600px;
-      margin-top: 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       display: none;
+      margin-top: 10px;
     }
 
-    #music-control, #theme-toggle, #topBtn {
+    .google-site-link {
+      display: block;
+      margin-top: 10px;
+      color: yellow;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .achievement {
       position: fixed;
-      z-index: 9999;
-      background: #222;
-      padding: 10px;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    #music-control {
-      top: 20px;
-      left: 20px;
-    }
-
-    #theme-toggle {
-      top: 20px;
-      right: 20px;
-    }
-
-    #topBtn {
-      bottom: 20px;
-      right: 20px;
+      top: 10px;
+      right: 10px;
+      background: #673ab7;
+      padding: 10px 20px;
+      border-radius: 10px;
       display: none;
+      font-size: 1em;
+      z-index: 10000;
     }
+
+    .music-controls, .theme-toggle, #topButton {
+      position: fixed;
+      padding: 10px;
+      background: #333;
+      color: white;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 10000;
+    }
+
+    .music-controls { top: 80px; left: 10px; }
+    .theme-toggle { top: 140px; left: 10px; }
+    #topButton { bottom: 20px; right: 20px; display: none; }
 
     .discord-floating {
       position: fixed;
       bottom: 20px;
       left: 20px;
       background: #5865F2;
-      padding: 12px 18px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
+      padding: 10px 20px;
       border-radius: 10px;
-      animation: flicker 2s infinite alternate;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      animation: flicker 1.5s infinite alternate;
     }
 
     @keyframes flicker {
-      0% { opacity: 0.7; }
-      100% { opacity: 1; }
+      from { opacity: 0.6; }
+      to { opacity: 1; }
     }
 
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      text-align: center;
-    }
-
-    footer a {
-      color: #0ff;
-      text-decoration: underline;
+    @media(max-width: 600px) {
+      iframe { height: 400px; }
     }
   </style>
 
   <script>
-    let musicList = [
-      {title: "Calm Adventure", src: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_3171b043e8.mp3"},
-      {title: "Pixel Fun", src: "https://cdn.pixabay.com/download/audio/2021/10/24/audio_c42b5b82dc.mp3"},
-      {title: "Gaming Chill", src: "https://cdn.pixabay.com/download/audio/2022/03/30/audio_ba7d2db35f.mp3"}
-    ];
-    let currentTrack = 0;
-    let music = new Audio();
-    music.loop = true;
+    let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
+
+    function unlockAchievement(name) {
+      if (!achievements.includes(name)) {
+        achievements.push(name);
+        localStorage.setItem('achievements', JSON.stringify(achievements));
+        const box = document.getElementById('achievement');
+        box.innerText = "🎖 Achievement Unlocked: " + name;
+        box.style.display = 'block';
+        setTimeout(() => box.style.display = 'none', 3000);
+      }
+    }
+
+    function loadGame(button, iframeId, url) {
+      button.style.display = 'none';
+      document.getElementById(iframeId).src = url;
+      document.getElementById(iframeId).style.display = 'block';
+      unlockAchievement("First Game Played");
+    }
 
     function toggleMusic() {
+      const music = document.getElementById('bgMusic');
       if (music.paused) {
-        music.src = musicList[currentTrack].src;
         music.play();
-        document.getElementById('music-control').innerText = "Pause: " + musicList[currentTrack].title;
+        document.getElementById('musicBtn').innerText = "Pause Music";
       } else {
         music.pause();
-        document.getElementById('music-control').innerText = "Play Music";
+        document.getElementById('musicBtn').innerText = "Play Music";
       }
     }
 
@@ -198,77 +183,117 @@
       localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
     }
 
-    function returnTop() {
+    window.onload = () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+      }
+    };
+
+    window.onscroll = () => {
+      document.getElementById('topButton').style.display = 
+        (document.documentElement.scrollTop > 100) ? 'block' : 'none';
+    };
+
+    function scrollTopPage() {
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
-
-    window.onscroll = function() {
-      document.getElementById('topBtn').style.display = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
-    }
-
-    function loadIframe(btn, url) {
-      btn.style.display = "none";
-      let link = btn.nextElementSibling;
-      link.style.display = "none";
-      let iframe = btn.parentNode.querySelector('iframe');
-      iframe.src = url;
-      iframe.style.display = "block";
-      alert("🎖 Achievement Unlocked: First Play!");
-    }
-
-    window.onload = function() {
-      if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
-    }
   </script>
-</head>
 
+</head>
 <body>
 
-<header>StaticQuasar931 – Unblocked Games Hub</header>
+<!-- Progress Loading (fake fast one) -->
+<div id="progressBar" style="height: 5px; background: lime; width: 0%; position: fixed; top:0; left:0; z-index:10000;"></div>
+<script>
+  let p = 0;
+  let loading = setInterval(() => {
+    if (p >= 100) clearInterval(loading);
+    document.getElementById('progressBar').style.width = (++p) + "%";
+  }, 10);
+</script>
+
+<div class="top-announcement">
+  Welcome to <strong>StaticQuasar931</strong>! 🎮 600+ Unblocked Games. New games added daily/weekly!  
+  ➔ <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform" target="_blank">Suggest a game here</a>!
+</div>
+
+<header>
+  <h1>StaticQuasar931 - Free Unblocked Games Hub</h1>
+</header>
 
 <nav>
-  <a href="https://sites.google.com/view/staticquasar931">Browse All Games</a>
-  <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Our Discord!</a>
+  <a href="https://sites.google.com/view/staticquasar931" target="_blank">Visit Google Site</a>
+  <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord</a>
 </nav>
 
-<!-- Floating Buttons -->
-<div id="music-control" onclick="toggleMusic()">Play Music</div>
-<div id="theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</div>
-<div id="topBtn" onclick="returnTop()">⬆️ Top</div>
-<a class="discord-floating" href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord</a>
+<!-- Floating Controls -->
+<div class="music-controls" id="musicBtn" onclick="toggleMusic()">Play Music</div>
+<div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>
+<button id="topButton" onclick="scrollTopPage()">⬆️ Top</button>
 
-<!-- Minecraft Hub -->
-<section class="game-container">
+<a class="discord-floating" href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord!</a>
+
+<div id="achievement" class="achievement"></div>
+
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3171b043e8.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Game Sections -->
+
+<section class="game-section">
   <h2>Minecraft Hub</h2>
-  <iframe src="https://staticquasar931.github.io/Minecraft-hub/" allowfullscreen></iframe>
+  <button class="play-button" onclick="loadGame(this, 'mcFrame', 'https://staticquasar931.github.io/Minecraft-hub/')">Play Minecraft</button>
+  <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/minecraft" target="_blank">Play it on StaticQuasar931 Google Sites</a>
+  <iframe id="mcFrame" allowfullscreen></iframe>
 </section>
 
-<!-- Snow Rider -->
-<section class="game-container">
+<section class="game-section">
   <h2>Snow Rider</h2>
-  <button class="play-button" onclick="loadIframe(this, 'https://drippy-cat.github.io/snowrider3D/')">Play Snow Rider</button>
-  <a class="google-link" href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" target="_blank">Play it on StaticQuasar931.com</a>
-  <iframe allowfullscreen></iframe>
+  <button class="play-button" onclick="loadGame(this, 'snowFrame', 'https://drippy-cat.github.io/snowrider3D/')">Play Snow Rider</button>
+  <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" target="_blank">Play it on StaticQuasar931 Google Sites</a>
+  <iframe id="snowFrame" allowfullscreen></iframe>
 </section>
 
-<!-- Slope -->
-<section class="game-container">
+<section class="game-section">
   <h2>Slope</h2>
-  <button class="play-button" onclick="loadIframe(this, 'https://slope-unblocked-10x.github.io/action-games/slope/')">Play Slope</button>
-  <a class="google-link" href="https://sites.google.com/view/staticquasar931/gm3z/slope" target="_blank">Play it on StaticQuasar931.com</a>
-  <iframe allowfullscreen></iframe>
+  <button class="play-button" onclick="loadGame(this, 'slopeFrame', 'https://slope-unblocked-10x.github.io/action-games/slope/')">Play Slope</button>
+  <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/slope" target="_blank">Play it on StaticQuasar931 Google Sites</a>
+  <iframe id="slopeFrame" allowfullscreen></iframe>
 </section>
 
-<!-- Subway Surfers -->
-<section class="game-container">
+<section class="game-section">
   <h2>Subway Surfers</h2>
-  <button class="play-button" onclick="loadIframe(this, 'https://staticquasar931.github.io/Subway-Surfers/')">Play Subway Surfers</button>
-  <a class="google-link" href="https://sites.google.com/view/staticquasar931/gm3z/subway-surfers_1/subway-surfers-main" target="_blank">Play it on StaticQuasar931.com</a>
-  <iframe allowfullscreen></iframe>
+  <button class="play-button" onclick="loadGame(this, 'subwayFrame', 'https://staticquasar931.github.io/Subway-Surfers/')">Play Subway Surfers</button>
+  <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/subway-surfers_1/subway-surfers-main" target="_blank">Play it on StaticQuasar931 Google Sites</a>
+  <iframe id="subwayFrame" allowfullscreen></iframe>
+</section>
+
+<section class="game-section">
+  <h2>Drift Hunters</h2>
+  <button class="play-button" onclick="loadGame(this, 'driftFrame', 'https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1')">Play Drift Hunters</button>
+  <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" target="_blank">Play it on StaticQuasar931 Google Sites</a>
+  <iframe id="driftFrame" allowfullscreen></iframe>
+</section>
+
+<section class="game-section">
+  <h2>Block Blast</h2>
+  <button class="play-button" onclick="loadGame(this, 'blockblastFrame', 'https://reunbozdo.github.io/')">Play Block Blast</button>
+  <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/block-blast" target="_blank">Play it on StaticQuasar931 Google Sites</a>
+  <iframe id="blockblastFrame" allowfullscreen></iframe>
+</section>
+
+<section class="game-section">
+  <h2>It's Raining Boxes</h2>
+  <button class="play-button" onclick="loadGame(this, 'rainingFrame', 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec')">Play It's Raining Boxes</button>
+  <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/its-raining-boxes" target="_blank">Play it on StaticQuasar931 Google Sites</a>
+  <iframe id="rainingFrame" allowfullscreen></iframe>
 </section>
 
 <footer>
-  © 2025 StaticQuasar931 | <a href="https://sites.google.com/view/staticquasar931" target="_blank">Visit Main Website</a> | <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Our Discord</a>
+  © 2025 StaticQuasar931 - All Rights Reserved |
+  <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord</a> |
+  <a href="https://sites.google.com/view/staticquasar931" target="_blank">Visit Google Site</a>
 </footer>
 
 </body>
