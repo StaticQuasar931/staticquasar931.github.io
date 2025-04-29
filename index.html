@@ -12,7 +12,6 @@
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Pixelated-joystick-icon.png" />
 
   <style>
-    /* Base Styles */
     html, body {
       margin: 0;
       padding: 0;
@@ -28,7 +27,7 @@
       padding: 15px;
     }
 
-    nav a, .discord-button, .theme-button {
+    nav a, .theme-button {
       display: inline-block;
       margin: 5px;
       padding: 10px 20px;
@@ -39,20 +38,29 @@
       transition: 0.3s;
       cursor: pointer;
     }
-    nav a:hover, .discord-button:hover, .theme-button:hover {
+
+    nav a:hover, .theme-button:hover {
       background: #388e3c;
     }
 
     .top-announcement {
       background: #2196F3;
-      padding: 10px;
+      padding: 12px;
+      text-align: center;
       font-size: 1em;
-      color: white;
+      font-weight: bold;
     }
 
     .top-announcement a {
-      color: yellow;
+      color: #fff200;
       font-weight: bold;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .top-announcement a:hover {
+      color: #ffffff;
     }
 
     .game-section {
@@ -88,16 +96,21 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .play-button:hover {
       background: #0097a7;
     }
 
     .google-site-link {
-      margin-top: 10px;
+      margin-top: 5px;
       display: inline-block;
-      color: yellow;
+      color: #ffd700;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    .google-site-link:hover {
+      color: white;
     }
 
     iframe {
@@ -133,7 +146,6 @@
       z-index: 1000;
     }
 
-    /* Achievement Toast */
     #achievementToast {
       position: fixed;
       top: 20px;
@@ -147,7 +159,6 @@
       z-index: 10000;
     }
 
-    /* Theme Selector */
     #themeSelector {
       position: fixed;
       top: 80px;
@@ -174,13 +185,14 @@
       .game-placeholder, iframe { height: 400px; }
     }
   </style>
-
 </head>
 <body>
 
 <div class="top-announcement">
-  Welcome to <strong>StaticQuasar931</strong>! 🎮 600+ Unblocked Games. ➔ 
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform" target="_blank">Suggest a game here!</a>
+  🎮 Welcome to <strong>StaticQuasar931</strong> — 600+ Free Unblocked Games! |
+  <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord</a> |
+  <a href="https://sites.google.com/view/staticquasar931" target="_blank">Visit Google Site</a> |
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform" target="_blank">Suggest a Game</a>
 </div>
 
 <header>
@@ -188,8 +200,6 @@
 </header>
 
 <nav>
-  <a href="https://sites.google.com/view/staticquasar931" target="_blank">Google Site</a>
-  <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord</a>
   <button class="theme-button" onclick="toggleThemeSelector()">Themes</button>
 </nav>
 
@@ -213,18 +223,28 @@
 
 <button id="topButton" onclick="scrollTopPage()">⬆️ Top</button>
 
-<!-- Game Sections Example -->
+<!-- Game Sections: ADD more using this template -->
 <section class="game-section">
   <h2>Minecraft Hub</h2>
   <div class="game-placeholder" id="mcPlaceholder">
     <button class="play-button" onclick="startGame('mcPlaceholder', 'mcFrame', 'https://staticquasar931.github.io/Minecraft-hub/')">Play Minecraft</button>
-    <br><a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/minecraft" target="_blank">Or play on Google Sites</a>
+    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/minecraft" target="_blank">Or play on Google Sites</a>
   </div>
   <iframe id="mcFrame" allowfullscreen loading="lazy"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('mcFrame')">Full Screen</button>
 </section>
 
-<!-- More game sections can be added the same way -->
+<section class="game-section">
+  <h2>Subway Surfers</h2>
+  <div class="game-placeholder" id="subwayPlaceholder">
+    <button class="play-button" onclick="startGame('subwayPlaceholder', 'subwayFrame', 'https://staticquasar931.github.io/Subway-Surfers/')">Play Subway Surfers</button>
+    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/subway-surfers_1/subway-surfers-main" target="_blank">Or play on Google Sites</a>
+  </div>
+  <iframe id="subwayFrame" allowfullscreen loading="lazy"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('subwayFrame')">Full Screen</button>
+</section>
+
+<!-- ADD more game sections just like above for: Snow Rider, Slope, Drift Hunters, Block Blast, etc -->
 
 <footer>
   © 2025 StaticQuasar931 - All Rights Reserved
@@ -246,7 +266,7 @@
 
   function toggleThemeSelector() {
     const selector = document.getElementById('themeSelector');
-    selector.style.display = (selector.style.display === 'none') ? 'block' : 'none';
+    selector.style.display = selector.style.display === 'none' ? 'block' : 'none';
   }
 
   function changeTheme(index) {
@@ -259,7 +279,7 @@
     const iframe = document.getElementById(iframeId);
     iframe.src = url;
     iframe.style.display = 'block';
-    showAchievement("First Game Played!");
+    showAchievement("Game Loaded!");
   }
 
   function fullscreen(iframeId) {
