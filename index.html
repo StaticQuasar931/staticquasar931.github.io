@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StaticQuasar931 - Play 600+ Unblocked Games | Updated Weekly</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StaticQuasar931 - Free Unblocked Games Hub</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Play Minecraft, Slope, Subway Surfers, Drift Hunters, Snow Rider and 600+ free unblocked games at StaticQuasar931. New games every week!">
-  <meta name="keywords" content="unblocked games, free games, play at school, StaticQuasar931, Minecraft unblocked, Drift Hunters, Subway Surfers, Slope game">
+  <meta name="description" content="Play 600+ free unblocked games like Minecraft, Slope, Drift Hunters, and Rise Up at StaticQuasar931. New games added weekly!">
+  <meta name="keywords" content="unblocked games, staticquasar931, minecraft unblocked, slope unblocked, free games at school, subway surfers, drift hunters, block blast">
   <meta name="author" content="StaticQuasar931">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Pixelated-joystick-icon.png">
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Pixelated-joystick-icon.png" />
 
   <style>
     body {
@@ -24,7 +23,7 @@
       text-align: center;
       padding: 15px;
     }
-    nav a, .btn, .play-btn, .mute-btn, .fullscreen-btn, .theme-btn, .achievement-btn {
+    nav a, .btn, .play-btn, .theme-btn, .achievement-btn, .fullscreen-btn {
       margin: 5px;
       padding: 10px 20px;
       background: #4CAF50;
@@ -34,7 +33,7 @@
       cursor: pointer;
       display: inline-block;
     }
-    .btn:hover, .play-btn:hover, .mute-btn:hover, .fullscreen-btn:hover, .theme-btn:hover, .achievement-btn:hover {
+    nav a:hover, .btn:hover, .play-btn:hover, .theme-btn:hover, .achievement-btn:hover, .fullscreen-btn:hover {
       background: #388e3c;
     }
     .top-announcement {
@@ -43,8 +42,13 @@
       font-size: 18px;
       font-weight: bold;
     }
+    .top-announcement a {
+      color: yellow;
+      text-decoration: underline;
+      font-weight: bold;
+    }
     .game-section {
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
       margin: 20px auto;
       padding: 20px;
       border-radius: 12px;
@@ -61,6 +65,7 @@
       align-items: center;
       justify-content: center;
       margin-top: 10px;
+      transition: opacity 0.5s;
     }
     iframe {
       width: 100%;
@@ -82,25 +87,64 @@
     }
     #achievementPopup {
       position: fixed;
-      top: 20%;
+      top: 10%;
       left: 50%;
-      transform: translate(-50%, -20%);
+      transform: translateX(-50%);
       background: #673ab7;
       padding: 20px;
       border-radius: 12px;
       display: none;
       z-index: 1000;
+      text-align: center;
+    }
+    #achievementGrid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .achievement-tile {
+      background: #444;
+      border-radius: 8px;
+      padding: 10px;
+      width: 180px;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .achievement-tile.locked {
+      background: #777;
+      opacity: 0.6;
+    }
+    .achievement-notify {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #4CAF50;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: none;
+      z-index: 1000;
+      animation: pop 0.5s ease;
+    }
+    @keyframes pop {
+      from { transform: scale(0); }
+      to { transform: scale(1); }
     }
     @media(max-width:600px){
       iframe, .game-placeholder { height: 400px; }
     }
   </style>
-
 </head>
 <body>
 
 <div class="top-announcement">
-  🎮 Welcome to <strong>StaticQuasar931</strong> ➔ <a href="https://sites.google.com/view/staticquasar931" target="_blank"><strong>Google Site</strong></a> ➔ <a href="https://discord.gg/DP2hM7RRhR" target="_blank"><strong>Join Discord</strong></a>
+  🎮 Welcome to <strong>StaticQuasar931</strong> ➔ 
+  <a href="https://sites.google.com/view/staticquasar931" onclick="unlockAchievement('Visited Google Site')" target="_blank">Google Site</a> ➔ 
+  <a href="https://discord.gg/DP2hM7RRhR" onclick="unlockAchievement('Joined Discord')" target="_blank">Join Discord</a>
 </div>
 
 <header>
@@ -115,16 +159,14 @@
 <button id="topButton" onclick="scrollTopPage()">⬆️ Top</button>
 
 <div id="achievementPopup"></div>
+<div id="achievementNotify" class="achievement-notify"></div>
 
-<audio id="bgMusic" preload="auto" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/03/audio_54b74ed275.mp3" type="audio/mpeg">
-</audio>
-<button class="btn" onclick="toggleMusic()">Play Music</button>
+<audio id="bgMusic" preload="auto" loop></audio>
+<button class="btn" onclick="toggleMusic(this)">Play Music</button>
 
 <!-- Game Sections -->
 <div id="games"></div>
 
-<!-- Scripts -->
 <script>
 const games = [
   { name: 'Minecraft Hub', url: 'https://staticquasar931.github.io/Minecraft-hub/' },
@@ -133,12 +175,42 @@ const games = [
   { name: 'Subway Surfers', url: 'https://staticquasar931.github.io/Subway-Surfers/' },
   { name: 'Drift Hunters', url: 'https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1' },
   { name: 'Block Blast', url: 'https://reunbozdo.github.io/' },
-  { name: "It's Raining Boxes", url: 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec' },
+  { name: \"It's Raining Boxes\", url: 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec' },
 ];
 
 const bonusGame = { name: 'Rise Up / Rise Higher', url: 'https://www.hoodamath.com/mobile/games/rise-higher/game.html?nocheckorient=1' };
 
+let musicTracks = [
+  'https://cdn.pixabay.com/download/audio/2022/03/03/audio_54b74ed275.mp3',
+  'https://cdn.pixabay.com/download/audio/2022/10/21/audio_d38f50e7f4.mp3',
+  'https://cdn.pixabay.com/download/audio/2022/08/01/audio_ef2480c5cd.mp3'
+];
+let musicIndex = 0;
+
+function tryMusic() {
+  const music = document.getElementById('bgMusic');
+  if (musicIndex >= musicTracks.length) return;
+  music.src = musicTracks[musicIndex];
+  music.play().catch(() => {
+    musicIndex++;
+    tryMusic();
+  });
+}
+
+function toggleMusic(btn) {
+  const music = document.getElementById('bgMusic');
+  if (music.paused) {
+    tryMusic();
+    btn.innerText = "Pause Music";
+  } else {
+    music.pause();
+    btn.innerText = "Play Music";
+  }
+}
+
 let container = document.getElementById('games');
+games.forEach((game, i) => createGameSection(game, i));
+createGameSection(bonusGame, 999, true);
 
 function createGameSection(game, index, hidden=false) {
   container.innerHTML += `
@@ -147,7 +219,7 @@ function createGameSection(game, index, hidden=false) {
       <div class="game-placeholder" id="placeholder${index}">
         <button class="play-btn" onclick="startGame(${index}, '${game.url}')">▶ Play</button>
       </div>
-      <div class="controls">
+      <div>
         <button class="fullscreen-btn" onclick="fullscreen('iframe${index}')">Full Screen</button>
       </div>
       <iframe id="iframe${index}" allowfullscreen></iframe>
@@ -155,79 +227,12 @@ function createGameSection(game, index, hidden=false) {
   `;
 }
 
-games.forEach((game, i) => createGameSection(game, i));
-
-createGameSection(bonusGame, 999, true);
-
-const themes = [
-  'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
-  'linear-gradient(to right, #ff7e5f, #feb47b)',
-  'linear-gradient(to right, #43cea2, #185a9d)',
-  'linear-gradient(to right, #fc466b, #3f5efb)',
-  'linear-gradient(to right, #00c6ff, #0072ff)',
-  'linear-gradient(to right, #7F00FF, #E100FF)',
-  'linear-gradient(to right, #11998e, #38ef7d)',
-  'linear-gradient(to right, #f7971e, #ffd200)',
-  'linear-gradient(to right, #00c3ff, #ffff1c)',
-  'linear-gradient(to right, #8e2de2, #4a00e0)'
-];
-
-function openThemeSelector() {
-  let choice = prompt("Choose a theme (1-10):\n1. Dark Blue\n2. Sunset\n3. Aqua\n4. Purple\n5. Sky\n6. Violet\n7. Green\n8. Orange\n9. Neon\n10. Deep Purple");
-  let index = parseInt(choice)-1;
-  if(index >= 0 && index < themes.length) document.body.style.background = themes[index];
-}
-
-let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
-
-const allAchievements = [
-  {name: 'First Game Played', hint: 'Play any game.'},
-  {name: 'Visited Google Site', hint: 'Click Google Site link.'},
-  {name: 'Joined Discord', hint: 'Click Discord link.'},
-  {name: 'Played 5 Different Games', hint: 'Play 5 different games.'},
-  {name: 'Played Minecraft', hint: 'Play Minecraft.'},
-  {name: 'Played Slope', hint: 'Play Slope.'},
-  {name: 'Played Subway Surfers', hint: 'Play Subway Surfers.'},
-  {name: 'Played Drift Hunters', hint: 'Play Drift Hunters.'},
-  {name: 'Played Snow Rider', hint: 'Play Snow Rider.'},
-  {name: 'Played Block Blast', hint: 'Play Block Blast.'},
-  {name: 'Found Secret Game', hint: 'Unlock 10 achievements.'},
-  {name: 'Used Theme Changer', hint: 'Change the site theme.'},
-  {name: 'Viewed Achievements', hint: 'Open Achievements menu.'},
-  {name: 'Listened to Music', hint: 'Play background music.'},
-  {name: 'Paused Music', hint: 'Pause background music.'},
-  {name: 'Scrolled to Top', hint: 'Use the Top button.'},
-  {name: 'Unlocked 5 Achievements', hint: 'Unlock 5 achievements.'},
-  {name: 'Unlocked 15 Achievements', hint: 'Unlock 15 achievements.'},
-  {name: 'Visited 3 Games', hint: 'Visit 3 different games.'},
-  {name: 'Played Secret Game', hint: 'Play Rise Up / Rise Higher!'}
-];
-
-function unlockAchievement(name) {
-  if (!achievements.includes(name)) {
-    achievements.push(name);
-    localStorage.setItem('achievements', JSON.stringify(achievements));
-    alert('🎖 Achievement Unlocked: ' + name);
-    checkSecretUnlock();
-  }
-}
-
-function showAchievements() {
-  const popup = document.getElementById('achievementPopup');
-  popup.innerHTML = '<h2>Achievements</h2>' + allAchievements.map(a => `<p>${achievements.includes(a.name) ? '✅' : '🔒'} ${a.name}<br><small>Hint: ${a.hint}</small></p>`).join('') + '<br><button class="btn" onclick="closeAchievements()">Close</button>';
-  popup.style.display = 'block';
-}
-
-function closeAchievements() {
-  document.getElementById('achievementPopup').style.display = 'none';
-}
-
 function startGame(index, url) {
-  const frame = document.getElementById(`iframe${index}`);
-  document.getElementById(`placeholder${index}`).style.display = 'none';
-  frame.src = url;
-  frame.style.display = 'block';
   unlockAchievement('First Game Played');
+  document.getElementById('placeholder' + index).style.display = 'none';
+  let iframe = document.getElementById('iframe' + index);
+  iframe.src = url;
+  iframe.style.display = 'block';
 }
 
 function fullscreen(id) {
@@ -237,15 +242,49 @@ function fullscreen(id) {
   else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
 }
 
-function toggleMusic() {
-  const music = document.getElementById('bgMusic');
-  if (music.paused) {
-    music.play();
-    event.target.innerText = 'Pause Music';
-  } else {
-    music.pause();
-    event.target.innerText = 'Play Music';
+let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
+
+const allAchievements = [
+  {name:'First Game Played', hint:'Play any game.'},
+  {name:'Visited Google Site', hint:'Click Google Site link.'},
+  {name:'Joined Discord', hint:'Click Discord link.'},
+  {name:'Played 5 Different Games', hint:'Play 5 games.'},
+  {name:'Used Theme Changer', hint:'Change the theme.'},
+  {name:'Viewed Achievements', hint:'Open Achievements.'},
+  {name:'Listened to Music', hint:'Play background music.'},
+  {name:'Paused Music', hint:'Pause background music.'},
+  {name:'Scrolled to Top', hint:'Use the Top button.'},
+  {name:'Found Secret Game', hint:'Unlock 10 achievements.'}
+];
+
+function unlockAchievement(name) {
+  if (!achievements.includes(name)) {
+    achievements.push(name);
+    localStorage.setItem('achievements', JSON.stringify(achievements));
+    notifyAchievement(name);
+    checkSecretUnlock();
   }
+}
+
+function notifyAchievement(name) {
+  let box = document.getElementById('achievementNotify');
+  box.innerText = `🎖 Achievement Unlocked: ${name}`;
+  box.style.display = 'block';
+  setTimeout(() => box.style.display = 'none', 3000);
+}
+
+function showAchievements() {
+  unlockAchievement('Viewed Achievements');
+  let popup = document.getElementById('achievementPopup');
+  popup.innerHTML = '<h2>Achievements</h2><div id="achievementGrid">' +
+    allAchievements.map(a => `<div class="achievement-tile ${achievements.includes(a.name) ? '' : 'locked'}">
+      <strong>${a.name}</strong><br><small>${a.hint}</small></div>`).join('') +
+    '</div><br><button class="btn" onclick="closeAchievements()">Close</button>';
+  popup.style.display = 'block';
+}
+
+function closeAchievements() {
+  document.getElementById('achievementPopup').style.display = 'none';
 }
 
 function checkSecretUnlock() {
@@ -253,6 +292,20 @@ function checkSecretUnlock() {
     document.getElementById('section999').style.display = 'block';
     unlockAchievement('Found Secret Game');
   }
+}
+
+const themes = [
+  'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
+  'linear-gradient(to right, #ff7e5f, #feb47b)',
+  'linear-gradient(to right, #43cea2, #185a9d)',
+  'linear-gradient(to right, #fc466b, #3f5efb)',
+  'linear-gradient(to right, #00c6ff, #0072ff)'
+];
+
+function openThemeSelector() {
+  let choice = prompt('Pick a theme 1-5:');
+  let index = parseInt(choice) - 1;
+  if(index >= 0 && index < themes.length) document.body.style.background = themes[index];
 }
 
 window.onscroll = () => {
