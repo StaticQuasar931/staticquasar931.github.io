@@ -12,7 +12,6 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Pixelated-joystick-icon.png">
 
-  <!-- Styles -->
   <style>
     body {
       margin: 0;
@@ -25,7 +24,7 @@
       text-align: center;
       padding: 15px;
     }
-    nav a, .btn {
+    nav a, .btn, .play-btn, .mute-btn, .fullscreen-btn, .theme-btn, .achievement-btn {
       margin: 5px;
       padding: 10px 20px;
       background: #4CAF50;
@@ -35,31 +34,40 @@
       cursor: pointer;
       display: inline-block;
     }
-    nav a:hover, .btn:hover {
+    .btn:hover, .play-btn:hover, .mute-btn:hover, .fullscreen-btn:hover, .theme-btn:hover, .achievement-btn:hover {
       background: #388e3c;
     }
+    .top-announcement {
+      background: #2196F3;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
     .game-section {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0,0,0,0.6);
       margin: 20px auto;
       padding: 20px;
       border-radius: 12px;
       width: 90%;
       max-width: 1000px;
+      text-align: center;
+    }
+    .game-placeholder {
+      background: #555;
+      width: 100%;
+      height: 600px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
     }
     iframe {
       width: 100%;
       height: 600px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       display: none;
-      margin-top: 10px;
-    }
-    .controls {
-      margin-top: 10px;
-    }
-    .top-announcement {
-      background: #2196F3;
-      padding: 10px;
     }
     #topButton {
       position: fixed;
@@ -70,6 +78,7 @@
       border-radius: 8px;
       cursor: pointer;
       display: none;
+      z-index: 1000;
     }
     #achievementPopup {
       position: fixed;
@@ -83,7 +92,7 @@
       z-index: 1000;
     }
     @media(max-width:600px){
-      iframe { height: 400px; }
+      iframe, .game-placeholder { height: 400px; }
     }
   </style>
 
@@ -91,7 +100,7 @@
 <body>
 
 <div class="top-announcement">
-  Welcome to <strong>StaticQuasar931</strong> - 600+ Unblocked Games! ➔ <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform" target="_blank">Suggest a Game!</a>
+  🎮 Welcome to <strong>StaticQuasar931</strong> ➔ <a href="https://sites.google.com/view/staticquasar931" target="_blank"><strong>Google Site</strong></a> ➔ <a href="https://discord.gg/DP2hM7RRhR" target="_blank"><strong>Join Discord</strong></a>
 </div>
 
 <header>
@@ -99,129 +108,165 @@
 </header>
 
 <nav>
-  <a href="https://sites.google.com/view/staticquasar931" target="_blank">Google Site</a>
-  <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord</a>
-  <button class="btn" onclick="cycleTheme()">Change Theme</button>
-  <button class="btn" onclick="showAchievements()">Achievements</button>
+  <button class="theme-btn" onclick="openThemeSelector()">Choose Theme</button>
+  <button class="achievement-btn" onclick="showAchievements()">Achievements</button>
 </nav>
 
 <button id="topButton" onclick="scrollTopPage()">⬆️ Top</button>
 
 <div id="achievementPopup"></div>
 
-<audio id="bgMusic" preload="none" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3171b043e8.mp3" type="audio/mpeg">
+<audio id="bgMusic" preload="auto" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/03/audio_54b74ed275.mp3" type="audio/mpeg">
 </audio>
 <button class="btn" onclick="toggleMusic()">Play Music</button>
 
-<!-- Game Sections Start -->
+<!-- Game Sections -->
 <div id="games"></div>
-<!-- Game Sections End -->
+
+<!-- Scripts -->
+<script>
+const games = [
+  { name: 'Minecraft Hub', url: 'https://staticquasar931.github.io/Minecraft-hub/' },
+  { name: 'Snow Rider', url: 'https://drippy-cat.github.io/snowrider3D/' },
+  { name: 'Slope', url: 'https://slope-unblocked-10x.github.io/action-games/slope/' },
+  { name: 'Subway Surfers', url: 'https://staticquasar931.github.io/Subway-Surfers/' },
+  { name: 'Drift Hunters', url: 'https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1' },
+  { name: 'Block Blast', url: 'https://reunbozdo.github.io/' },
+  { name: "It's Raining Boxes", url: 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec' },
+];
+
+const bonusGame = { name: 'Rise Up / Rise Higher', url: 'https://www.hoodamath.com/mobile/games/rise-higher/game.html?nocheckorient=1' };
+
+let container = document.getElementById('games');
+
+function createGameSection(game, index, hidden=false) {
+  container.innerHTML += `
+    <section class="game-section" id="section${index}" ${hidden ? 'style="display:none"' : ''}>
+      <h2>${game.name}</h2>
+      <div class="game-placeholder" id="placeholder${index}">
+        <button class="play-btn" onclick="startGame(${index}, '${game.url}')">▶ Play</button>
+      </div>
+      <div class="controls">
+        <button class="fullscreen-btn" onclick="fullscreen('iframe${index}')">Full Screen</button>
+      </div>
+      <iframe id="iframe${index}" allowfullscreen></iframe>
+    </section>
+  `;
+}
+
+games.forEach((game, i) => createGameSection(game, i));
+
+createGameSection(bonusGame, 999, true);
+
+const themes = [
+  'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
+  'linear-gradient(to right, #ff7e5f, #feb47b)',
+  'linear-gradient(to right, #43cea2, #185a9d)',
+  'linear-gradient(to right, #fc466b, #3f5efb)',
+  'linear-gradient(to right, #00c6ff, #0072ff)',
+  'linear-gradient(to right, #7F00FF, #E100FF)',
+  'linear-gradient(to right, #11998e, #38ef7d)',
+  'linear-gradient(to right, #f7971e, #ffd200)',
+  'linear-gradient(to right, #00c3ff, #ffff1c)',
+  'linear-gradient(to right, #8e2de2, #4a00e0)'
+];
+
+function openThemeSelector() {
+  let choice = prompt("Choose a theme (1-10):\n1. Dark Blue\n2. Sunset\n3. Aqua\n4. Purple\n5. Sky\n6. Violet\n7. Green\n8. Orange\n9. Neon\n10. Deep Purple");
+  let index = parseInt(choice)-1;
+  if(index >= 0 && index < themes.length) document.body.style.background = themes[index];
+}
+
+let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
+
+const allAchievements = [
+  {name: 'First Game Played', hint: 'Play any game.'},
+  {name: 'Visited Google Site', hint: 'Click Google Site link.'},
+  {name: 'Joined Discord', hint: 'Click Discord link.'},
+  {name: 'Played 5 Different Games', hint: 'Play 5 different games.'},
+  {name: 'Played Minecraft', hint: 'Play Minecraft.'},
+  {name: 'Played Slope', hint: 'Play Slope.'},
+  {name: 'Played Subway Surfers', hint: 'Play Subway Surfers.'},
+  {name: 'Played Drift Hunters', hint: 'Play Drift Hunters.'},
+  {name: 'Played Snow Rider', hint: 'Play Snow Rider.'},
+  {name: 'Played Block Blast', hint: 'Play Block Blast.'},
+  {name: 'Found Secret Game', hint: 'Unlock 10 achievements.'},
+  {name: 'Used Theme Changer', hint: 'Change the site theme.'},
+  {name: 'Viewed Achievements', hint: 'Open Achievements menu.'},
+  {name: 'Listened to Music', hint: 'Play background music.'},
+  {name: 'Paused Music', hint: 'Pause background music.'},
+  {name: 'Scrolled to Top', hint: 'Use the Top button.'},
+  {name: 'Unlocked 5 Achievements', hint: 'Unlock 5 achievements.'},
+  {name: 'Unlocked 15 Achievements', hint: 'Unlock 15 achievements.'},
+  {name: 'Visited 3 Games', hint: 'Visit 3 different games.'},
+  {name: 'Played Secret Game', hint: 'Play Rise Up / Rise Higher!'}
+];
+
+function unlockAchievement(name) {
+  if (!achievements.includes(name)) {
+    achievements.push(name);
+    localStorage.setItem('achievements', JSON.stringify(achievements));
+    alert('🎖 Achievement Unlocked: ' + name);
+    checkSecretUnlock();
+  }
+}
+
+function showAchievements() {
+  const popup = document.getElementById('achievementPopup');
+  popup.innerHTML = '<h2>Achievements</h2>' + allAchievements.map(a => `<p>${achievements.includes(a.name) ? '✅' : '🔒'} ${a.name}<br><small>Hint: ${a.hint}</small></p>`).join('') + '<br><button class="btn" onclick="closeAchievements()">Close</button>';
+  popup.style.display = 'block';
+}
+
+function closeAchievements() {
+  document.getElementById('achievementPopup').style.display = 'none';
+}
+
+function startGame(index, url) {
+  const frame = document.getElementById(`iframe${index}`);
+  document.getElementById(`placeholder${index}`).style.display = 'none';
+  frame.src = url;
+  frame.style.display = 'block';
+  unlockAchievement('First Game Played');
+}
+
+function fullscreen(id) {
+  const frame = document.getElementById(id);
+  if (frame.requestFullscreen) frame.requestFullscreen();
+  else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+  else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
+}
+
+function toggleMusic() {
+  const music = document.getElementById('bgMusic');
+  if (music.paused) {
+    music.play();
+    event.target.innerText = 'Pause Music';
+  } else {
+    music.pause();
+    event.target.innerText = 'Play Music';
+  }
+}
+
+function checkSecretUnlock() {
+  if (achievements.length >= 10 && document.getElementById('section999').style.display === 'none') {
+    document.getElementById('section999').style.display = 'block';
+    unlockAchievement('Found Secret Game');
+  }
+}
+
+window.onscroll = () => {
+  document.getElementById('topButton').style.display = (document.documentElement.scrollTop > 100) ? 'block' : 'none';
+};
+
+function scrollTopPage() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 
 <footer>
   © 2025 StaticQuasar931 - All Rights Reserved
 </footer>
-
-<!-- Scripts -->
-<script>
-  const games = [
-    { name: 'Minecraft Hub', url: 'https://staticquasar931.github.io/Minecraft-hub/' },
-    { name: 'Snow Rider', url: 'https://drippy-cat.github.io/snowrider3D/' },
-    { name: 'Slope', url: 'https://slope-unblocked-10x.github.io/action-games/slope/' },
-    { name: 'Subway Surfers', url: 'https://staticquasar931.github.io/Subway-Surfers/' },
-    { name: 'Drift Hunters', url: 'https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1' },
-    { name: 'Block Blast', url: 'https://reunbozdo.github.io/' },
-    { name: "It's Raining Boxes", url: 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec' }
-  ];
-
-  const container = document.getElementById('games');
-
-  games.forEach((game, index) => {
-    container.innerHTML += `
-      <section class="game-section">
-        <h2>${game.name}</h2>
-        <button class="btn" onclick="startGame('game${index}', '${game.url}')">Play</button>
-        <div class="controls">
-          <button class="btn" onclick="fullscreen('game${index}')">Full Screen</button>
-        </div>
-        <iframe id="game${index}" allowfullscreen></iframe>
-      </section>
-    `;
-  });
-
-  const themes = [
-    'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
-    'linear-gradient(to right, #ff7e5f, #feb47b)',
-    'linear-gradient(to right, #43cea2, #185a9d)',
-    'linear-gradient(to right, #fc466b, #3f5efb)',
-    'linear-gradient(to right, #00c6ff, #0072ff)',
-    'linear-gradient(to right, #7F00FF, #E100FF)',
-    'linear-gradient(to right, #11998e, #38ef7d)',
-    'linear-gradient(to right, #f7971e, #ffd200)',
-    'linear-gradient(to right, #00c3ff, #ffff1c)',
-    'linear-gradient(to right, #8e2de2, #4a00e0)'
-  ];
-
-  let themeIndex = 0;
-
-  function cycleTheme() {
-    themeIndex = (themeIndex + 1) % themes.length;
-    document.body.style.background = themes[themeIndex];
-  }
-
-  let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
-
-  function unlockAchievement(name) {
-    if (!achievements.includes(name)) {
-      achievements.push(name);
-      localStorage.setItem('achievements', JSON.stringify(achievements));
-      alert('🎖 Achievement Unlocked: ' + name);
-    }
-  }
-
-  function showAchievements() {
-    const popup = document.getElementById('achievementPopup');
-    popup.innerHTML = '<h2>Achievements</h2>' + achievements.map(a => `<p>🏆 ${a}</p>`).join('') + '<br><button class="btn" onclick="closeAchievements()">Close</button>';
-    popup.style.display = 'block';
-  }
-
-  function closeAchievements() {
-    document.getElementById('achievementPopup').style.display = 'none';
-  }
-
-  function startGame(id, url) {
-    unlockAchievement("First Game Played");
-    const frame = document.getElementById(id);
-    frame.src = url;
-    frame.style.display = 'block';
-  }
-
-  function fullscreen(id) {
-    const frame = document.getElementById(id);
-    if (frame.requestFullscreen) frame.requestFullscreen();
-    else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
-    else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
-  }
-
-  function toggleMusic() {
-    const music = document.getElementById('bgMusic');
-    if (music.paused) {
-      music.play();
-      event.target.innerText = "Pause Music";
-    } else {
-      music.pause();
-      event.target.innerText = "Play Music";
-    }
-  }
-
-  window.onscroll = () => {
-    document.getElementById('topButton').style.display = (document.documentElement.scrollTop > 100) ? 'block' : 'none';
-  };
-
-  function scrollTopPage() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
 
 </body>
 </html>
