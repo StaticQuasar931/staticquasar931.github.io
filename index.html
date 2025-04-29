@@ -27,22 +27,6 @@
       padding: 15px;
     }
 
-    nav a, .theme-button {
-      display: inline-block;
-      margin: 5px;
-      padding: 10px 20px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    nav a:hover, .theme-button:hover {
-      background: #388e3c;
-    }
-
     .top-announcement {
       background: #2196F3;
       padding: 12px;
@@ -61,6 +45,45 @@
 
     .top-announcement a:hover {
       color: #ffffff;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    #themeButton {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #themeSelector {
+      position: fixed;
+      top: 70px;
+      left: 20px;
+      background: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      display: none;
+      z-index: 1000;
+    }
+
+    #themeSelector select {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 6px;
+      margin-top: 5px;
+      cursor: pointer;
     }
 
     .game-section {
@@ -159,28 +182,6 @@
       z-index: 10000;
     }
 
-    #themeSelector {
-      position: fixed;
-      top: 80px;
-      left: 20px;
-      background: #333;
-      color: white;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 0.9em;
-      z-index: 10000;
-    }
-
-    #themeSelector select {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 5px;
-      border-radius: 6px;
-      margin-top: 5px;
-      cursor: pointer;
-    }
-
     @media(max-width:600px){
       .game-placeholder, iframe { height: 400px; }
     }
@@ -199,11 +200,8 @@
   <h1>StaticQuasar931 - Free Unblocked Games Hub</h1>
 </header>
 
-<nav>
-  <button class="theme-button" onclick="toggleThemeSelector()">Themes</button>
-</nav>
-
-<div id="themeSelector" style="display:none;">
+<button id="themeButton" onclick="toggleThemeSelector()">Themes</button>
+<div id="themeSelector">
   <label>Pick a Theme:</label><br>
   <select onchange="changeTheme(this.value)">
     <option value="0">Ocean Dark</option>
@@ -223,7 +221,6 @@
 
 <button id="topButton" onclick="scrollTopPage()">⬆️ Top</button>
 
-<!-- Game Sections: ADD more using this template -->
 <section class="game-section">
   <h2>Minecraft Hub</h2>
   <div class="game-placeholder" id="mcPlaceholder">
@@ -244,13 +241,62 @@
   <button class="fullscreen-btn" onclick="fullscreen('subwayFrame')">Full Screen</button>
 </section>
 
-<!-- ADD more game sections just like above for: Snow Rider, Slope, Drift Hunters, Block Blast, etc -->
+<section class="game-section">
+  <h2>Snow Rider</h2>
+  <div class="game-placeholder" id="snowPlaceholder">
+    <button class="play-button" onclick="startGame('snowPlaceholder', 'snowFrame', 'https://drippy-cat.github.io/snowrider3D/')">Play Snow Rider</button>
+    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" target="_blank">Or play on Google Sites</a>
+  </div>
+  <iframe id="snowFrame" allowfullscreen loading="lazy"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('snowFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>Slope</h2>
+  <div class="game-placeholder" id="slopePlaceholder">
+    <button class="play-button" onclick="startGame('slopePlaceholder', 'slopeFrame', 'https://slope-unblocked-10x.github.io/action-games/slope/')">Play Slope</button>
+    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/slope" target="_blank">Or play on Google Sites</a>
+  </div>
+  <iframe id="slopeFrame" allowfullscreen loading="lazy"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('slopeFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>Drift Hunters</h2>
+  <div class="game-placeholder" id="driftPlaceholder">
+    <button class="play-button" onclick="startGame('driftPlaceholder', 'driftFrame', 'https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1')">Play Drift Hunters</button>
+    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" target="_blank">Or play on Google Sites</a>
+  </div>
+  <iframe id="driftFrame" allowfullscreen loading="lazy"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('driftFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>Block Blast</h2>
+  <div class="game-placeholder" id="blockPlaceholder">
+    <button class="play-button" onclick="startGame('blockPlaceholder', 'blockFrame', 'https://reunbozdo.github.io/')">Play Block Blast</button>
+    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/block-blast" target="_blank">Or play on Google Sites</a>
+  </div>
+  <iframe id="blockFrame" allowfullscreen loading="lazy"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('blockFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>It's Raining Boxes</h2>
+  <div class="game-placeholder" id="rainingPlaceholder">
+    <button class="play-button" onclick="startGame('rainingPlaceholder', 'rainingFrame', 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec')">Play It's Raining Boxes</button>
+    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/its-raining-boxes" target="_blank">Or play on Google Sites</a>
+  </div>
+  <iframe id="rainingFrame" allowfullscreen loading="lazy"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('rainingFrame')">Full Screen</button>
+</section>
 
 <footer>
   © 2025 StaticQuasar931 - All Rights Reserved
 </footer>
 
 <script>
+  localStorage.removeItem('achievements');
   const themes = [
     'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
     'linear-gradient(to right, #ff7e5f, #feb47b)',
