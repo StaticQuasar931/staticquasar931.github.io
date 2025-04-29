@@ -5,28 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StaticQuasar931 - Free Unblocked Games Hub | 600+ Games</title>
 
-  <meta name="description" content="Play 600+ free unblocked games at StaticQuasar931! Minecraft, Subway Surfers, Drift Hunters, Snow Rider, Slope and more! New games every week.">
-  <meta name="keywords" content="unblocked games, free games, StaticQuasar931, school games, Minecraft unblocked, Drift Hunters, Subway Surfers, Slope unblocked">
+  <meta name="description" content="Play 600+ free unblocked games at StaticQuasar931! Minecraft, Subway Surfers, Drift Hunters, Snow Rider, Slope and more! New games added weekly.">
+  <meta name="keywords" content="unblocked games, free games, StaticQuasar931, school games, Minecraft unblocked, Subway Surfers, Drift Hunters, Slope unblocked">
   <meta name="author" content="StaticQuasar931">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3a/Pixelated-joystick-icon.png" />
 
   <style>
-    /* Base styles */
+    /* Base Styles */
     html, body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
       color: white;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
+
     header, nav, footer {
       text-align: center;
       padding: 15px;
     }
-    nav a, .discord-button, .control-button, .play-button, .theme-button, .achievement-button {
+
+    nav a, .discord-button, .theme-button {
       display: inline-block;
       margin: 5px;
       padding: 10px 20px;
@@ -37,9 +39,22 @@
       transition: 0.3s;
       cursor: pointer;
     }
-    nav a:hover, .control-button:hover, .play-button:hover, .theme-button:hover, .achievement-button:hover {
+    nav a:hover, .discord-button:hover, .theme-button:hover {
       background: #388e3c;
     }
+
+    .top-announcement {
+      background: #2196F3;
+      padding: 10px;
+      font-size: 1em;
+      color: white;
+    }
+
+    .top-announcement a {
+      color: yellow;
+      font-weight: bold;
+    }
+
     .game-section {
       background: rgba(0,0,0,0.6);
       margin: 20px auto;
@@ -47,7 +62,44 @@
       border-radius: 12px;
       width: 90%;
       max-width: 1000px;
+      text-align: center;
+      position: relative;
     }
+
+    .game-placeholder {
+      width: 100%;
+      height: 600px;
+      background: #444;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .play-button {
+      padding: 12px 25px;
+      margin: 10px;
+      font-size: 1.2em;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .play-button:hover {
+      background: #0097a7;
+    }
+
+    .google-site-link {
+      margin-top: 10px;
+      display: inline-block;
+      color: yellow;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
     iframe {
       width: 100%;
       height: 600px;
@@ -56,22 +108,17 @@
       display: none;
       margin-top: 10px;
     }
-    .game-controls {
+
+    .fullscreen-btn {
       margin-top: 10px;
-    }
-    .game-controls button {
-      margin-right: 5px;
-    }
-    .top-announcement {
-      background: #2196F3;
-      padding: 10px;
-      font-size: 1em;
+      padding: 8px 15px;
+      background: #673ab7;
       color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
-    .top-announcement a {
-      color: yellow;
-      font-weight: bold;
-    }
+
     #topButton {
       position: fixed;
       bottom: 20px;
@@ -85,19 +132,46 @@
       display: none;
       z-index: 1000;
     }
-    #achievementPopup {
+
+    /* Achievement Toast */
+    #achievementToast {
       position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -20%);
-      background: #673ab7;
-      padding: 20px;
-      border-radius: 12px;
+      top: 20px;
+      right: 20px;
+      background: #4caf50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
       display: none;
+      font-size: 1em;
       z-index: 10000;
     }
+
+    /* Theme Selector */
+    #themeSelector {
+      position: fixed;
+      top: 80px;
+      left: 20px;
+      background: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.9em;
+      z-index: 10000;
+    }
+
+    #themeSelector select {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 6px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
     @media(max-width:600px){
-      iframe { height: 400px; }
+      .game-placeholder, iframe { height: 400px; }
     }
   </style>
 
@@ -105,8 +179,8 @@
 <body>
 
 <div class="top-announcement">
-  Welcome to <strong>StaticQuasar931</strong>! 🎮 600+ Unblocked Games. 
-  ➔ <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform" target="_blank">Suggest a game here!</a>
+  Welcome to <strong>StaticQuasar931</strong>! 🎮 600+ Unblocked Games. ➔ 
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFiegPH6GsWIWERzfbtptJW2GMk4exkrTQsdqlR2-2oj83zA/viewform" target="_blank">Suggest a game here!</a>
 </div>
 
 <header>
@@ -116,41 +190,41 @@
 <nav>
   <a href="https://sites.google.com/view/staticquasar931" target="_blank">Google Site</a>
   <a href="https://discord.gg/DP2hM7RRhR" target="_blank">Join Discord</a>
-  <button class="theme-button" onclick="cycleTheme()">Change Theme</button>
-  <button class="achievement-button" onclick="showAchievements()">Achievements</button>
+  <button class="theme-button" onclick="toggleThemeSelector()">Themes</button>
 </nav>
+
+<div id="themeSelector" style="display:none;">
+  <label>Pick a Theme:</label><br>
+  <select onchange="changeTheme(this.value)">
+    <option value="0">Ocean Dark</option>
+    <option value="1">Sunset</option>
+    <option value="2">Aqua Blue</option>
+    <option value="3">Pink/Blue</option>
+    <option value="4">Sky Blue</option>
+    <option value="5">Purple</option>
+    <option value="6">Green Fields</option>
+    <option value="7">Golden</option>
+    <option value="8">Neon</option>
+    <option value="9">Royal Purple</option>
+  </select>
+</div>
+
+<div id="achievementToast"></div>
 
 <button id="topButton" onclick="scrollTopPage()">⬆️ Top</button>
 
-<div id="achievementPopup"></div>
-
-<audio id="bgMusic" preload="none" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3171b043e8.mp3" type="audio/mpeg">
-</audio>
-<button class="control-button" onclick="toggleMusic()">Play Music</button>
-
-<!-- Game Sections -->
+<!-- Game Sections Example -->
 <section class="game-section">
   <h2>Minecraft Hub</h2>
-  <button class="play-button" onclick="startGame('mcFrame', 'https://staticquasar931.github.io/Minecraft-hub/')">Play Minecraft</button>
-  <div class="game-controls">
-    <button onclick="fullscreen('mcFrame')">Full Screen</button>
-    <button onclick="muteGame('mcFrame')">Mute/Unmute</button>
+  <div class="game-placeholder" id="mcPlaceholder">
+    <button class="play-button" onclick="startGame('mcPlaceholder', 'mcFrame', 'https://staticquasar931.github.io/Minecraft-hub/')">Play Minecraft</button>
+    <br><a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/minecraft" target="_blank">Or play on Google Sites</a>
   </div>
-  <iframe id="mcFrame" allowfullscreen></iframe>
+  <iframe id="mcFrame" allowfullscreen loading="lazy"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('mcFrame')">Full Screen</button>
 </section>
 
-<section class="game-section">
-  <h2>Snow Rider</h2>
-  <button class="play-button" onclick="startGame('snowFrame', 'https://drippy-cat.github.io/snowrider3D/')">Play Snow Rider</button>
-  <div class="game-controls">
-    <button onclick="fullscreen('snowFrame')">Full Screen</button>
-    <button onclick="muteGame('snowFrame')">Mute/Unmute</button>
-  </div>
-  <iframe id="snowFrame" allowfullscreen></iframe>
-</section>
-
-<!-- Add more games below following the same structure -->
+<!-- More game sections can be added the same way -->
 
 <footer>
   © 2025 StaticQuasar931 - All Rights Reserved
@@ -169,61 +243,39 @@
     'linear-gradient(to right, #00c3ff, #ffff1c)',
     'linear-gradient(to right, #8e2de2, #4a00e0)'
   ];
-  let themeIndex = 0;
 
-  function cycleTheme() {
-    themeIndex = (themeIndex + 1) % themes.length;
-    document.body.style.background = themes[themeIndex];
+  function toggleThemeSelector() {
+    const selector = document.getElementById('themeSelector');
+    selector.style.display = (selector.style.display === 'none') ? 'block' : 'none';
   }
 
-  let achievements = JSON.parse(localStorage.getItem('achievements')) || [];
-
-  function unlockAchievement(name) {
-    if (!achievements.includes(name)) {
-      achievements.push(name);
-      localStorage.setItem('achievements', JSON.stringify(achievements));
-      alert("🎖 Achievement Unlocked: " + name);
-    }
+  function changeTheme(index) {
+    document.body.style.background = themes[index];
+    showAchievement("Theme Changed!");
   }
 
-  function showAchievements() {
-    const box = document.getElementById('achievementPopup');
-    box.innerHTML = "<h2>Achievements</h2>" + achievements.map(a => `<p>🏆 ${a}</p>`).join('') + '<br><button onclick="closeAchievements()">Close</button>';
-    box.style.display = 'block';
+  function startGame(placeholderId, iframeId, url) {
+    document.getElementById(placeholderId).style.display = 'none';
+    const iframe = document.getElementById(iframeId);
+    iframe.src = url;
+    iframe.style.display = 'block';
+    showAchievement("First Game Played!");
   }
 
-  function closeAchievements() {
-    document.getElementById('achievementPopup').style.display = 'none';
+  function fullscreen(iframeId) {
+    const iframe = document.getElementById(iframeId);
+    if (iframe.requestFullscreen) iframe.requestFullscreen();
+    else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+    else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
   }
 
-  function startGame(id, url) {
-    unlockAchievement("First Game Played");
-    const frame = document.getElementById(id);
-    frame.src = url;
-    frame.style.display = 'block';
-  }
-
-  function fullscreen(id) {
-    const frame = document.getElementById(id);
-    if (frame.requestFullscreen) frame.requestFullscreen();
-    else if (frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
-    else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
-  }
-
-  function muteGame(id) {
-    const frame = document.getElementById(id);
-    frame.contentWindow.postMessage({type: "mute"}, "*"); // if game listens to postMessage events
-  }
-
-  function toggleMusic() {
-    const music = document.getElementById('bgMusic');
-    if (music.paused) {
-      music.play();
-      event.target.innerText = "Pause Music";
-    } else {
-      music.pause();
-      event.target.innerText = "Play Music";
-    }
+  function showAchievement(text) {
+    const toast = document.getElementById('achievementToast');
+    toast.innerText = text;
+    toast.style.display = 'block';
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 3000);
   }
 
   window.onscroll = function() {
