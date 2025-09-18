@@ -14,22 +14,18 @@
   <link rel="canonical" href="https://staticquasar931.github.io/" />
   <link rel="sitemap" type="application/xml" href="https://staticquasar931.github.io/sitemap.xml" />
 
-  <!-- Structured data to boost discovery and sitelinks -->
+  <!-- Structured data to boost discovery -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "StaticQuasar931 - Free Unblocked Games",
-    "url": "https://staticquasar931.github.io/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.google.com/search?q=site%3Astaticquasar931.github.io+{search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    "sameAs": [
-      "https://sites.google.com/view/staticquasar931",
-      "https://www.instagram.com/freeschoolgamepage/"
-    ]
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"StaticQuasar931 - Free Unblocked Games",
+    "url":"https://staticquasar931.github.io/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.google.com/search?q=site%3Astaticquasar931.github.io+{search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
   }
   </script>
 
@@ -44,10 +40,7 @@
       overflow-x: hidden;
     }
 
-    header, nav, footer {
-      text-align: center;
-      padding: 15px;
-    }
+    header, nav, footer { text-align: center; padding: 15px; }
 
     .top-announcement {
       background: #2196F3;
@@ -56,64 +49,25 @@
       font-size: 1em;
       font-weight: bold;
     }
-
     .top-announcement a {
-      color: #fff200;
-      font-weight: bold;
-      margin: 0 10px;
-      text-decoration: none;
-      transition: color 0.3s;
+      color: #fff200; font-weight: bold; margin: 0 10px; text-decoration: none; transition: color .3s;
     }
-
     .top-announcement a:hover { color: #ffffff; }
 
     nav { margin-top: 12px; }
-    nav .quick-links a {
-      display: inline-block;
-      margin: 6px 8px;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
+    nav .quick-links a{
+      display:inline-block;margin:6px 8px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.08);
+      color:#fff;text-decoration:none;font-weight:600;
     }
-    nav .quick-links a:hover { background: rgba(255,255,255,0.16); }
+    nav .quick-links a:hover{background:rgba(255,255,255,.16);}
 
     #themeButton {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1000;
+      position: fixed; top: 20px; left: 20px; background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; z-index: 1000;
     }
-
     #themeSelector {
-      position: fixed;
-      top: 70px;
-      left: 20px;
-      background: #333;
-      color: white;
-      padding: 10px;
-      border-radius: 10px;
-      display: none;
-      z-index: 1000;
+      position: fixed; top: 70px; left: 20px; background: #333; color: white; padding: 10px; border-radius: 10px; display: none; z-index: 1000;
     }
-
-    #themeSelector select {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 5px;
-      border-radius: 6px;
-      margin-top: 5px;
-      cursor: pointer;
-    }
+    #themeSelector select { background: #4CAF50; color: white; border: none; padding: 5px; border-radius: 6px; margin-top: 5px; cursor: pointer; }
 
     .game-section {
       background: rgba(0,0,0,0.6);
@@ -126,51 +80,71 @@
       position: relative;
     }
 
-    .game-placeholder {
+    /* Image-based placeholders */
+    .game-placeholder{
+      position: relative;
       width: 100%;
       height: 600px;
-      background: #444;
       border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      isolation:isolate;
+    }
+    .game-art{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:0;
+    }
+    .game-gradient{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.25), rgba(0,0,0,.55));
+      z-index:1;
+    }
+    .game-overlay{
+      position:relative;
+      z-index:2;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+      padding:10px;
     }
 
-    .play-button {
+    .play-button{
       padding: 12px 25px;
-      margin: 10px;
-      font-size: 1.2em;
+      margin: 3px;
+      font-size: 1.1em;
       background: #00bcd4;
       color: white;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      transition: background 0.3s;
-      display: inline-block;
-      text-decoration: none;
+      transition: transform .1s ease, background .3s ease;
+      display:inline-block;
+      text-decoration:none;
+      font-weight:700;
     }
-    .play-button:hover { background: #0097a7; }
+    .play-button:hover{ background:#0097a7; transform: translateY(-1px); }
 
-    .google-site-link, .direct-link {
-      margin-top: 5px;
-      display: inline-block;
-      color: #ffd700;
-      font-weight: bold;
-      text-decoration: none;
+    .google-site-link, .direct-link{
+      display:inline-block;
+      color:#ffd700;
+      font-weight:bold;
+      text-decoration:none;
     }
-    .google-site-link:hover, .direct-link:hover { color: white; }
+    .google-site-link:hover, .direct-link:hover{ color:#fff; }
 
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 10px;
-      display: none;
-      margin-top: 10px;
+    iframe{
+      width:100%; height:600px; border:none; border-radius:10px; display:none; margin-top:10px;
     }
 
-    .fullscreen-btn {
+    .fullscreen-btn{
       margin-top: 10px;
       padding: 8px 15px;
       background: #673ab7;
@@ -180,53 +154,42 @@
       cursor: pointer;
     }
 
-    #topButton {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px;
-      background: #333;
-      color: white;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      display: none;
-      z-index: 1000;
+    #topButton{
+      position:fixed; bottom:20px; right:20px; padding:10px; background:#333; color:white; border-radius:8px; font-size:14px; cursor:pointer; display:none; z-index:1000;
+    }
+    #achievementToast{
+      position:fixed; top:20px; right:20px; background:#4caf50; color:white; padding:15px 25px; border-radius:10px; display:none; font-size:1em; z-index:10000;
     }
 
-    #achievementToast {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #4caf50;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 10px;
-      display: none;
-      font-size: 1em;
-      z-index: 10000;
+    /* Compact HTML sitemap */
+    .html-sitemap{
+      width:90%; max-width:1100px; margin:10px auto 40px; background:rgba(0,0,0,0.5);
+      border-radius:12px; padding:16px; text-align:left;
     }
-
-    /* HTML sitemap list */
-    .html-sitemap {
-      width: 90%;
-      max-width: 1100px;
-      margin: 10px auto 40px;
-      background: rgba(0,0,0,0.5);
-      border-radius: 12px;
-      padding: 20px;
-      line-height: 1.7;
-      text-align: left;
+    .sitemap-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:8px;
+      list-style:none;
+      padding:0;
+      margin:12px 0 0 0;
     }
-    .html-sitemap a {
-      color: #9cf3ff;
-      text-decoration: none;
-      font-weight: 600;
+    .sitemap-grid a{
+      display:block;
+      padding:8px 10px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.08);
+      color:#9cf3ff;
+      text-decoration:none;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      font-weight:600;
     }
-    .html-sitemap a:hover { text-decoration: underline; }
+    .sitemap-grid a:hover{ background:rgba(255,255,255,0.16); }
 
     @media(max-width:600px){
-      .game-placeholder, iframe { height: 400px; }
+      .game-placeholder, iframe{ height:400px; }
     }
   </style>
 </head>
@@ -241,7 +204,6 @@
 
 <header>
   <h1>StaticQuasar931 - Free Unblocked Games Hub</h1>
-  <!-- Crawlable Quick Links to emphasize key destinations -->
   <nav aria-label="Popular game links">
     <div class="quick-links">
       <a href="https://staticquasar931.github.io/Minecraft-hub/" target="_blank" rel="noopener">Minecraft Hub (unblocked)</a>
@@ -252,6 +214,7 @@
       <a href="https://staticquasar931.github.io/Cookie-Clicker/" target="_blank" rel="noopener">Cookie Clicker (unblocked)</a>
       <a href="https://staticquasar931.github.io/Crossy-Road/" target="_blank" rel="noopener">Crossy Road (unblocked)</a>
       <a href="https://staticquasar931.github.io/Make-Money-96.01/" target="_blank" rel="noopener">Make Money 96.01 (unblocked)</a>
+      <!-- 3 Slices quick-link already points to StaticQuasar931 version via section below -->
     </div>
   </nav>
 </header>
@@ -276,81 +239,294 @@
 <div id="achievementToast"></div>
 <button id="topButton" onclick="scrollTopPage()">⬆️ Top</button>
 
+<!-- ===================== GAME SECTIONS WITH IMAGES ===================== -->
+
 <section class="game-section">
   <h2>Minecraft Hub</h2>
-  <div class="game-placeholder" id="mcPlaceholder">
-    <button class="play-button" onclick="startGame('mcPlaceholder', 'mcFrame', 'https://staticquasar931.github.io/Minecraft-hub/')">Play Minecraft</button>
-    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/minecraft" target="_blank">Or play on Google Sites</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/Minecraft-hub/" target="_blank" rel="noopener">Minecraft Hub (Direct Link)</a>
+  <div class="game-placeholder" id="mcPlaceholder" role="img" aria-label="Minecraft EaglerCraft Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1757883396/Minecraft_EaglerCraft_StaticQuasar931_Github_wwo4ae.jpg"
+         alt="Minecraft EaglerCraft Hub — Unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('mcPlaceholder', 'mcFrame', 'https://staticquasar931.github.io/Minecraft-hub/')" title="Play Minecraft on StaticQuasar931">Play Minecraft</button>
+      <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/minecraft" target="_blank">Or play on Google Sites</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/Minecraft-hub/" target="_blank" rel="noopener">Minecraft Hub (Direct Link)</a>
+    </div>
   </div>
-  <iframe id="mcFrame" allowfullscreen loading="lazy"></iframe>
+  <iframe id="mcFrame" allowfullscreen loading="lazy" title="Minecraft Hub - StaticQuasar931"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('mcFrame')">Full Screen</button>
 </section>
 
 <section class="game-section">
   <h2>Subway Surfers</h2>
-  <div class="game-placeholder" id="subwayPlaceholder">
-    <button class="play-button" onclick="startGame('subwayPlaceholder', 'subwayFrame', 'https://staticquasar931.github.io/Subway-Surfers/')">Play Subway Surfers</button>
-    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/subway-surfers_1/subway-surfers-main" target="_blank">Or play on Google Sites</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/Subway-Surfers/" target="_blank" rel="noopener">Subway Surfers (Direct Link)</a>
+  <div class="game-placeholder" id="subwayPlaceholder" role="img" aria-label="Subway Surfers Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1757369916/subway-surfers_vaqo1m.jpg"
+         alt="Subway Surfers — Play Unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('subwayPlaceholder', 'subwayFrame', 'https://staticquasar931.github.io/Subway-Surfers/')" title="Play Subway Surfers on StaticQuasar931">Play Subway Surfers</button>
+      <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/subway-surfers_1/subway-surfers-main" target="_blank">Or play on Google Sites</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/Subway-Surfers/" target="_blank" rel="noopener">Subway Surfers (Direct Link)</a>
+    </div>
   </div>
-  <iframe id="subwayFrame" allowfullscreen loading="lazy"></iframe>
+  <iframe id="subwayFrame" allowfullscreen loading="lazy" title="Subway Surfers - StaticQuasar931"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('subwayFrame')">Full Screen</button>
 </section>
 
 <section class="game-section">
   <h2>Snow Rider</h2>
-  <div class="game-placeholder" id="snowPlaceholder">
-    <button class="play-button" onclick="startGame('snowPlaceholder', 'snowFrame', 'https://drippy-cat.github.io/snowrider3D/')">Play Snow Rider</button>
-    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" target="_blank">Or play on Google Sites</a>
-    <a class="direct-link" href="https://drippy-cat.github.io/snowrider3D/" target="_blank" rel="noopener">Snow Rider 3D (Direct Link)</a>
+  <div class="game-placeholder" id="snowPlaceholder" role="img" aria-label="Snow Rider Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758159083/Snow_Rider_3d_StaticQuasar931_mbu3p3.png"
+         alt="Snow Rider 3D — Unblocked snow game on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('snowPlaceholder', 'snowFrame', 'https://drippy-cat.github.io/snowrider3D/')" title="Play Snow Rider on StaticQuasar931">Play Snow Rider</button>
+      <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/snow-rider" target="_blank">Or play on Google Sites</a>
+      <a class="direct-link" href="https://drippy-cat.github.io/snowrider3D/" target="_blank" rel="noopener">Snow Rider 3D (Direct Link)</a>
+    </div>
   </div>
-  <iframe id="snowFrame" allowfullscreen loading="lazy"></iframe>
+  <iframe id="snowFrame" allowfullscreen loading="lazy" title="Snow Rider - StaticQuasar931"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('snowFrame')">Full Screen</button>
 </section>
 
 <section class="game-section">
   <h2>Slope</h2>
-  <div class="game-placeholder" id="slopePlaceholder">
-    <button class="play-button" onclick="startGame('slopePlaceholder', 'slopeFrame', 'https://slope-unblocked-10x.github.io/action-games/slope/')">Play Slope</button>
-    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/slope" target="_blank">Or play on Google Sites</a>
-    <a class="direct-link" href="https://slope-unblocked-10x.github.io/action-games/slope/" target="_blank" rel="noopener">Slope (Direct Link)</a>
+  <div class="game-placeholder" id="slopePlaceholder" role="img" aria-label="Slope Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1757369902/images_cpni6c.png"
+         alt="Slope — Fast Arcade Game on StaticQuasar931 (Unblocked)" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('slopePlaceholder', 'slopeFrame', 'https://slope-unblocked-10x.github.io/action-games/slope/')" title="Play Slope on StaticQuasar931">Play Slope</button>
+      <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/slope" target="_blank">Or play on Google Sites</a>
+      <a class="direct-link" href="https://slope-unblocked-10x.github.io/action-games/slope/" target="_blank" rel="noopener">Slope (Direct Link)</a>
+    </div>
   </div>
-  <iframe id="slopeFrame" allowfullscreen loading="lazy"></iframe>
+  <iframe id="slopeFrame" allowfullscreen loading="lazy" title="Slope - StaticQuasar931"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('slopeFrame')">Full Screen</button>
 </section>
 
 <section class="game-section">
   <h2>Drift Hunters</h2>
-  <div class="game-placeholder" id="driftPlaceholder">
-    <button class="play-button" onclick="startGame('driftPlaceholder', 'driftFrame', 'https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1')">Play Drift Hunters</button>
-    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" target="_blank">Or play on Google Sites</a>
-    <a class="direct-link" href="https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1" target="_blank" rel="noopener">Drift Hunters (Direct Link)</a>
+  <div class="game-placeholder" id="driftPlaceholder" role="img" aria-label="Drift Hunters Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1757884673/Drift_Hunters_StaticQuasar931_q1auwa.png"
+         alt="Drift Hunters — Car drifting unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('driftPlaceholder', 'driftFrame', 'https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1')" title="Play Drift Hunters on StaticQuasar931">Play Drift Hunters</button>
+      <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/drift-hunters" target="_blank">Or play on Google Sites</a>
+      <a class="direct-link" href="https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1" target="_blank" rel="noopener">Drift Hunters (Direct Link)</a>
+    </div>
   </div>
-  <iframe id="driftFrame" allowfullscreen loading="lazy"></iframe>
+  <iframe id="driftFrame" allowfullscreen loading="lazy" title="Drift Hunters - StaticQuasar931"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('driftFrame')">Full Screen</button>
 </section>
 
 <section class="game-section">
   <h2>Block Blast</h2>
-  <div class="game-placeholder" id="blockPlaceholder">
-    <button class="play-button" onclick="startGame('blockPlaceholder', 'blockFrame', 'https://reunbozdo.github.io/')">Play Block Blast</button>
-    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/block-blast" target="_blank">Or play on Google Sites</a>
-    <a class="direct-link" href="https://reunbozdo.github.io/" target="_blank" rel="noopener">Block Blast (Direct Link)</a>
+  <div class="game-placeholder" id="blockPlaceholder" role="img" aria-label="Block Blast Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758159102/Block_Blast_Puzzle_nowords_StaticQuasar931_lzmy2c.png"
+         alt="Block Blast — Puzzle game unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('blockPlaceholder', 'blockFrame', 'https://reunbozdo.github.io/')" title="Play Block Blast on StaticQuasar931">Play Block Blast</button>
+      <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/block-blast" target="_blank">Or play on Google Sites</a>
+      <a class="direct-link" href="https://reunbozdo.github.io/" target="_blank" rel="noopener">Block Blast (Direct Link)</a>
+    </div>
   </div>
-  <iframe id="blockFrame" allowfullscreen loading="lazy"></iframe>
+  <iframe id="blockFrame" allowfullscreen loading="lazy" title="Block Blast - StaticQuasar931"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('blockFrame')">Full Screen</button>
 </section>
 
 <section class="game-section">
   <h2>It's Raining Boxes</h2>
-  <div class="game-placeholder" id="rainingPlaceholder">
-    <button class="play-button" onclick="startGame('rainingPlaceholder', 'rainingFrame', 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec')">Play It's Raining Boxes</button>
-    <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/its-raining-boxes" target="_blank">Or play on Google Sites</a>
-    <a class="direct-link" href="https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec" target="_blank" rel="noopener">It's Raining Boxes (Direct Link)</a>
+  <div class="game-placeholder" id="rainingPlaceholder" role="img" aria-label="It's Raining Boxes Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758073340/Its_Raining_Boxes_StaticQuasar931_zi3wz0.jpg"
+         alt="It's Raining Boxes — Unblocked arcade on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('rainingPlaceholder', 'rainingFrame', 'https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec')" title="Play It's Raining Boxes on StaticQuasar931">Play It's Raining Boxes</button>
+      <a class="google-site-link" href="https://sites.google.com/view/staticquasar931/gm3z/its-raining-boxes" target="_blank">Or play on Google Sites</a>
+      <a class="direct-link" href="https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec" target="_blank" rel="noopener">It's Raining Boxes (Direct Link)</a>
+    </div>
   </div>
-  <iframe id="rainingFrame" allowfullscreen loading="lazy"></iframe>
+  <iframe id="rainingFrame" allowfullscreen loading="lazy" title="It's Raining Boxes - StaticQuasar931"></iframe>
   <button class="fullscreen-btn" onclick="fullscreen('rainingFrame')">Full Screen</button>
+</section>
+
+<!-- ===================== ADDITIONAL GAMES ===================== -->
+
+<section class="game-section">
+  <h2>Static's Interstellar Trader</h2>
+  <div class="game-placeholder" id="interstellarPlaceholder" role="img" aria-label="Interstellar Trader Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/fl_preserve_transparency/v1733649001/88bd324e-48b1-4f80-b75f-bb707da10cf6_t0mzde.jpg?_s=public-apps"
+         alt="Static's Interstellar Trader — Space trading game unblocked on StaticQuasar931" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('interstellarPlaceholder', 'interstellarFrame', 'https://staticquasar931.github.io/Static-s-Interstellar-Trader/')" title="Play Interstellar Trader on StaticQuasar931">Play Interstellar Trader</button>
+      <a class="google-site-link" href="https://staticquasar931.github.io/Static-s-Interstellar-Trader/" target="_blank">Direct GitHub Page</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/Static-s-Interstellar-Trader/" target="_blank" rel="noopener">Interstellar Trader (Direct Link)</a>
+    </div>
+  </div>
+  <iframe id="interstellarFrame" allowfullscreen loading="lazy" title="Interstellar Trader - StaticQuasar931"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('interstellarFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>SwOOOP</h2>
+  <div class="game-placeholder" id="swooopPlaceholder" role="img" aria-label="SwOOOP Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758159100/SWOOOP_StaticQuasar931_wm1wrj.jpg"
+         alt="SwOOOP — Arcade flying game unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('swooopPlaceholder', 'swooopFrame', 'https://staticquasar931.github.io/swOOOP/')" title="Play SwOOOP on StaticQuasar931">Play SwOOOP</button>
+      <a class="google-site-link" href="https://staticquasar931.github.io/swOOOP/" target="_blank">Direct GitHub Page</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/swOOOP/" target="_blank" rel="noopener">SwOOOP (Direct Link)</a>
+    </div>
+  </div>
+  <iframe id="swooopFrame" allowfullscreen loading="lazy" title="SwOOOP - StaticQuasar931"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('swooopFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>Super Hot</h2>
+  <div class="game-placeholder" id="superhotPlaceholder" role="img" aria-label="Super Hot Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758159099/Super_Hot_StaticQuasar931_mbqmnl.jpg"
+         alt="Super Hot — Bullet-time action unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('superhotPlaceholder', 'superhotFrame', 'https://staticquasar931.github.io/Super-Hot/')" title="Play Super Hot on StaticQuasar931">Play Super Hot</button>
+      <a class="google-site-link" href="https://staticquasar931.github.io/Super-Hot/" target="_blank">Direct GitHub Page</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/Super-Hot/" target="_blank" rel="noopener">Super Hot (Direct Link)</a>
+    </div>
+  </div>
+  <iframe id="superhotFrame" allowfullscreen loading="lazy" title="Super Hot - StaticQuasar931"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('superhotFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>Tangerine Tycoon</h2>
+  <div class="game-placeholder" id="tangerinePlaceholder" role="img" aria-label="Tangerine Tycoon Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758159083/Tangerine_Tycoon_StaticQuasar931_jvyrjp.jpg"
+         alt="Tangerine Tycoon — Idle clicker unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('tangerinePlaceholder', 'tangerineFrame', 'https://staticquasar931.github.io/Tangerine-Tycoon/')" title="Play Tangerine Tycoon on StaticQuasar931">Play Tangerine Tycoon</button>
+      <a class="google-site-link" href="https://staticquasar931.github.io/Tangerine-Tycoon/" target="_blank">Direct GitHub Page</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/Tangerine-Tycoon/" target="_blank" rel="noopener">Tangerine Tycoon (Direct Link)</a>
+    </div>
+  </div>
+  <iframe id="tangerineFrame" allowfullscreen loading="lazy" title="Tangerine Tycoon - StaticQuasar931"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('tangerineFrame')">Full Screen</button>
+</section>
+
+<section class="game-section">
+  <h2>3 Slices</h2>
+  <div class="game-placeholder" id="slice1Placeholder" role="img" aria-label="3 Slices Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758158673/3_Slices_StaticQuasar931_txbyax.jpg"
+         alt="3 Slices — Physics puzzle unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <!-- ✅ Updated to use StaticQuasar931 version -->
+      <button class="play-button" onclick="startGame('slice1Placeholder', 'slice1Frame', 'https://staticquasar931.github.io/3-Slices-StaticQuasar931/')" title="Play 3 Slices on StaticQuasar931">Play 3 Slices</button>
+      <a class="google-site-link" href="https://staticquasar931.github.io/3-Slices-StaticQuasar931/" target="_blank">Direct GitHub Page</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/3-Slices-StaticQuasar931/" target="_blank" rel="noopener">3 Slices (Direct Link)</a>
+    </div>
+  </div>
+  <iframe id="slice1Frame" allowfullscreen loading="lazy" title="3 Slices - StaticQuasar931"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('slice1Frame')">Full Screen</button>
+</section>
+
+<!--  ✅ Removed the "3 Slices - Enhanced" section per your request -->
+
+<section class="game-section">
+  <h2>3 Slices 2</h2>
+  <div class="game-placeholder" id="slice3Placeholder" role="img" aria-label="3 Slices 2 Unblocked - StaticQuasar931">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758158675/3_Slices_2_StaticQuasar931_dwovzl.jpg"
+         alt="3 Slices 2 — Physics puzzle sequel unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <button class="play-button" onclick="startGame('slice3Placeholder', 'slice3Frame', 'https://staticquasar931.github.io/3-Slices-2/')" title="Play 3 Slices 2 on StaticQuasar931">Play 3 Slices 2</button>
+      <a class="google-site-link" href="https://staticquasar931.github.io/3-Slices-2/" target="_blank">Direct GitHub Page</a>
+      <a class="direct-link" href="https://staticquasar931.github.io/3-Slices-2/" target="_blank" rel="noopener">3 Slices 2 (Direct Link)</a>
+    </div>
+  </div>
+  <iframe id="slice3Frame" allowfullscreen loading="lazy" title="3 Slices 2 - StaticQuasar931"></iframe>
+  <button class="fullscreen-btn" onclick="fullscreen('slice3Frame')">Full Screen</button>
+</section>
+
+<!-- ===================== FEATURED CLASSICS ===================== -->
+
+<section class="game-section" id="featured-classics">
+  <h2>Featured Classics – Quick Play</h2>
+  <p>Jump straight into these popular unblocked games. These direct links help you play instantly and make sure search engines can find them:</p>
+
+  <div class="game-placeholder" role="img" aria-label="Cookie Clicker Unblocked - StaticQuasar931" style="height:320px;">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758159103/Cookie_Clicker_StaticQuasar931_wwj9ku.jpg"
+         alt="Cookie Clicker — Classic incremental game unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <a class="play-button" href="https://staticquasar931.github.io/Cookie-Clicker/" target="_blank" rel="noopener" title="Play Cookie Clicker on StaticQuasar931">Play Cookie Clicker</a>
+    </div>
+  </div>
+
+  <div class="game-placeholder" role="img" aria-label="Make Money 96.01 Unblocked - StaticQuasar931" style="height:320px;margin-top:14px;">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1758159104/Make_Money_StaticQuasar931_e6zu55.png"
+         alt="Make Money 96.01 — Idle clicker unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <a class="play-button" href="https://staticquasar931.github.io/Make-Money-96.01/" target="_blank" rel="noopener" title="Play Make Money 96.01 on StaticQuasar931">Play Make Money 96.01</a>
+    </div>
+  </div>
+
+  <div class="game-placeholder" role="img" aria-label="Crossy Road Unblocked - StaticQuasar931" style="height:320px;margin-top:14px;">
+    <img class="game-art" loading="lazy" decoding="async"
+         src="https://res.cloudinary.com/dcsrqennd/image/upload/v1757981345/CrossyRoad_StaticQuasar931_clndd6.webp"
+         alt="Crossy Road — Play unblocked on StaticQuasar931" width="1600" height="900" />
+    <div class="game-gradient" aria-hidden="true"></div>
+    <div class="game-overlay">
+      <a class="play-button" href="https://staticquasar931.github.io/Crossy-Road/" target="_blank" rel="noopener" title="Play Crossy Road on StaticQuasar931">Play Crossy Road</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPACT HTML SITEMAP ===================== -->
+
+<section class="html-sitemap" aria-label="HTML Sitemap">
+  <h2>HTML Sitemap – Unblocked Games on StaticQuasar931</h2>
+  <ul class="sitemap-grid">
+    <li><a href="https://staticquasar931.github.io/Minecraft-hub/" target="_blank" rel="noopener">Minecraft Hub</a></li>
+    <li><a href="https://staticquasar931.github.io/Subway-Surfers/" target="_blank" rel="noopener">Subway Surfers</a></li>
+    <li><a href="https://drippy-cat.github.io/snowrider3D/" target="_blank" rel="noopener">Snow Rider 3D</a></li>
+    <li><a href="https://slope-unblocked-10x.github.io/action-games/slope/" target="_blank" rel="noopener">Slope</a></li>
+    <li><a href="https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1" target="_blank" rel="noopener">Drift Hunters</a></li>
+    <li><a href="https://reunbozdo.github.io/" target="_blank" rel="noopener">Block Blast</a></li>
+    <li><a href="https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec" target="_blank" rel="noopener">It's Raining Boxes</a></li>
+    <li><a href="https://staticquasar931.github.io/Static-s-Interstellar-Trader/" target="_blank" rel="noopener">Interstellar Trader</a></li>
+    <li><a href="https://staticquasar931.github.io/swOOOP/" target="_blank" rel="noopener">SwOOOP</a></li>
+    <li><a href="https://staticquasar931.github.io/Super-Hot/" target="_blank" rel="noopener">Super Hot</a></li>
+    <li><a href="https://staticquasar931.github.io/Tangerine-Tycoon/" target="_blank" rel="noopener">Tangerine Tycoon</a></li>
+    <!-- 3 Slices now uses the StaticQuasar931 version; enhanced removed -->
+    <li><a href="https://staticquasar931.github.io/3-Slices-StaticQuasar931/" target="_blank" rel="noopener">3 Slices</a></li>
+    <li><a href="https://staticquasar931.github.io/3-Slices-2/" target="_blank" rel="noopener">3 Slices 2</a></li>
+    <li><a href="https://staticquasar931.github.io/Cookie-Clicker/" target="_blank" rel="noopener">Cookie Clicker</a></li>
+    <li><a href="https://staticquasar931.github.io/Make-Money-96.01/" target="_blank" rel="noopener">Make Money 96.01</a></li>
+    <li><a href="https://staticquasar931.github.io/Crossy-Road/" target="_blank" rel="noopener">Crossy Road</a></li>
+  </ul>
 </section>
 
 <footer>
@@ -358,12 +534,9 @@
 </footer>
 
 <script>
-  // Leave/Reload warning (per user preference)
-  window.onbeforeunload = function() {
-    return "Changes you made may not be saved. Are you sure you want to leave?";
-  };
+  // Leave/Reload warning
+  window.onbeforeunload = function(){ return "Changes you made may not be saved. Are you sure you want to leave?"; };
 
-  // Achievements UI
   localStorage.removeItem('achievements');
   const themes = [
     'linear-gradient(to bottom, #0f2027, #203a43, #2c5364)',
@@ -378,188 +551,36 @@
     'linear-gradient(to right, #8e2de2, #4a00e0)'
   ];
 
-  function toggleThemeSelector() {
-    const selector = document.getElementById('themeSelector');
-    selector.style.display = selector.style.display === 'none' ? 'block' : 'none';
+  function toggleThemeSelector(){
+    const selector=document.getElementById('themeSelector');
+    selector.style.display=(selector.style.display==='none'||!selector.style.display)?'block':'none';
   }
-
-  function changeTheme(index) {
-    document.body.style.background = themes[index];
+  function changeTheme(index){
+    document.body.style.background=themes[index];
     showAchievement("Theme Changed!");
   }
-
-  function startGame(placeholderId, iframeId, url) {
-    document.getElementById(placeholderId).style.display = 'none';
-    const iframe = document.getElementById(iframeId);
-    iframe.src = url;
-    iframe.style.display = 'block';
+  function startGame(placeholderId, iframeId, url){
+    document.getElementById(placeholderId).style.display='none';
+    const iframe=document.getElementById(iframeId);
+    iframe.src=url; iframe.style.display='block';
     showAchievement("Game Loaded!");
   }
-
-  function fullscreen(iframeId) {
-    const iframe = document.getElementById(iframeId);
-    if (iframe.requestFullscreen) iframe.requestFullscreen();
-    else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
-    else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
+  function fullscreen(iframeId){
+    const iframe=document.getElementById(iframeId);
+    if(iframe.requestFullscreen) iframe.requestFullscreen();
+    else if(iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+    else if(iframe.msRequestFullscreen) iframe.msRequestFullscreen();
   }
-
-  function showAchievement(text) {
-    const toast = document.getElementById('achievementToast');
-    toast.innerText = text;
-    toast.style.display = 'block';
-    setTimeout(() => { toast.style.display = 'none'; }, 3000);
+  function showAchievement(text){
+    const toast=document.getElementById('achievementToast');
+    toast.innerText=text; toast.style.display='block';
+    setTimeout(()=>{toast.style.display='none';},3000);
   }
-
-  window.onscroll = function() {
-    document.getElementById('topButton').style.display = (document.documentElement.scrollTop > 100) ? 'block' : 'none';
+  window.onscroll=function(){
+    document.getElementById('topButton').style.display=(document.documentElement.scrollTop>100)?'block':'none';
   }
-
-  function scrollTopPage() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
+  function scrollTopPage(){ window.scrollTo({top:0, behavior:'smooth'}); }
 </script>
-
-<!-- ✅ ADDITIONAL GAMES START HERE -->
-<section class="game-section">
-  <h2>Static's Interstellar Trader</h2>
-  <div class="game-placeholder" id="interstellarPlaceholder">
-    <button class="play-button" onclick="startGame('interstellarPlaceholder', 'interstellarFrame', 'https://staticquasar931.github.io/Static-s-Interstellar-Trader/')">Play Interstellar Trader</button>
-    <a class="google-site-link" href="https://staticquasar931.github.io/Static-s-Interstellar-Trader/" target="_blank">Direct GitHub Page</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/Static-s-Interstellar-Trader/" target="_blank" rel="noopener">Interstellar Trader (Direct Link)</a>
-  </div>
-  <iframe id="interstellarFrame" allowfullscreen loading="lazy"></iframe>
-  <button class="fullscreen-btn" onclick="fullscreen('interstellarFrame')">Full Screen</button>
-</section>
-
-<section class="game-section">
-  <h2>SwOOOP</h2>
-  <div class="game-placeholder" id="swooopPlaceholder">
-    <button class="play-button" onclick="startGame('swooopPlaceholder', 'swooopFrame', 'https://staticquasar931.github.io/swOOOP/')">Play SwOOOP</button>
-    <a class="google-site-link" href="https://staticquasar931.github.io/swOOOP/" target="_blank">Direct GitHub Page</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/swOOOP/" target="_blank" rel="noopener">SwOOOP (Direct Link)</a>
-  </div>
-  <iframe id="swooopFrame" allowfullscreen loading="lazy"></iframe>
-  <button class="fullscreen-btn" onclick="fullscreen('swooopFrame')">Full Screen</button>
-</section>
-
-<section class="game-section">
-  <h2>Super Hot</h2>
-  <div class="game-placeholder" id="superhotPlaceholder">
-    <button class="play-button" onclick="startGame('superhotPlaceholder', 'superhotFrame', 'https://staticquasar931.github.io/Super-Hot/')">Play Super Hot</button>
-    <a class="google-site-link" href="https://staticquasar931.github.io/Super-Hot/" target="_blank">Direct GitHub Page</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/Super-Hot/" target="_blank" rel="noopener">Super Hot (Direct Link)</a>
-  </div>
-  <iframe id="superhotFrame" allowfullscreen loading="lazy"></iframe>
-  <button class="fullscreen-btn" onclick="fullscreen('superhotFrame')">Full Screen</button>
-</section>
-
-<section class="game-section">
-  <h2>Tangerine Tycoon</h2>
-  <div class="game-placeholder" id="tangerinePlaceholder">
-    <button class="play-button" onclick="startGame('tangerinePlaceholder', 'tangerineFrame', 'https://staticquasar931.github.io/Tangerine-Tycoon/')">Play Tangerine Tycoon</button>
-    <a class="google-site-link" href="https://staticquasar931.github.io/Tangerine-Tycoon/" target="_blank">Direct GitHub Page</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/Tangerine-Tycoon/" target="_blank" rel="noopener">Tangerine Tycoon (Direct Link)</a>
-  </div>
-  <iframe id="tangerineFrame" allowfullscreen loading="lazy"></iframe>
-  <button class="fullscreen-btn" onclick="fullscreen('tangerineFrame')">Full Screen</button>
-</section>
-
-<section class="game-section">
-  <h2>3 Slices - Classic</h2>
-  <div class="game-placeholder" id="slice1Placeholder">
-    <button class="play-button" onclick="startGame('slice1Placeholder', 'slice1Frame', 'https://staticquasar931.github.io/3-Slices/')">Play 3 Slices</button>
-    <a class="google-site-link" href="https://staticquasar931.github.io/3-Slices/" target="_blank">Direct GitHub Page</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/3-Slices/" target="_blank" rel="noopener">3 Slices (Direct Link)</a>
-  </div>
-  <iframe id="slice1Frame" allowfullscreen loading="lazy"></iframe>
-  <button class="fullscreen-btn" onclick="fullscreen('slice1Frame')">Full Screen</button>
-</section>
-
-<section class="game-section">
-  <h2>3 Slices - Enhanced</h2>
-  <div class="game-placeholder" id="slice2Placeholder">
-    <button class="play-button" onclick="startGame('slice2Placeholder', 'slice2Frame', 'https://staticquasar931.github.io/3-Slices-StaticQuasar931/')">Play 3 Slices - StaticQuasar931</button>
-    <a class="google-site-link" href="https://staticquasar931.github.io/3-Slices-StaticQuasar931/" target="_blank">Direct GitHub Page</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/3-Slices-StaticQuasar931/" target="_blank" rel="noopener">3 Slices - Enhanced (Direct Link)</a>
-  </div>
-  <iframe id="slice2Frame" allowfullscreen loading="lazy"></iframe>
-  <button class="fullscreen-btn" onclick="fullscreen('slice2Frame')">Full Screen</button>
-</section>
-
-<section class="game-section">
-  <h2>3 Slices 2</h2>
-  <div class="game-placeholder" id="slice3Placeholder">
-    <button class="play-button" onclick="startGame('slice3Placeholder', 'slice3Frame', 'https://staticquasar931.github.io/3-Slices-2/')">Play 3 Slices 2</button>
-    <a class="google-site-link" href="https://staticquasar931.github.io/3-Slices-2/" target="_blank">Direct GitHub Page</a>
-    <a class="direct-link" href="https://staticquasar931.github.io/3-Slices-2/" target="_blank" rel="noopener">3 Slices 2 (Direct Link)</a>
-  </div>
-  <iframe id="slice3Frame" allowfullscreen loading="lazy"></iframe>
-  <button class="fullscreen-btn" onclick="fullscreen('slice3Frame')">Full Screen</button>
-</section>
-
-<!-- ⭐ NEW: Featured Direct-Play Buttons for SEO & Clicks -->
-<section class="game-section" id="featured-classics">
-  <h2>Featured Classics – Quick Play</h2>
-  <p>Jump straight into these popular unblocked games. These direct links help you play instantly and make sure search engines can find them:</p>
-  <div>
-    <a class="play-button" href="https://staticquasar931.github.io/Cookie-Clicker/" target="_blank" rel="noopener">Play Cookie Clicker</a>
-    <a class="play-button" href="https://staticquasar931.github.io/Make-Money-96.01/" target="_blank" rel="noopener">Play Make Money 96.01</a>
-    <a class="play-button" href="https://staticquasar931.github.io/Crossy-Road/" target="_blank" rel="noopener">Play Crossy Road</a>
-  </div>
-  <!-- Visible crawlable links for Google -->
-  <p style="margin-top:14px;">
-    <a class="google-site-link" href="https://staticquasar931.github.io/Cookie-Clicker/" target="_blank" rel="noopener">Cookie Clicker (Direct)</a> ·
-    <a class="google-site-link" href="https://staticquasar931.github.io/Make-Money-96.01/" target="_blank" rel="noopener">Make Money 96.01 (Direct)</a> ·
-    <a class="google-site-link" href="https://staticquasar931.github.io/Crossy-Road/" target="_blank" rel="noopener">Crossy Road (Direct)</a>
-  </p>
-
-  <!-- JSON-LD ItemList to strengthen SEO discovery -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Featured Unblocked Games",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "url": "https://staticquasar931.github.io/Cookie-Clicker/", "name": "Cookie Clicker - Unblocked Game" },
-      { "@type": "ListItem", "position": 2, "url": "https://staticquasar931.github.io/Make-Money-96.01/", "name": "Make Money 96.01 - Unblocked Game" },
-      { "@type": "ListItem", "position": 3, "url": "https://staticquasar931.github.io/Crossy-Road/", "name": "Crossy Road - Unblocked Game" }
-    ]
-  }
-  </script>
-
-  <!-- Hidden SEO helper copy (lightweight, crawlable) -->
-  <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-    Explore classic unblocked games at school or work:
-    <a href="https://staticquasar931.github.io/Cookie-Clicker/">Cookie Clicker unblocked</a>,
-    <a href="https://staticquasar931.github.io/Make-Money-96.01/">Make Money 96.01 unblocked</a>, and
-    <a href="https://staticquasar931.github.io/Crossy-Road/">Crossy Road unblocked</a> on StaticQuasar931.
-  </div>
-</section>
-<!-- ✅ ADDITIONAL GAMES END -->
-
-<!-- 📌 HTML Sitemap (crawlable internal links for Google) -->
-<section class="html-sitemap" aria-label="HTML Sitemap">
-  <h2>HTML Sitemap – Unblocked Games on StaticQuasar931</h2>
-  <ul>
-    <li><a href="https://staticquasar931.github.io/Minecraft-hub/" target="_blank" rel="noopener">Minecraft Hub – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/Subway-Surfers/" target="_blank" rel="noopener">Subway Surfers – unblocked game</a></li>
-    <li><a href="https://drippy-cat.github.io/snowrider3D/" target="_blank" rel="noopener">Snow Rider 3D – unblocked game</a></li>
-    <li><a href="https://slope-unblocked-10x.github.io/action-games/slope/" target="_blank" rel="noopener">Slope – unblocked game</a></li>
-    <li><a href="https://www.hoodamath.com/mobile/games/drift-hunters/game.html?nocheckorient=1" target="_blank" rel="noopener">Drift Hunters – unblocked game</a></li>
-    <li><a href="https://reunbozdo.github.io/" target="_blank" rel="noopener">Block Blast – unblocked game</a></li>
-    <li><a href="https://script.google.com/macros/s/AKfycbyWb6QYlupZAOJ58ztjUT0bsNfLlDSnNBXZwrYuiz1Tld_aXoVclZGb6E85pwVDLIv5/exec" target="_blank" rel="noopener">It's Raining Boxes – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/Static-s-Interstellar-Trader/" target="_blank" rel="noopener">Static's Interstellar Trader – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/swOOOP/" target="_blank" rel="noopener">SwOOOP – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/Super-Hot/" target="_blank" rel="noopener">Super Hot – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/Tangerine-Tycoon/" target="_blank" rel="noopener">Tangerine Tycoon – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/3-Slices/" target="_blank" rel="noopener">3 Slices – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/3-Slices-StaticQuasar931/" target="_blank" rel="noopener">3 Slices (Enhanced) – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/3-Slices-2/" target="_blank" rel="noopener">3 Slices 2 – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/Cookie-Clicker/" target="_blank" rel="noopener">Cookie Clicker – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/Make-Money-96.01/" target="_blank" rel="noopener">Make Money 96.01 – unblocked game</a></li>
-    <li><a href="https://staticquasar931.github.io/Crossy-Road/" target="_blank" rel="noopener">Crossy Road – unblocked game</a></li>
-  </ul>
-</section>
 
 </body>
 </html>
