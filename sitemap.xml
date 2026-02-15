@@ -926,11 +926,6 @@
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://staticquasar931.github.io/staticquasar931.github.io/</loc>
-    <lastmod>2025-12-07</lastmod>
-    <priority>0.70</priority>
-  </url>
-  <url>
     <loc>https://staticquasar931.github.io/Statics-gta/</loc>
     <lastmod>2025-11-07</lastmod>
     <priority>0.70</priority>
@@ -1246,3 +1241,4 @@
     <priority>0.70</priority>
   </url>
 </urlset>
+
