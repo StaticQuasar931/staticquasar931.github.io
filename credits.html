@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Credits | StaticQuasar931</title>
+
+  <meta name="description" content="Credits for StaticQuasar931, including project help, testing, suggestions, support, creator work, public tools, and general contributions across the broader site." />
+  <meta name="keywords" content="StaticQuasar931 credits, staticquasar931 contributors, site credits, project credits, helpers, contributors, browser game site credits" />
+  <meta name="author" content="StaticQuasar931" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="canonical" href="https://staticquasar931.github.io/credits.html" />
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/squarestaticquasar931logo.jpg" />
+
+  <meta property="og:title" content="Credits | StaticQuasar931" />
+  <meta property="og:description" content="Credits, contributors, helpers, tools, and acknowledgements for StaticQuasar931." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://staticquasar931.github.io/credits.html" />
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Credits | StaticQuasar931" />
+  <meta name="twitter:description" content="Credits, contributors, helpers, tools, and acknowledgements for StaticQuasar931." />
+  <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/icon.png" />
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Credits",
+    "url":"https://staticquasar931.github.io/credits.html",
+    "description":"Credits page for StaticQuasar931 including contributors, helpers, and tools."
+  }
+  </script>
+
+  <style>
+    :root{
+      --font-main:"Maven Pro", Arial, sans-serif;
+      --bg:#f4f1ec;
+      --bg-soft:#ebe6df;
+      --panel:#fbf9f6;
+      --panel-2:#ffffff;
+      --text:#171717;
+      --muted:#5a5a5a;
+      --soft:#787878;
+      --line:#d7d1c8;
+      --shadow:0 18px 44px rgba(0,0,0,0.10);
+      --shadow-soft:0 10px 26px rgba(0,0,0,0.08);
+      --accent:#7b4a37;
+      --accent-2:#5f82f2;
+      --button:#111111;
+      --button-text:#ffffff;
+      --button-outline:#111111;
+      --badge:#f1ece6;
+      --hero-glow:
+        radial-gradient(circle at top right, rgba(123,74,55,0.14), transparent 36%),
+        radial-gradient(circle at bottom left, rgba(95,130,242,0.14), transparent 35%);
+    }
+
+    body.dark-mode{
+      --bg:#0f1115;
+      --bg-soft:#151922;
+      --panel:#171b24;
+      --panel-2:#1c212b;
+      --text:#f5f4f1;
+      --muted:#c5c1b7;
+      --soft:#9da6b2;
+      --line:#2a3140;
+      --shadow:0 18px 46px rgba(0,0,0,0.38);
+      --shadow-soft:0 10px 26px rgba(0,0,0,0.28);
+      --accent:#8a5641;
+      --accent-2:#6f95ff;
+      --button:#f4f1ec;
+      --button-text:#111111;
+      --button-outline:#f4f1ec;
+      --badge:#222833;
+      --hero-glow:
+        radial-gradient(circle at top right, rgba(138,86,65,0.18), transparent 38%),
+        radial-gradient(circle at bottom left, rgba(111,149,255,0.14), transparent 35%);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:var(--font-main);
+      background:var(--bg);
+      color:var(--text);
+      transition:background 0.25s ease, color 0.25s ease;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .site-shell{
+      width:min(100%, 1320px);
+      margin:0 auto;
+      padding:16px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 16px;
+      background:rgba(255,255,255,0.55);
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow-soft);
+      position:sticky;
+      top:10px;
+      z-index:60;
+      backdrop-filter:blur(12px);
+    }
+
+    body.dark-mode .topbar{
+      background:rgba(23,27,36,0.78);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+      flex:1;
+    }
+
+    .brand img{
+      width:56px;
+      height:56px;
+      object-fit:cover;
+      border-radius:15px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+      flex-shrink:0;
+    }
+
+    .brand-text h1{
+      margin:0;
+      font-size:1.28rem;
+      line-height:1.02;
+      font-weight:900;
+      letter-spacing:-0.4px;
+    }
+
+    .brand-text p{
+      margin:5px 0 0;
+      color:var(--muted);
+      font-size:0.92rem;
+      line-height:1.35;
+      font-weight:700;
+    }
+
+    .nav-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill,
+    .menu-button,
+    .toggle-button,
+    .button,
+    .footer-link-card{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:14px;
+      font-weight:800;
+      font-family:var(--font-main);
+      transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .pill,
+    .menu-button,
+    .toggle-button{
+      min-height:46px;
+      padding:12px 15px;
+      background:var(--panel-2);
+      color:var(--text);
+      cursor:pointer;
+      font-size:0.96rem;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .button{
+      min-height:50px;
+      padding:14px 18px;
+      font-size:1rem;
+      border:1px solid transparent;
+      width:100%;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .pill:hover,
+    .menu-button:hover,
+    .toggle-button:hover,
+    .button:hover,
+    .footer-link-card:hover{
+      transform:translateY(-2px);
+    }
+
+    .pill.primary,
+    .button.primary{
+      background:var(--button);
+      color:var(--button-text);
+      border-color:var(--button);
+    }
+
+    .pill.secondary,
+    .button.secondary{
+      background:var(--panel-2);
+      color:var(--text);
+      border:1px solid var(--line);
+    }
+
+    .button.outline{
+      background:transparent;
+      color:var(--text);
+      border:1px solid var(--button-outline);
+    }
+
+    .topbar svg,
+    .button svg,
+    .footer-link-card svg{
+      width:16px;
+      height:16px;
+      flex-shrink:0;
+    }
+
+    .dropdown{
+      position:relative;
+      padding-bottom:10px;
+      margin-bottom:-10px;
+    }
+
+    .dropdown-panel{
+      position:absolute;
+      top:100%;
+      right:0;
+      min-width:270px;
+      background:var(--panel-2);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:10px;
+      display:none;
+    }
+
+    .dropdown:hover .dropdown-panel,
+    .dropdown:focus-within .dropdown-panel{
+      display:block;
+    }
+
+    .dropdown-panel a{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 13px;
+      border-radius:12px;
+      color:var(--text);
+      font-weight:700;
+    }
+
+    .dropdown-panel a:hover{
+      background:var(--bg-soft);
+    }
+
+    .mobile-only{
+      display:none;
+    }
+
+    .hero{
+      margin-top:18px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:var(--hero-glow);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      padding:28px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:var(--badge);
+      border:1px solid var(--line);
+      color:var(--accent);
+      font-weight:900;
+      font-size:0.9rem;
+      margin-bottom:14px;
+    }
+
+    .eyebrow svg{
+      width:16px;
+      height:16px;
+      flex-shrink:0;
+    }
+
+    .hero h2{
+      margin:0;
+      font-size:clamp(2.2rem, 4.5vw, 4rem);
+      line-height:0.96;
+      letter-spacing:-1.2px;
+      font-weight:900;
+      max-width:840px;
+    }
+
+    .hero p.lead{
+      margin:16px 0 0;
+      font-size:1.04rem;
+      line-height:1.72;
+      color:var(--muted);
+      max-width:880px;
+      font-weight:600;
+    }
+
+    .hero-actions{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+      max-width:860px;
+    }
+
+    .section{
+      width:100%;
+      margin-top:18px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+
+    .section-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:18px;
+      margin-bottom:16px;
+    }
+
+    .section-header h2{
+      margin:0;
+      font-size:1.82rem;
+      line-height:1;
+      letter-spacing:-0.7px;
+      font-weight:900;
+    }
+
+    .section-header p{
+      margin:10px 0 0;
+      color:var(--muted);
+      line-height:1.72;
+      font-size:0.98rem;
+      max-width:860px;
+      font-weight:600;
+    }
+
+    .section-tag{
+      white-space:nowrap;
+      padding:10px 14px;
+      border-radius:999px;
+      background:var(--badge);
+      border:1px solid var(--line);
+      color:var(--accent);
+      font-weight:900;
+      font-size:0.88rem;
+    }
+
+    .credits-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+    }
+
+    .credit-card{
+      background:var(--panel-2);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:var(--shadow-soft);
+      height:100%;
+    }
+
+    .credit-card h3{
+      margin:0 0 8px;
+      font-size:1.14rem;
+      font-weight:900;
+      letter-spacing:-0.2px;
+    }
+
+    .credit-card .role{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      background:var(--badge);
+      border:1px solid var(--line);
+      color:var(--accent);
+      font-size:0.82rem;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+
+    .credit-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.74;
+      font-size:0.96rem;
+      font-weight:600;
+    }
+
+    .note-box{
+      background:var(--panel-2);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .note-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.78;
+      font-size:0.97rem;
+      font-weight:600;
+    }
+
+    .footer{
+      margin-top:18px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.1fr repeat(4, minmax(0,1fr));
+      gap:16px;
+    }
+
+    .footer-brand h3{
+      margin:0 0 10px;
+      font-size:1.24rem;
+      font-weight:900;
+      letter-spacing:-0.3px;
+    }
+
+    .footer-brand p,
+    .footer-col p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-weight:600;
+      font-size:0.94rem;
+    }
+
+    .footer-col h4{
+      margin:0 0 10px;
+      font-size:0.98rem;
+      font-weight:900;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-link-card{
+      justify-content:flex-start;
+      padding:11px 12px;
+      border:1px solid var(--line);
+      background:var(--panel-2);
+      box-shadow:var(--shadow-soft);
+      color:var(--text);
+      font-weight:800;
+      min-height:44px;
+    }
+
+    .footer-bottom{
+      margin-top:18px;
+      padding-top:15px;
+      border-top:1px solid var(--line);
+      color:var(--soft);
+      font-size:0.93rem;
+      line-height:1.7;
+      text-align:center;
+      font-weight:700;
+    }
+
+    @media (max-width: 1100px){
+      .credits-grid,
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-brand{
+        grid-column:1 / -1;
+      }
+
+      .hero-actions{
+        grid-template-columns:1fr;
+        max-width:none;
+      }
+    }
+
+    @media (max-width: 900px){
+      .site-shell{
+        padding:12px;
+      }
+
+      .topbar{
+        position:relative;
+        top:0;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .nav-wrap{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .desktop-only{
+        display:none;
+      }
+
+      .mobile-only{
+        display:block;
+      }
+
+      .mobile-nav{
+        width:100%;
+        display:none;
+        margin-top:8px;
+        padding-top:8px;
+        border-top:1px solid var(--line);
+      }
+
+      .mobile-nav.open{
+        display:grid;
+        gap:10px;
+      }
+
+      .mobile-nav a{
+        padding:12px 14px;
+        border-radius:14px;
+        background:var(--panel-2);
+        border:1px solid var(--line);
+        font-weight:800;
+        box-shadow:var(--shadow-soft);
+      }
+
+      .section,
+      .hero-inner,
+      .footer{
+        padding:20px;
+      }
+
+      .section-header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .credits-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .button,
+      .pill,
+      .menu-button,
+      .toggle-button,
+      .footer-link-card{
+        width:100%;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("static-theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("dark-mode");
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar" aria-label="Site header">
+      <div class="brand">
+        <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/squarestaticquasar931logo.jpg" alt="StaticQuasar931 logo and site icon" />
+        <div class="brand-text">
+          <h1>StaticQuasar931</h1>
+          <p>Credits, acknowledgements, helpers, contributors, and tools</p>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <nav class="nav-links desktop-only" aria-label="Desktop navigation">
+          <a class="pill primary" href="index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+            Home
+          </a>
+
+          <button class="toggle-button" id="themeToggle" type="button" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+            Dark mode
+          </button>
+
+          <div class="dropdown">
+            <button class="menu-button" type="button" aria-haspopup="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="19" cy="12" r="1.5"></circle></svg>
+              More
+            </button>
+            <div class="dropdown-panel">
+              <a href="faq.html">FAQ</a>
+              <a href="about.html">About</a>
+              <a href="contact.html">Contact</a>
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="site-guide.html">Site Guide</a>
+              <a href="archive.html">Archive</a>
+            </div>
+          </div>
+        </nav>
+
+        <button class="menu-button mobile-only" id="mobileMenuToggle" type="button" aria-expanded="false" aria-controls="mobileNav">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+          Menu
+        </button>
+
+        <div class="mobile-nav mobile-only" id="mobileNav">
+          <a href="index.html">Home</a>
+          <a href="faq.html">FAQ</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="site-guide.html">Site Guide</a>
+          <a href="archive.html">Archive</a>
+          <button class="toggle-button" id="themeToggleMobile" type="button" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+            Dark mode
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Credits intro">
+        <div class="hero-inner">
+          <div class="eyebrow">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"></path></svg>
+            Credits and acknowledgements
+          </div>
+
+          <h2>The site is primarily built by me, but it is better because other people helped too.</h2>
+
+          <p class="lead">
+            This page gives credit to the people, support, ideas, testing, tools, and help that contributed to the broader StaticQuasar931 project.
+            Some help was technical, some was creative, some was testing, and some was just being useful at the right time.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="index.html">Back to Homepage</a>
+            <a class="button secondary" href="faq.html">Open FAQ</a>
+            <a class="button outline" href="contact.html">Contact</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Main contributors">
+        <div class="section-header">
+          <div>
+            <h2>Main Contributors</h2>
+            <p>
+              The people below are part of the main visible credit structure for the site and related work.
+            </p>
+          </div>
+          <div class="section-tag">Core credits</div>
+        </div>
+
+        <div class="credits-grid">
+          <article class="credit-card">
+            <div class="role">Founder · Owner · Main builder</div>
+            <h3>Static</h3>
+            <p>
+              Founder, owner, and primary developer behind most of the project direction, layout decisions, page creation, game page structure, overall site evolution, and main implementation work.
+            </p>
+          </article>
+
+          <article class="credit-card">
+            <div class="role">Testing · Suggestions · Support</div>
+            <h3>Rannug</h3>
+            <p>
+              Helped with bug testing, game help, suggestions, design ideas, support, and general feedback across parts of the site and related game pages.
+            </p>
+          </article>
+
+          <article class="credit-card">
+            <div class="role">Suggestions · Testing · Code help</div>
+            <h3>Isaac</h3>
+            <p>
+              Helped with suggestions, testing, code help, feedback, and support across specific game areas, structure decisions, and related improvements.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Tools and support">
+        <div class="section-header">
+          <div>
+            <h2>Tools and Workflow Help</h2>
+            <p>
+              Some tools help the project move faster, improve structure, or make repeated cleanup and design work more manageable.
+            </p>
+          </div>
+          <div class="section-tag">Tools</div>
+        </div>
+
+        <div class="credits-grid">
+          <article class="credit-card">
+            <div class="role">Workflow acceleration</div>
+            <h3>ChatGPT and related AI tools</h3>
+            <p>
+              Used to help speed up writing, layout cleanup, code drafting, page structure, troubleshooting, and repeated refinement tasks. Final decisions and direction still come from me.
+            </p>
+          </article>
+
+          <article class="credit-card">
+            <div class="role">Hosting and infrastructure</div>
+            <h3>GitHub Pages, Google Sites, and supporting services</h3>
+            <p>
+              These services help power different sides of the project, including public pages, site structure, game access, support content, and the broader main game collection.
+            </p>
+          </article>
+
+          <article class="credit-card">
+            <div class="role">Public web ecosystem</div>
+            <h3>Open-source and public learning resources</h3>
+            <p>
+              Public code, documentation, shared ideas, community examples, and open web resources have all influenced how I learn, test, and improve what I build.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Credit notes">
+        <div class="section-header">
+          <div>
+            <h2>Credit Notes</h2>
+            <p>
+              A few important things worth stating clearly.
+            </p>
+          </div>
+          <div class="section-tag">Notes</div>
+        </div>
+
+        <div class="credits-grid">
+          <div class="note-box">
+            <p>
+              Not every game or piece of content across the broader site was originally created by me. Some content may be public, embedded, linked, organized, archived, or adapted from outside sources.
+            </p>
+          </div>
+
+          <div class="note-box">
+            <p>
+              Rights, ownership, and original authorship may differ depending on the specific game, asset, or source involved.
+            </p>
+          </div>
+
+          <div class="note-box">
+            <p>
+              If a credit is missing, wrong, or should be clarified, use the <a href="contact.html">Contact page</a> or the <a href="https://sites.google.com/view/staticquasar931/google-form">Google Form</a> to report it.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Support appreciation">
+        <div class="section-header">
+          <div>
+            <h2>General Thanks</h2>
+            <p>
+              Not every contribution fits into a neat public role label.
+            </p>
+          </div>
+          <div class="section-tag">Appreciation</div>
+        </div>
+
+        <div class="note-box">
+          <p>
+            Thanks to the people who tested pages, found bugs, suggested games, reported issues, gave opinions on design, helped spot broken links, and generally made the project easier to improve.
+            Even small useful feedback can matter a lot when a site keeps growing over time.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" aria-label="Footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>StaticQuasar931</h3>
+          <p>
+            Credits are part of keeping the project more transparent, more respectful, and easier to understand.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Main Links</h4>
+          <div class="footer-links">
+            <a class="footer-link-card" href="index.html">Homepage</a>
+            <a class="footer-link-card" href="faq.html">FAQ</a>
+            <a class="footer-link-card" href="about.html">About</a>
+            <a class="footer-link-card" href="site-guide.html">Site Guide</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a class="footer-link-card" href="contact.html">Contact</a>
+            <a class="footer-link-card" href="https://sites.google.com/view/staticquasar931/google-form">Google Form</a>
+            <a class="footer-link-card" href="mailto:StaticQuasar931Games@gmail.com">Email</a>
+            <a class="footer-link-card" href="archive.html">Archive</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Community</h4>
+          <div class="footer-links">
+            <a class="footer-link-card" href="https://discord.gg/DP2hM7RRhR">Discord</a>
+            <a class="footer-link-card" href="https://www.instagram.com/freeschoolgamepage/">Instagram</a>
+            <a class="footer-link-card" href="https://www.tiktok.com/@staticquasar931">TikTok</a>
+            <a class="footer-link-card" href="privacy.html">Privacy</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a class="footer-link-card" href="privacy.html">Privacy</a>
+            <a class="footer-link-card" href="terms.html">Terms</a>
+            <a class="footer-link-card" href="contact.html">Contact</a>
+            <a class="footer-link-card" href="faq.html">FAQ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 StaticQuasar931 · Public contact email: StaticQuasar931Games@gmail.com
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var themeToggle = document.getElementById("themeToggle");
+      var themeToggleMobile = document.getElementById("themeToggleMobile");
+      var storageKey = "static-theme";
+      var mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      var mobileNav = document.getElementById("mobileNav");
+
+      function applyTheme(theme) {
+        var isDark = theme === "dark";
+        document.body.classList.toggle("dark-mode", isDark);
+
+        if (themeToggle) {
+          themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+          themeToggle.innerHTML = isDark
+            ? '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>Light mode'
+            : '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>Dark mode';
+        }
+
+        if (themeToggleMobile) {
+          themeToggleMobile.setAttribute("aria-pressed", isDark ? "true" : "false");
+          themeToggleMobile.innerHTML = isDark
+            ? '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>Light mode'
+            : '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>Dark mode';
+        }
+      }
+
+      function getSystemTheme() {
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      try {
+        var saved = localStorage.getItem(storageKey);
+        applyTheme(saved || getSystemTheme());
+      } catch (e) {
+        applyTheme(getSystemTheme());
+      }
+
+      function toggleTheme() {
+        var isDark = document.body.classList.contains("dark-mode");
+        var newTheme = isDark ? "light" : "dark";
+        applyTheme(newTheme);
+        try {
+          localStorage.setItem(storageKey, newTheme);
+        } catch (e) {}
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", toggleTheme);
+      }
+
+      if (themeToggleMobile) {
+        themeToggleMobile.addEventListener("click", toggleTheme);
+      }
+
+      if (mobileMenuToggle && mobileNav) {
+        mobileMenuToggle.addEventListener("click", function () {
+          var open = mobileNav.classList.toggle("open");
+          mobileMenuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
