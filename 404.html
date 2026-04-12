@@ -6,193 +6,209 @@
 
   <title>404 | Page Not Found | StaticQuasar931</title>
 
-  <meta name="description" content="The page you tried to open does not exist or may have moved. Use this StaticQuasar931 404 page to get back to the homepage, games page, genres page, archive, or support links." />
+  <meta name="description" content="This page could not be found. Return to the main StaticQuasar931 pages, games hub, or homepage." />
   <meta name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#111111" />
   <meta name="color-scheme" content="light dark" />
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/squarestaticquasar931logo.jpg" />
 
   <meta property="og:title" content="404 | Page Not Found | StaticQuasar931" />
-  <meta property="og:description" content="This page could not be found. Use the main links to get back to the right place on StaticQuasar931." />
+  <meta property="og:description" content="This page could not be found. Return to the main StaticQuasar931 pages." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://staticquasar931.github.io/404.html" />
   <meta property="og:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/icon.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="404 | Page Not Found | StaticQuasar931" />
-  <meta name="twitter:description" content="This page could not be found. Use the main links to get back to the right place on StaticQuasar931." />
+  <meta name="twitter:description" content="This page could not be found. Return to the main StaticQuasar931 pages." />
   <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/icon.png" />
 
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --font-main:"Maven Pro", Arial, sans-serif;
-      --bg:#f4f1ec;
-      --bg-soft:#ebe6df;
-      --panel:#fbf9f6;
-      --panel-2:#ffffff;
-      --text:#171717;
-      --muted:#5a5a5a;
-      --soft:#787878;
-      --line:#d7d1c8;
-      --shadow:0 18px 44px rgba(0,0,0,0.10);
-      --shadow-soft:0 10px 26px rgba(0,0,0,0.08);
-      --accent:#7b4a37;
-      --accent-2:#5f82f2;
-      --button:#111111;
-      --button-text:#ffffff;
-      --button-outline:#111111;
-      --badge:#f1ece6;
-      --hero-glow:
-        radial-gradient(circle at top right, rgba(123,74,55,0.14), transparent 36%),
-        radial-gradient(circle at bottom left, rgba(95,130,242,0.14), transparent 35%);
-    }
+  --font-main:"Maven Pro", Arial, sans-serif;
+  --bg:#f6f8fc;
+  --text:#111318;
+  --muted:#5f6b7a;
+  --line:#d9e1ec;
+  --panel:rgba(255,255,255,0.78);
+  --shadow:0 18px 44px rgba(15,23,42,0.10);
+  --accent:#4f7cff;
+  --accent-2:#8db7ff;
+  --button:#111318;
+  --button-text:#ffffff;
+}
 
     body.dark-mode{
-      --bg:#0f1115;
-      --bg-soft:#151922;
-      --panel:#171b24;
-      --panel-2:#1c212b;
-      --text:#f5f4f1;
-      --muted:#c5c1b7;
-      --soft:#9da6b2;
-      --line:#2a3140;
-      --shadow:0 18px 46px rgba(0,0,0,0.38);
-      --shadow-soft:0 10px 26px rgba(0,0,0,0.28);
-      --accent:#8a5641;
-      --accent-2:#6f95ff;
-      --button:#f4f1ec;
-      --button-text:#111111;
-      --button-outline:#f4f1ec;
-      --badge:#222833;
-      --hero-glow:
-        radial-gradient(circle at top right, rgba(138,86,65,0.18), transparent 38%),
-        radial-gradient(circle at bottom left, rgba(111,149,255,0.14), transparent 35%);
-    }
+  --bg:#0a0d14;
+  --text:#f4f7fb;
+  --muted:#97a4b5;
+  --line:#1f2937;
+  --panel:rgba(16,20,30,0.78);
+  --shadow:0 18px 46px rgba(0,0,0,0.42);
+  --accent:#6ea8ff;
+  --accent-2:#9dc2ff;
+  --button:#f4f7fb;
+  --button-text:#111318;
+}
 
     *{
       box-sizing:border-box;
     }
 
-    html{
-      scroll-behavior:smooth;
+    html, body{
+      min-height:100%;
     }
 
     body{
-      margin:0;
-      font-family:var(--font-main);
-      background:var(--bg);
-      color:var(--text);
-      transition:background 0.25s ease, color 0.25s ease;
-      overflow-x:hidden;
-      min-height:100vh;
-    }
+  margin:0;
+  font-family:var(--font-main);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(79,124,255,0.10), transparent 30%),
+    radial-gradient(circle at 82% 82%, rgba(141,183,255,0.14), transparent 30%),
+    var(--bg);
+  color:var(--text);
+  transition:background 0.25s ease, color 0.25s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  overflow:hidden;
+}
 
     a{
       color:inherit;
       text-decoration:none;
     }
 
-    .site-shell{
-      width:min(100%, 1180px);
-      margin:0 auto;
-      padding:16px;
+    .wrap{
+      width:min(100%, 920px);
+      position:relative;
     }
 
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      padding:14px 16px;
-      background:rgba(255,255,255,0.55);
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(10px);
+      opacity:0.55;
+      pointer-events:none;
+    }
+
+.orb.one{
+  width:180px;
+  height:180px;
+  background:rgba(79,124,255,0.18);
+  top:-40px;
+  left:-30px;
+}
+
+.orb.two{
+  width:200px;
+  height:200px;
+  background:rgba(141,183,255,0.18);
+  bottom:-50px;
+  right:-20px;
+}
+
+    .card{
+      position:relative;
+      z-index:2;
+      background:var(--panel);
       border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow-soft);
-      position:sticky;
-      top:10px;
-      z-index:60;
+      border-radius:32px;
+      box-shadow:var(--shadow);
       backdrop-filter:blur(12px);
+      padding:40px 32px;
+      text-align:center;
     }
 
-    body.dark-mode .topbar{
-      background:rgba(23,27,36,0.78);
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-      flex:1;
-    }
-
-    .brand img{
-      width:56px;
-      height:56px;
-      object-fit:cover;
-      border-radius:15px;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow-soft);
-      flex-shrink:0;
-    }
-
-    .brand-text h1{
-      margin:0;
-      font-size:1.28rem;
-      line-height:1.02;
-      font-weight:900;
-      letter-spacing:-0.4px;
-    }
-
-    .brand-text p{
-      margin:5px 0 0;
-      color:var(--muted);
-      font-size:0.92rem;
-      line-height:1.35;
-      font-weight:700;
-    }
-
-    .toggle-button,
-    .button,
-    .footer-link-card{
+    .tiny{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
-      border-radius:14px;
-      font-weight:800;
-      font-family:var(--font-main);
-      transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      font-weight:900;
+      font-size:0.9rem;
+      color:var(--accent);
+      margin-bottom:20px;
+      background:rgba(255,255,255,0.25);
     }
 
-    .toggle-button{
-      min-height:46px;
-      padding:12px 15px;
-      background:var(--panel-2);
-      color:var(--text);
-      cursor:pointer;
-      font-size:0.96rem;
+    body.dark-mode .tiny{
+      background:rgba(110,168,255,0.08);
+    }
+
+    .shape{
+      width:120px;
+      height:120px;
+      margin:0 auto 18px;
+      display:grid;
+      place-items:center;
+      border-radius:28px;
       border:1px solid var(--line);
-      box-shadow:var(--shadow-soft);
+      background:
+        linear-gradient(135deg, rgba(123,74,55,0.14), rgba(95,130,242,0.14));
+      box-shadow:var(--shadow);
+    }
+
+    .shape svg{
+      width:58px;
+      height:58px;
+      opacity:0.9;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(4rem, 12vw, 7rem);
+      line-height:0.88;
+      letter-spacing:-3px;
+      font-weight:900;
+    }
+
+    h2{
+      margin:14px 0 0;
+      font-size:clamp(1.4rem, 3vw, 2.2rem);
+      line-height:1;
+      letter-spacing:-0.8px;
+      font-weight:900;
+    }
+
+    p{
+      margin:16px auto 0;
+      max-width:640px;
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.8;
+      font-weight:600;
+    }
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
     }
 
     .button{
-      min-height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
       padding:14px 18px;
-      font-size:1rem;
-      border:1px solid transparent;
-      width:100%;
-      box-shadow:var(--shadow-soft);
+      border-radius:14px;
+      font-weight:800;
+      border:1px solid var(--line);
+      transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+      box-shadow:var(--shadow);
     }
 
-    .toggle-button:hover,
-    .button:hover,
-    .footer-link-card:hover{
+    .button:hover{
       transform:translateY(-2px);
     }
 
@@ -203,227 +219,64 @@
     }
 
     .button.secondary{
-      background:var(--panel-2);
-      color:var(--text);
-      border:1px solid var(--line);
-    }
-
-    .button.outline{
       background:transparent;
       color:var(--text);
-      border:1px solid var(--button-outline);
     }
 
-    .hero{
+    .small-link{
+      display:inline-block;
       margin-top:18px;
-      background:var(--panel);
+      color:var(--muted);
+      font-weight:700;
+      font-size:0.95rem;
+    }
+
+    .theme-toggle{
+      position:fixed;
+      top:18px;
+      right:18px;
+      z-index:10;
+      min-height:46px;
+      padding:12px 15px;
+      border-radius:14px;
       border:1px solid var(--line);
-      border-radius:26px;
+      background:var(--panel);
+      color:var(--text);
+      cursor:pointer;
+      font:800 0.95rem var(--font-main);
+      backdrop-filter:blur(10px);
       box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-      isolation:isolate;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:var(--hero-glow);
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .hero-inner{
-      position:relative;
-      z-index:1;
-      padding:32px;
-    }
-
-    .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:var(--badge);
-      border:1px solid var(--line);
-      color:var(--accent);
-      font-weight:900;
-      font-size:0.9rem;
-      margin-bottom:14px;
     }
 
-    .hero h2{
-      margin:0;
-      font-size:clamp(2.5rem, 5vw, 4.5rem);
-      line-height:0.96;
-      letter-spacing:-1.3px;
-      font-weight:900;
-      max-width:760px;
+    .theme-toggle svg{
+      width:16px;
+      height:16px;
+      flex-shrink:0;
     }
 
-    .hero p.lead{
-      margin:16px 0 0;
-      font-size:1.05rem;
-      line-height:1.74;
-      color:var(--muted);
-      max-width:860px;
-      font-weight:600;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:18px;
-      margin-top:18px;
-    }
-
-    .hero-card{
-      background:var(--panel-2);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:18px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .hero-card h3{
-      margin:0 0 10px;
-      font-size:1.08rem;
-      font-weight:900;
-    }
-
-    .hero-card p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.72;
-      font-size:0.96rem;
-      font-weight:600;
-    }
-
-    .button-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .section{
-      width:100%;
-      margin-top:18px;
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:24px;
-    }
-
-    .section h3{
-      margin:0 0 10px;
-      font-size:1.35rem;
-      font-weight:900;
-      letter-spacing:-0.3px;
-    }
-
-    .section p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.74;
-      font-weight:600;
-    }
-
-    .footer{
-      margin-top:18px;
-      background:var(--panel);
-      border:1px solid var(--line);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:24px;
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.1fr repeat(3, minmax(0,1fr));
-      gap:16px;
-    }
-
-    .footer-brand h3{
-      margin:0 0 10px;
-      font-size:1.24rem;
-      font-weight:900;
-      letter-spacing:-0.3px;
-    }
-
-    .footer-brand p,
-    .footer-col p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.7;
-      font-weight:600;
-      font-size:0.94rem;
-    }
-
-    .footer-col h4{
-      margin:0 0 10px;
-      font-size:0.98rem;
-      font-weight:900;
-    }
-
-    .footer-links{
-      display:grid;
-      gap:10px;
-    }
-
-    .footer-link-card{
-      justify-content:flex-start;
-      padding:11px 12px;
-      border:1px solid var(--line);
-      background:var(--panel-2);
-      box-shadow:var(--shadow-soft);
-      color:var(--text);
-      font-weight:800;
-      min-height:44px;
-    }
-
-    .footer-bottom{
-      margin-top:18px;
-      padding-top:15px;
-      border-top:1px solid var(--line);
-      color:var(--soft);
-      font-size:0.93rem;
-      line-height:1.7;
-      text-align:center;
-      font-weight:700;
-    }
-
-    @media (max-width: 900px){
-      .site-shell{
-        padding:12px;
+    @media (max-width: 640px){
+      .card{
+        padding:28px 20px;
+        border-radius:24px;
       }
 
-      .topbar{
-        position:relative;
-        top:0;
-        align-items:flex-start;
-        flex-direction:column;
+      .shape{
+        width:96px;
+        height:96px;
+        border-radius:24px;
       }
 
-      .hero-inner,
-      .section,
-      .footer{
-        padding:20px;
+      .shape svg{
+        width:48px;
+        height:48px;
       }
 
-      .hero-grid,
-      .button-grid,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
-
-      .button,
-      .toggle-button,
-      .footer-link-card{
-        width:100%;
+      .theme-toggle{
+        top:12px;
+        right:12px;
       }
     }
   </style>
@@ -443,114 +296,42 @@
   </script>
 </head>
 <body>
-  <div class="site-shell">
-    <header class="topbar" aria-label="Site header">
-      <div class="brand">
-        <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/squarestaticquasar931logo.jpg" alt="StaticQuasar931 logo and site icon" />
-        <div class="brand-text">
-          <h1>StaticQuasar931</h1>
-          <p>Page not found, but the useful stuff is still easy to reach</p>
-        </div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+    </svg>
+    Dark mode
+  </button>
+
+  <main class="wrap">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+
+    <section class="card" aria-label="404 message">
+      <div class="tiny">StaticQuasar931</div>
+
+      <div class="shape" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"></path>
+          <path d="M9 12h6"></path>
+        </svg>
       </div>
 
-      <button class="toggle-button" id="themeToggle" type="button" aria-pressed="false">
-        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
-        Dark mode
-      </button>
-    </header>
+      <h1>404</h1>
+      <h2>Page not found.</h2>
+      <p>
+        Wrong door. Wrong link. Wrong page.  
+        The main site is still here.
+      </p>
 
-    <main>
-      <section class="hero" aria-label="404 message">
-        <div class="hero-inner">
-          <div class="eyebrow">404 error</div>
-          <h2>That page is gone, moved, wrong, or never existed in the first place.</h2>
-          <p class="lead">
-            The good news is the rest of the site is still here. Use the buttons below to get back to the main games page, browse by genre, head to the homepage, check the archive, or report a broken link.
-          </p>
-
-          <div class="hero-grid">
-            <div class="hero-card">
-              <h3>Most useful next steps</h3>
-              <p>
-                If you were trying to find a specific game, the best places to recover are the
-                main games page or the genre page. If a link sent you here by mistake, the Google Form is the best place to report it.
-              </p>
-            </div>
-
-            <div class="hero-card">
-              <h3>Small honest note</h3>
-              <p>
-                Sometimes pages get renamed, removed, replaced, or linked wrong. If that happened here, report it and it can be fixed faster.
-              </p>
-            </div>
-          </div>
-
-          <div class="button-grid">
-            <a class="button primary" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a>
-            <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/genres">Games by Genre</a>
-            <a class="button secondary" href="index.html">Homepage</a>
-            <a class="button outline" href="archive.html">Archive</a>
-            <a class="button secondary" href="https://sites.google.com/view/staticquasar931/google-form">Report a Broken Link</a>
-            <a class="button outline" href="faq.html">FAQ</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-label="Help text">
-        <h3>Still lost?</h3>
-        <p>
-          Try the <a href="https://sites.google.com/view/staticquasar931/gm3z/genres">Games by Genre</a> page if you are browsing,
-          the <a href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a> if you already know what you want,
-          or the <a href="contact.html">Contact page</a> if you need help with something specific.
-        </p>
-      </section>
-    </main>
-
-    <footer class="footer" aria-label="Footer">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>StaticQuasar931</h3>
-          <p>
-            Even if one page fails, the main site, support pages, and game hubs are still easy to reach from here.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Main Links</h4>
-          <div class="footer-links">
-            <a class="footer-link-card" href="index.html">Homepage</a>
-            <a class="footer-link-card" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a>
-            <a class="footer-link-card" href="https://sites.google.com/view/staticquasar931/gm3z/genres">Games by Genre</a>
-            <a class="footer-link-card" href="archive.html">Archive</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Support</h4>
-          <div class="footer-links">
-            <a class="footer-link-card" href="faq.html">FAQ</a>
-            <a class="footer-link-card" href="contact.html">Contact</a>
-            <a class="footer-link-card" href="https://sites.google.com/view/staticquasar931/google-form">Google Form</a>
-            <a class="footer-link-card" href="mailto:StaticQuasar931Games@gmail.com">Email</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Info</h4>
-          <div class="footer-links">
-            <a class="footer-link-card" href="about.html">About</a>
-            <a class="footer-link-card" href="site-guide.html">Site Guide</a>
-            <a class="footer-link-card" href="privacy.html">Privacy</a>
-            <a class="footer-link-card" href="terms.html">Terms</a>
-          </div>
-        </div>
+      <div class="actions">
+        <a class="button primary" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a>
+        <a class="button secondary" href="index.html">Homepage</a>
       </div>
 
-      <div class="footer-bottom">
-        © 2026 StaticQuasar931 · Public contact email: StaticQuasar931Games@gmail.com
-      </div>
-    </footer>
-  </div>
+      <a class="small-link" href="https://sites.google.com/view/staticquasar931/google-form">Report a broken link</a>
+    </section>
+  </main>
 
   <script>
     (function () {
