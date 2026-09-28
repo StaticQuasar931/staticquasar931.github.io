@@ -22,7 +22,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="StaticQuasar931 | Pick a game. Get playing." />
-  <meta name="twitter:description" content="Search the game collection, open featured picks, and explore projects by StaticQuasar931." />
+  <meta name="twitter:description" content="Play Retro Bowl on the homepage, browse more picks, or find a saved game in the collection." />
   <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/WheresEpsteinstartscreen.png" />
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
@@ -30,7 +30,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1415298662803026" crossorigin="anonymous"></script>
   <meta name="google-site-verification" content="Q0JppYFHqNml_qBtmME2bbogn7ObRLMKgi71gvzGsR0" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SGH98926P"></script>
@@ -68,7 +67,7 @@
     "@type":"WebSite",
     "name":"StaticQuasar931",
     "url":"https://staticquasar931.github.io/",
-    "description":"A searchable browser game collection, featured picks, and creator projects by StaticQuasar931.",
+    "description":"Play Retro Bowl, browse handpicked games, search the collection, and explore creator projects by StaticQuasar931.",
     "author":{
       "@type":"Person",
       "name":"StaticQuasar931"
@@ -977,6 +976,9 @@
         width:100%;
       }
     }
+
+    .play-section{display:grid;gap:18px}.play-section .home-section-heading{align-items:end}.play-section .home-section-heading>div{max-width:700px}.play-section .home-section-heading>div>p:last-child{margin:9px 0 0;color:#66736d}.game-frame-wrap{overflow:hidden;aspect-ratio:16/10;min-height:380px;border:1px solid #18221f;border-radius:18px;background:#080a0c;box-shadow:0 14px 36px #18221f20}.game-frame-wrap iframe{display:block;width:100%;height:100%;min-height:380px;border:0}.play-caption{margin:0;color:#66736d;font-size:.88rem}.play-caption a{font-weight:750}.extra-picks .pick-card{min-height:228px}.how-section{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,6vw,76px);padding:clamp(24px,5vw,48px);border:1px solid #d9ded7;border-radius:22px;background:#e8eddf}.how-section h2{max-width:430px;margin:0;font-size:clamp(1.8rem,3.5vw,2.7rem);line-height:1.05;letter-spacing:-.05em}.how-intro{max-width:470px;color:#58655e}.how-steps{display:grid;gap:0}.how-steps article{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-bottom:1px solid #cdd6c9}.how-steps article:first-child{padding-top:0}.how-steps article:last-child{border-bottom:0;padding-bottom:0}.how-steps article>span{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#d6ed85;color:#194a3a;font-size:.75rem;font-weight:900}.how-steps h3{margin:0 0 3px;font-size:1.05rem}.how-steps p{margin:0 0 5px;color:#66736d;font-size:.92rem}.how-steps a{font-weight:800;text-decoration:none}
+    @media(max-width:760px){.game-frame-wrap,.game-frame-wrap iframe{min-height:360px}.how-section{grid-template-columns:1fr}.play-section .home-section-heading{align-items:flex-start}}
   </style>
 
   <script>
@@ -1106,6 +1108,12 @@
         </a>
       </section>
 
+      <section class="play-section" aria-labelledby="play-title">
+        <div class="home-section-heading"><div><p class="home-kicker">Play here</p><h2 id="play-title">Retro Bowl</h2><p>Run a season, call the plays, and build your team. The game loads below when this section enters view.</p></div><a href="https://sites.google.com/view/staticquasar931/gm3z/retro-bowl">Open game page <span aria-hidden="true">↗</span></a></div>
+        <div class="game-frame-wrap"><iframe title="Play Retro Bowl" src="https://script.google.com/macros/s/AKfycbxvrDV3nLMrCiNt67lOiyIdPcqK71fba3bPiqLg8fYJC9jwudj_XBE2rAloeQQaak4/exec" loading="lazy" allow="fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="play-caption">The game is provided through a Google Apps Script page. If it does not load in your browser, use <a href="https://script.google.com/macros/s/AKfycbxvrDV3nLMrCiNt67lOiyIdPcqK71fba3bPiqLg8fYJC9jwudj_XBE2rAloeQQaak4/exec">open Retro Bowl directly</a>.</p>
+      </section>
+
       <section class="return-shelf" id="saved-shelf" hidden aria-labelledby="saved-title">
         <div><p class="home-kicker">Your list</p><h2 id="saved-title">Pick up where you left off</h2><p>These saved titles are stored only in this browser.</p></div>
         <div id="saved-games" class="saved-games"></div>
@@ -1118,6 +1126,24 @@
           <article class="pick-card pick-card-featured"><span class="pick-number">01 · SPORTS</span><h3>Retro Bowl</h3><p>Call the plays on the field, then shape the team between games. A quick football session with a longer season to build.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/retro-bowl">Play Retro Bowl <span aria-hidden="true">↗</span></a></article>
           <article class="pick-card"><span class="pick-number">02 · ACTION</span><h3>Brotato</h3><p>Build a loadout, survive short waves, and try a different combination next run.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/brotato">Play Brotato <span aria-hidden="true">↗</span></a></article>
           <article class="pick-card"><span class="pick-number">03 · STRATEGY</span><h3>Balatro</h3><p>Turn poker hands and Joker combinations into a scoring strategy that keeps changing.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/balatro">Play Balatro <span aria-hidden="true">↗</span></a></article>
+        </div>
+      </section>
+
+      <section class="home-section" aria-labelledby="more-games-title">
+        <div class="home-section-heading"><div><p class="home-kicker">A few more starting points</p><h2 id="more-games-title">Pick by mood</h2><p>Three different styles when you want something besides football, action runs, or card strategy.</p></div><a href="https://sites.google.com/view/staticquasar931/gm3z/genres">Browse genres <span aria-hidden="true">→</span></a></div>
+        <div class="pick-grid extra-picks">
+          <article class="pick-card"><span class="pick-number">ARCADE · RHYTHM</span><h3>Geometry Dash Lite</h3><p>Jump through obstacle courses where timing each move is the whole challenge.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/geometry-dash-lite">Open Geometry Dash Lite <span aria-hidden="true">↗</span></a></article>
+          <article class="pick-card"><span class="pick-number">DRIVING · ESCAPE</span><h3>Escape Road 2</h3><p>Keep moving, avoid the pursuit, and see how long you can stay ahead.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/escape-road-2-fake-gta-2">Open Escape Road 2 <span aria-hidden="true">↗</span></a></article>
+          <article class="pick-card"><span class="pick-number">QUICK · MINI-GAMES</span><h3>Dumb Ways to Die</h3><p>A set of fast reaction challenges built around spotting what to do before time runs out.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/dumb-ways-to-die">Open Dumb Ways to Die <span aria-hidden="true">↗</span></a></article>
+        </div>
+      </section>
+
+      <section class="how-section" aria-labelledby="how-title">
+        <div><p class="home-kicker">How to use this collection</p><h2 id="how-title">Find a title, save it, or help fix a link</h2><p class="how-intro">The Finder is for locating a game by title, alternate name, or a small spelling mistake. Game pages open in the main collection. Saved titles stay in your browser and are not sent to the site.</p></div>
+        <div class="how-steps">
+          <article><span>01</span><div><h3>Know what you want?</h3><p>Search the collection and save games you want to revisit.</p><a href="game-finder.html">Open the Game Finder →</a></div></article>
+          <article><span>02</span><div><h3>Something not working?</h3><p>Send the game title and describe what happened, including your device if it matters.</p><a href="https://sites.google.com/view/staticquasar931/google-form">Report a problem →</a></div></article>
+          <article><span>03</span><div><h3>Have a useful clip?</h3><p>Share a short walkthrough, a helpful tip, or a game you think belongs in the collection.</p><a href="https://www.youtube.com/@StaticQuasar931">Visit YouTube →</a></div></article>
         </div>
       </section>
 
