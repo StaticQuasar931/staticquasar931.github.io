@@ -1,0 +1,11 @@
+/* Respect a visitor's reduced-motion preference across every page. */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.site-social-links { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }

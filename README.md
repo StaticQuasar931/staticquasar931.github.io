@@ -32,6 +32,8 @@ This repository is used for:
 
 ## Main Site Structure
 
+- Game Finder: https://staticquasar931.github.io/game-finder.html (searches the collection master list and keeps favorites in the visitor's browser)
+
 The StaticQuasar931 project is split across multiple surfaces:
 
 ### 1. Google Sites
@@ -81,7 +83,10 @@ Google Form:
 https://sites.google.com/view/staticquasar931/google-form
 
 Instagram:
-https://www.instagram.com/freeschoolgamepage/
+https://www.instagram.com/staticquasar931/
+
+YouTube:
+https://www.youtube.com/@StaticQuasar931
 
 TikTok:
 https://www.tiktok.com/@staticquasar931
@@ -115,12 +120,10 @@ These pages are part of the public trust structure for the GitHub site:
 - Terms: https://staticquasar931.github.io/terms.html
 - Site Guide: https://staticquasar931.github.io/site-guide.html
 
-## Creator Challenge
+## Share a useful game clip
 
-StaticQuasar931 also runs a creator event where the winner may get:
+Post a short gameplay clip with the game title and device you used, then tag StaticQuasar931 so other players can find it.
 
-- their name added to the website
-- priority game requests
-- possibly their own custom game
-
-Competition-specific details and participation are handled through the competition Discord context when relevant.
+- YouTube: https://www.youtube.com/@StaticQuasar931
+- Instagram: https://www.instagram.com/staticquasar931/
+- Game requests and reports: https://sites.google.com/view/staticquasar931/google-form
