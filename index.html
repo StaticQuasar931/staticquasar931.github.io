@@ -4,24 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>StaticQuasar931 | Game Finder, Featured Games, and Projects</title>
+  <title>StaticQuasar931 | Pick a game. Get playing.</title>
 
-  <meta name="description" content="Search 960 games by name or spelling, open featured picks, explore creator projects, and find help for the StaticQuasar931 game collection." />
+  <meta name="description" content="Pick a game to play, start with Retro Bowl, or search the curated StaticQuasar931 collection." />
   <meta name="author" content="StaticQuasar931" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="theme-color" content="#111111" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="color-scheme" content="light" />
   <link rel="canonical" href="https://staticquasar931.github.io/" />
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/squarestaticquasar931logo.jpg" />
 
-  <meta property="og:title" content="StaticQuasar931 | Game Finder, Featured Games, and Projects" />
-  <meta property="og:description" content="Search the game collection, open featured picks, explore projects, or get help from StaticQuasar931." />
+  <meta property="og:title" content="StaticQuasar931 | Pick a game. Get playing." />
+  <meta property="og:description" content="Start with Retro Bowl, browse handpicked games, or search the StaticQuasar931 collection." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://staticquasar931.github.io/" />
   <meta property="og:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/WheresEpsteinstartscreen.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="StaticQuasar931 | Game Finder, Featured Games, and Projects" />
+  <meta name="twitter:title" content="StaticQuasar931 | Pick a game. Get playing." />
   <meta name="twitter:description" content="Search the game collection, open featured picks, and explore projects by StaticQuasar931." />
   <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/WheresEpsteinstartscreen.png" />
 
@@ -867,15 +867,6 @@
       font-weight:700;
     }
 
-    .seo-hidden{
-      position:absolute;
-      left:-99999px;
-      top:auto;
-      width:1px;
-      height:1px;
-      overflow:hidden;
-    }
-
     @media (max-width: 1280px){
       .featured-grid,
       .stats-grid,
@@ -1002,6 +993,24 @@
     })();
   </script>
   <link rel="stylesheet" href="accessibility.css">
+  <link rel="stylesheet" href="site-theme.css">
+
+  <style>
+    .home-main{display:grid;gap:clamp(34px,6vw,76px);padding:clamp(22px,5vw,58px) 0 48px}
+    .home-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(26px,6vw,66px);background:#e8eddf;border:1px solid #d9ded7;border-radius:28px;overflow:hidden}
+    .home-hero-copy{max-width:660px}.home-kicker{margin:0 0 10px;color:#24634d;font-size:.76rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+    .home-hero h2{max-width:650px;margin:0;color:#18221f;font-size:clamp(2.7rem,7vw,5.4rem);letter-spacing:-.065em;line-height:.98}
+    .home-hero-copy>p:not(.home-kicker):not(.home-note){max-width:570px;margin:20px 0 0;color:#53625a;font-size:clamp(1.02rem,2vw,1.18rem)}
+    .home-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.home-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid #24634d;border-radius:999px;font-weight:800;text-decoration:none!important}
+    .home-button-primary{background:#24634d;color:white!important}.home-button-primary:hover{background:#194a3a}.home-button-secondary{color:#194a3a;background:#fffefa}.home-note{margin:15px 0 0;color:#66736d;font-size:.84rem}
+    .home-cover{position:relative;display:block;max-width:360px;justify-self:center;width:100%;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#213c32;box-shadow:0 18px 40px #18221f24;text-decoration:none!important;transform:rotate(1.5deg)}
+    .home-cover img{width:100%;height:100%;object-fit:cover}.home-cover:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#101914df)}.home-cover>span{position:absolute;z-index:1;bottom:22px;left:22px;color:#fff;display:grid;gap:3px;font-size:.84rem}.home-cover b{font-size:1.65rem;letter-spacing:-.03em}
+    .home-section{display:grid;gap:20px}.home-section-heading{display:flex;align-items:end;justify-content:space-between;gap:18px}.home-section-heading h2,.return-shelf h2{margin:0;font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:-.045em;line-height:1.1}.home-section-heading>a,.return-shelf>a{flex:none;font-weight:800;text-decoration:none}.pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.pick-card{display:flex;flex-direction:column;min-height:244px;padding:24px;border:1px solid #d9ded7;border-radius:18px;background:#fffefa}.pick-card-featured{background:#1d392e;color:white;border-color:#1d392e}.pick-number{color:#24634d;font-size:.72rem;font-weight:850;letter-spacing:.12em}.pick-card-featured .pick-number{color:#d6ed85}.pick-card h3{margin:25px 0 5px;font-size:1.55rem;letter-spacing:-.04em}.pick-card p{margin:0 0 20px;color:#66736d;font-size:.94rem}.pick-card-featured p{color:#d2ddd5}.pick-card>a,.home-feature>a{margin-top:auto;font-weight:800;text-decoration:none}.pick-card-featured>a{color:#d6ed85}
+    .home-bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.home-feature,.home-community{display:flex;flex-direction:column;align-items:flex-start;min-height:250px;padding:clamp(23px,4vw,36px);border:1px solid #d9ded7;border-radius:18px;background:#fffefa}.home-feature{background:#edf0e9}.home-feature h2,.home-community h2{margin:0;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.04em}.home-feature p:not(.home-kicker),.home-community p:not(.home-kicker){color:#66736d}.home-community .home-actions{margin-top:auto}
+    .return-shelf{padding:24px;border:1px solid #cfdac7;border-radius:18px;background:#edf3e6}.return-shelf>div:first-child>p:last-child{margin:7px 0 0;color:#66736d}.saved-games{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.saved-games a{padding:8px 13px;border:1px solid #c9d5c2;border-radius:999px;background:#fffefa;font-weight:750;text-decoration:none}
+    @media(max-width:760px){.home-hero{grid-template-columns:1fr}.home-cover{max-width:300px;justify-self:start;aspect-ratio:16/10;transform:none}.pick-grid{grid-template-columns:1fr}.pick-card{min-height:0}.pick-card h3{margin-top:15px}.home-bottom-grid{grid-template-columns:1fr}.home-section-heading{align-items:flex-start;flex-direction:column}}
+  </style>
+
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -1012,7 +1021,7 @@
         <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/squarestaticquasar931logo.jpg" alt="StaticQuasar931 logo and site icon" />
         <div class="brand-text">
           <h1>StaticQuasar931</h1>
-          <p>Creator projects, polished browser builds, school-friendly pages, and curated interactive experiences</p>
+          <p>Find a game to play</p>
         </div>
       </div>
 
@@ -1022,11 +1031,6 @@
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4-9-4z"></path><path d="M3 17l9 4 9-4"></path><path d="M3 12l9 4 9-4"></path></svg>
             Games
           </a> <a href="game-finder.html">Game Finder</a>
-
-          <button class="toggle-button" id="themeToggle" type="button" aria-pressed="false">
-  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
-  Dark mode
-</button>
 
           <div class="dropdown">
             <button class="menu-button" type="button" aria-haspopup="true">
@@ -1080,347 +1084,59 @@
           <a href="site-guide.html">Site Guide</a>
           <a href="faq.html">FAQ</a>
           <a href="https://sites.google.com/view/staticquasar931/credits">Credits</a>
-          <button class="toggle-button" id="themeToggleMobile" type="button" aria-pressed="false">
-  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
-  Dark mode
-</button>
         </div>
       </div>
     </header>
 
-    <main id="main">
-      <section class="hero" aria-label="Hero">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="eyebrow">
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z"></path></svg>
-              Start here
-            </div>
-
-            <h2>Find a game fast, open the featured picks, or explore projects made for this site.</h2>
-
-            <p class="lead">
-  Search the 960-entry Game Finder, open a featured game, or explore the projects built for StaticQuasar931.
-</p>
-</div>
-
-          <aside class="hero-side" aria-label="Quick overview">
-<div class="side-card">
-  <h3>What this page is for</h3>
-  <p>
-    The searchable index is here. Game pages open on the main collection, while project pages and support information stay on this site.
-  </p>
-</div>
-
-<div class="side-card">
-  <h3>What you can do from here</h3>
-  <p>
-    Jump into the main games page, browse standout projects, check handpicked favorites, use support links, and learn more about how the site is built and maintained.
-  </p>
-
-  <div class="hero-actions" style="margin-top:14px; max-width:none;">
-    <a class="button primary" href="game-finder.html">Find a Game</a>
-    <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a>
-    <a class="button secondary" href="https://staticquasar931.github.io/Wheres-Epstein/">
-      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.7 5.5L21 9.3l-4.5 4.4 1.1 6.3L12 17l-5.6 3 1.1-6.3L3 9.3l6.3-.8L12 3z"></path></svg>
-      Featured Project
-    </a>
-  </div>
-</div>          </aside>
-        </div>
-      </section>
-
-      <section class="section" aria-label="Featured work">
-        <div class="section-header">
-          <div>
-            <h2>Featured Work</h2>
-            <p>
-              These are some of the pages and projects that best represent the direction, effort, and style behind StaticQuasar931.
-            </p>
+    <main id="main" class="home-main">
+      <section class="home-hero" aria-labelledby="home-title">
+        <div class="home-hero-copy">
+          <p class="home-kicker">A small, curated place to find your next game</p>
+          <h2 id="home-title">Pick a game. Get playing.</h2>
+          <p>Start with Retro Bowl, browse a few handpicked favorites, or search the full collection when you already know what you want.</p>
+          <div class="home-actions">
+            <a class="home-button home-button-primary" href="https://sites.google.com/view/staticquasar931/gm3z/retro-bowl">Play Retro Bowl <span aria-hidden="true">↗</span></a>
+            <a class="home-button home-button-secondary" href="game-finder.html">Find a different game</a>
           </div>
-          <div class="section-tag">Featured picks</div>
+          <p class="home-note">Game pages open in the main collection. Saved games stay in this browser.</p>
         </div>
+        <a class="home-cover" href="https://sites.google.com/view/staticquasar931/gm3z/retro-bowl" aria-label="Open Retro Bowl">
+          <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/Retro_Bowl_StaticQuasar931_t2epwp.jpg" alt="Retro Bowl game artwork">
+          <span>Featured game <b>Retro Bowl</b></span>
+        </a>
+      </section>
 
-        <div class="featured-grid">
-<article class="project-card">
-  <div class="project-media">
-    <span class="badge">Recent favorite</span>
-    <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/escaperoadcity2.png" alt="Preview image for Escape Road City 2, a fast driving game featured on StaticQuasar931" />
-  </div>
-  <div class="project-body">
-    <h3>Escape Road City 2</h3>
-    <p>
-      A recent addition that people have been enjoying a lot. It is fast to understand, fun to jump into, and memorable enough to keep coming back to.
-    </p>
-    <div class="meta-row">
-      <span class="meta">Recently added</span>
-      <span class="meta">Popular with users</span>
-    </div>
-    <div class="action-row one">
-      <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/escape-road-city-2">View Game</a>
-    </div>
-  </div>
-</article>
-          <article class="project-card">
-            <div class="project-media">
-              <span class="badge">Main featured project</span>
-              <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/WheresEpsteinstartscreen.png" alt="Preview image for Where's Epstein, a featured original project by StaticQuasar931" />
-            </div>
-            <div class="project-body">
-              <h3>Where’s Epstein?</h3>
-              <p>
-                This is one of the most personal and distinct projects on the site. It reflects the polish, structure, and creator direction that make the broader website feel like more than a plain launcher.
-              </p>
-              <div class="meta-row">
-                <span class="meta">Original project</span>
-                <span class="meta">High effort</span>
-                <span class="meta">Featured build</span>
-              </div>
-              <div class="action-row one">
-                <a class="button primary" href="https://staticquasar931.github.io/Wheres-Epstein/">View Project</a>
-              </div>
-            </div>
-          </article>
+      <section class="return-shelf" id="saved-shelf" hidden aria-labelledby="saved-title">
+        <div><p class="home-kicker">Your list</p><h2 id="saved-title">Pick up where you left off</h2><p>These saved titles are stored only in this browser.</p></div>
+        <div id="saved-games" class="saved-games"></div>
+        <a href="game-finder.html?favorites=1">Manage saved games <span aria-hidden="true">→</span></a>
+      </section>
 
-<article class="project-card">
-  <div class="project-media">
-    <span class="badge">Known favorite</span>
-    <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/dumbwaystodieicon.webp" alt="Preview image for Dumb Ways to Die, a recognizable user favorite featured on StaticQuasar931" />
-  </div>
-  <div class="project-body">
-    <h3>Dumb Ways to Die</h3>
-    <p>
-      Another standout that works because it is recognizable, easy to jump into, and fun without needing a long explanation.
-    </p>
-    <div class="meta-row">
-      <span class="meta">Creator curated</span>
-      <span class="meta">User favorite</span>
-    </div>
-    <div class="action-row">
-      <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/dumb-ways-to-die">Main Version</a>
-      <a class="button outline" href="https://sites.google.com/view/staticquasar931/gm3z/flash-dumb-ways-to-die">Flash Version</a>
-    </div>
-  </div>
-</article>
+      <section class="home-section" aria-labelledby="quick-picks-title">
+        <div class="home-section-heading"><div><p class="home-kicker">Three good places to start</p><h2 id="quick-picks-title">Choose your kind of run</h2></div><a href="game-finder.html">Search all games <span aria-hidden="true">→</span></a></div>
+        <div class="pick-grid">
+          <article class="pick-card pick-card-featured"><span class="pick-number">01 · SPORTS</span><h3>Retro Bowl</h3><p>Call the plays on the field, then shape the team between games. A quick football session with a longer season to build.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/retro-bowl">Play Retro Bowl <span aria-hidden="true">↗</span></a></article>
+          <article class="pick-card"><span class="pick-number">02 · ACTION</span><h3>Brotato</h3><p>Build a loadout, survive short waves, and try a different combination next run.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/brotato">Play Brotato <span aria-hidden="true">↗</span></a></article>
+          <article class="pick-card"><span class="pick-number">03 · STRATEGY</span><h3>Balatro</h3><p>Turn poker hands and Joker combinations into a scoring strategy that keeps changing.</p><a href="https://sites.google.com/view/staticquasar931/gm3z/balatro">Play Balatro <span aria-hidden="true">↗</span></a></article>
         </div>
       </section>
 
-      <section class="section" aria-label="Handpicked games">
-        <div class="section-header">
-          <div>
-            <h2>Handpicked Games</h2>
-            <p>
-              Featured picks, starting with the three games you asked to put first.
-            </p>
-          </div>
-          <div class="section-tag">Featured picks</div>
-        </div>
-
-        <div class="games-grid">
-          <article class="project-card">
-            <a href="https://sites.google.com/view/staticquasar931/gm3z/five-nights-at-epsteins-fnae" aria-label="Open Five Nights at Epstein's on the main games site">
-              <div class="project-media">
-                <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/five-nights-at-epsteins.png" alt="Preview image for Five Nights at Epstein's, also known as FNAE, on StaticQuasar931" />
-              </div>
-            </a>
-            <div class="project-body">
-              <h3>FNAE</h3>
-              <p>One of the most important and recognizable pages in the broader StaticQuasar931 ecosystem.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/five-nights-at-epsteins-fnae">Open FNAE</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <a href="https://sites.google.com/view/staticquasar931/gm3z/geometry-dash-lite" aria-label="Open Geometry Dash Lite on the main games site">
-              <div class="project-media">
-                <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/GeometryDashLite.png" alt="Preview image for Geometry Dash Lite, a featured rhythm platform game on StaticQuasar931" />
-              </div>
-            </a>
-            <div class="project-body">
-              <h3>Geometry Dash Lite</h3>
-              <p>A strong recognizable favorite and one of the pages that helps define the wider games side of the project.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/geometry-dash-lite">Open Geometry Dash Lite</a>
-              </div>
-            </div>
-          </article>
-
-          
-
-          
-
-          <article class="project-card">
-            <a href="https://sites.google.com/view/staticquasar931/gm3z/retro-bowl" aria-label="Open Retro Bowl on the main games site">
-              <div class="project-media">
-                <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/Retro_Bowl_StaticQuasar931_t2epwp.jpg" alt="Preview image for Retro Bowl, a football game featured on StaticQuasar931" />
-              </div>
-            </a>
-            <div class="project-body">
-              <h3>Retro Bowl</h3>
-              <p>A classic known favorite that fits the kind of polished, recognizable games people expect to find here.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/retro-bowl">Open Retro Bowl</a>
-              </div>
-            </div>
-          </article>
-<article class="project-card">
-            <div class="project-body">
-              <div class="meta">Featured · Action roguelite</div>
-              <h3>Brotato</h3>
-              <p>Build a weapon and upgrade setup to survive short arena waves. Best for players who like quick runs and trying different combinations.</p>
-              <div class="action-row one"><a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/brotato">Open Brotato</a></div>
-            </div>
-          </article>
-<article class="project-card">
-            <div class="project-body">
-              <div class="meta">Featured · Card strategy</div>
-              <h3>Balatro</h3>
-              <p>Shape a scoring strategy around poker hands and the Jokers you find. Best for players who enjoy planning combinations between rounds.</p>
-              <div class="action-row one"><a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/balatro">Open Balatro</a></div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <a href="https://sites.google.com/view/staticquasar931/gm3z/escape-road-2-fake-gta-2" aria-label="Open Escape Road 2 on the main games site">
-              <div class="project-media">
-                <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/escaperoad2.jpg" alt="Preview image for Escape Road 2, a driving and action game featured on StaticQuasar931" />
-              </div>
-            </a>
-            <div class="project-body">
-              <h3>Escape Road 2</h3>
-              <p>A fast-growing favorite that has earned a strong spot among the site’s most interesting newer additions.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/escape-road-2-fake-gta-2">Open Escape Road 2</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <a href="https://sites.google.com/view/staticquasar931/gm3z/epstein-clicker" aria-label="Open Epstein Clicker on the main games site">
-              <div class="project-media">
-                <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/EpsteinClickerEnhanced.png" alt="Preview image for Epstein Clicker, a notable themed clicker game on StaticQuasar931" />
-              </div>
-            </a>
-            <div class="project-body">
-              <h3>Epstein Clicker</h3>
-              <p>A page with strong interest and one of the more notable themed games connected to the site’s identity.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/epstein-clicker">Open Epstein Clicker</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <a href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe" aria-label="Open Slope on the main games site">
-              <div class="project-media">
-                <img src="https://cdn.jsdelivr.net/gh/StaticQuasar931/Images@main/slope_Staticquasar931_stable_agqxto.png" alt="Preview image for Slope, a fast endless runner game featured on StaticQuasar931" />
-              </div>
-            </a>
-            <div class="project-body">
-              <h3>Slope</h3>
-              <p>A long-running recognizable favorite and one of the strongest quick-play browser game picks on the site.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="https://sites.google.com/view/staticquasar931/gm3z/sl0pe">Open Slope</a>
-              </div>
-            </div>
-          </article>
-        </div>
+      <section class="home-bottom-grid" aria-label="Explore and contribute">
+        <article class="home-feature">
+          <p class="home-kicker">Made by Static</p><h2>Where’s Epstein?</h2><p>An original project from the creator. Explore its own page and see what else is being built beyond the game collection.</p><a href="https://staticquasar931.github.io/Wheres-Epstein/">View the project <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="home-community">
+          <p class="home-kicker">Help make the collection better</p><h2>Found a broken page or a great game?</h2><p>Send the title and what happened. Useful clips and short gameplay tips are welcome on YouTube too.</p><div class="home-actions"><a class="home-button home-button-primary" href="https://sites.google.com/view/staticquasar931/google-form">Send a suggestion</a><a class="home-button home-button-secondary" href="https://www.youtube.com/@StaticQuasar931">YouTube</a></div>
+        </article>
       </section>
-
-      <section class="section" aria-label="Activity and scale">
-        <div class="section-header">
-          <div>
-            <h2>How the collection works</h2>
-            <p>
-              A few practical details make the collection easier to search, use, and keep accurate.
-            </p>
-          </div>
-          <div class="section-tag">Search · save · report</div>
-        </div>
-
-        <div class="support-grid">
-          <article class="info-card"><div class="info-body"><h3>Search by more than exact spelling</h3><p>The Game Finder checks titles and page addresses, accepts common alternate names, and tolerates small spelling mistakes.</p><a class="button secondary" href="game-finder.html">Search the collection</a></div></article>
-          <article class="info-card"><div class="info-body"><h3>Save picks on your device</h3><p>Saved games stay in this browser. The site does not receive or sync your favorites.</p><a href="privacy.html">Read the privacy details</a></div></article>
-          <article class="info-card"><div class="info-body"><h3>Report a bad link</h3><p>Game pages can move or stop working. Send the exact title and page link so it can be checked.</p><a href="https://sites.google.com/view/staticquasar931/google-form">Report a problem</a></div></article>
-        </div>
-      </section>
-
-      <section class="section" aria-label="Community and support">
-        <div class="section-header">
-          <div>
-            <h2>Community and Support</h2>
-            <p>
-              If you need help, want to report an issue, or want to follow the project, these are the main places to go.
-            </p>
-          </div>
-          <div class="section-tag">Support and socials</div>
-        </div>
-
-        <div class="support-grid">
-          <article class="info-card">
-            <div class="info-body">
-              <h3>Discord</h3>
-              <p>The fastest public contact method for questions, ideas, feedback, and general updates.</p>
-              <div class="action-row one">
-                <a class="button primary" href="https://discord.gg/DP2hM7RRhR">Join Discord</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="info-card">
-            <div class="info-body">
-              <h3>Google Form</h3>
-              <p>Use the form to report problems, request games, or send structured feedback.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="https://sites.google.com/view/staticquasar931/google-form">Open Form</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="info-card">
-            <div class="info-body">
-              <h3>Email</h3>
-              <p>Public contact email for general questions, support, corrections, and other important messages.</p>
-              <div class="action-row one">
-                <a class="button secondary" href="mailto:StaticQuasar931Games@gmail.com">Email Me</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="info-card">
-            <div class="info-body">
-              <h3>Follow Along</h3>
-              <p>Follow new game clips and updates on Instagram and YouTube.</p>
-              <div class="action-row">
-                <a class="button outline" href="https://www.instagram.com/staticquasar931/">Instagram</a>
-          <a class="button outline" href="https://www.youtube.com/@StaticQuasar931">YouTube</a>
-                <a class="button outline" href="faq.html">FAQ</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      </main>
-
-    <div class="seo-hidden" aria-hidden="true">
-      <h2>StaticQuasar931 creator page and project hub</h2>
-      <p>
-        StaticQuasar931 is a creator-focused browser project site that introduces the broader game ecosystem, highlights selected projects, and directs visitors to the main Google Sites games collection, genre browsing, support pages, archive pages, and community links.
-      </p>
-      <p>
-        Main destinations include the main games page, games by genre, archive, featured project pages, support pages, contact pages, privacy policy, terms, site guide, and FAQ.
-      </p>
-    </div>
+    </main>
 
     <footer class="footer" aria-label="Footer">
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>StaticQuasar931</h3>
           <p>
-            A cleaner landing page for the broader StaticQuasar931 project, designed to explain the site, highlight featured work, improve trust, and point people toward the main games collection.
+            A curated game collection and projects by StaticQuasar931.
           </p>
         </div>
 
@@ -1520,73 +1236,11 @@
     </footer>
   </div>
 
+  <script>(()=>{const b=document.getElementById("mobileMenuToggle"),n=document.getElementById("mobileNav");if(b&&n)b.addEventListener("click",()=>{const o=n.classList.toggle("open");b.setAttribute("aria-expanded",String(o));});})();</script>
+
   <script>
-    window.onbeforeunload = function () {
-      return "Changes you made may not be saved. Are you sure you want to leave?";
-    };
-
-    (function () {
-      var themeToggle = document.getElementById("themeToggle");
-      var themeToggleMobile = document.getElementById("themeToggleMobile");
-      var storageKey = "static-theme";
-      var mobileMenuToggle = document.getElementById("mobileMenuToggle");
-      var mobileNav = document.getElementById("mobileNav");
-
-      function applyTheme(theme) {
-        var isDark = theme === "dark";
-        document.body.classList.toggle("dark-mode", isDark);
-
-        if (themeToggle) {
-  themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-  themeToggle.innerHTML = isDark
-    ? '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>Light mode'
-    : '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>Dark mode';
-}
-
-
-        if (themeToggleMobile) {
-  themeToggleMobile.setAttribute("aria-pressed", isDark ? "true" : "false");
-  themeToggleMobile.innerHTML = isDark
-    ? '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></svg>Light mode'
-    : '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>Dark mode';
-}
-      }
-
-      function getSystemTheme() {
-        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-
-      try {
-        var saved = localStorage.getItem(storageKey);
-        applyTheme(saved || getSystemTheme());
-      } catch (e) {
-        applyTheme(getSystemTheme());
-      }
-
-      function toggleTheme() {
-        var isDark = document.body.classList.contains("dark-mode");
-        var newTheme = isDark ? "light" : "dark";
-        applyTheme(newTheme);
-        try {
-          localStorage.setItem(storageKey, newTheme);
-        } catch (e) {}
-      }
-
-      if (themeToggle) {
-        themeToggle.addEventListener("click", toggleTheme);
-      }
-
-      if (themeToggleMobile) {
-        themeToggleMobile.addEventListener("click", toggleTheme);
-      }
-
-      if (mobileMenuToggle && mobileNav) {
-        mobileMenuToggle.addEventListener("click", function () {
-          var open = mobileNav.classList.toggle("open");
-          mobileMenuToggle.setAttribute("aria-expanded", open ? "true" : "false");
-        });
-      }
-    })();
+  (()=>{const shelf=document.getElementById('saved-shelf'),list=document.getElementById('saved-games');if(!shelf||!list)return;try{const saved=new Set(JSON.parse(localStorage.getItem('staticquasar931-game-finder-favorites-v1')||'[]'));if(!saved.size)return;fetch('game-finder.html').then(r=>r.text()).then(html=>{const doc=new DOMParser().parseFromString(html,'text/html');const data=doc.getElementById('game-data');if(!data)return;const games=JSON.parse(data.textContent);games.filter(g=>saved.has(g.href)).slice(0,8).forEach(g=>{const a=document.createElement('a');a.href=g.href;a.textContent=g.title;list.append(a)});if(list.childElementCount)shelf.hidden=false}).catch(()=>{});}catch{}})();
   </script>
+
 </body>
 </html>

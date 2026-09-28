@@ -1,0 +1,25 @@
+/* Shared visual system for the StaticQuasar931 pages */
+:root { --sq-ink:#18221f; --sq-muted:#66736d; --sq-paper:#f5f4ef; --sq-card:#fffefa; --sq-line:#d9ded7; --sq-green:#24634d; --sq-green-dark:#194a3a; --sq-lime:#d6ed85; --sq-radius:18px; --sq-shadow:0 12px 34px rgba(24,34,31,.08); }
+html { scroll-behavior:smooth; }
+body { background:var(--sq-paper)!important; color:var(--sq-ink)!important; font-family:Inter,"Maven Pro",system-ui,-apple-system,"Segoe UI",sans-serif!important; line-height:1.6; }
+body a { color:var(--sq-green); }
+body a:hover { color:var(--sq-green-dark); }
+:is(.site-shell,.wrap,.container,.page-wrap) { max-width:1160px!important; margin-inline:auto!important; }
+:is(header,.topbar) { border-color:var(--sq-line)!important; }
+:is(.topbar,header) { box-shadow:0 5px 20px rgba(24,34,31,.05)!important; }
+:is(.hero,.section,.card,.creator-box,.highlight,.tool,.spot,.project-card,.info-card,.side-card,.panel) { border-color:var(--sq-line)!important; }
+:is(.card,.creator-box,.highlight,.tool,.spot,.project-card,.info-card,.side-card,.panel) { background:var(--sq-card)!important; color:var(--sq-ink)!important; border-radius:var(--sq-radius)!important; box-shadow:var(--sq-shadow); }
+:is(.hero,.section) { border-radius:24px!important; box-shadow:none!important; }
+:is(.hero h1,.hero h2,.intro h1) { color:var(--sq-ink)!important; letter-spacing:-.045em; }
+:is(.hero p,.section p,.card p,.creator-box p,.highlight p,.spot p,.project-card p,.info-card p,.side-card p) { color:var(--sq-muted)!important; }
+:is(.button,.btn,.topnav a,.topbar a) { transition:transform .16s ease,background-color .16s ease,border-color .16s ease; }
+:is(.button,.btn) { border-radius:999px!important; font-weight:750!important; }
+:is(.button.primary,.btn.accent) { background:var(--sq-green)!important; border-color:var(--sq-green)!important; color:white!important; }
+:is(.button.primary,.button.secondary,.button.outline,.btn):hover { transform:translateY(-1px); }
+:is(.eyebrow,.section-tag,.tag,.badge) { letter-spacing:.08em; }
+:is(.project-media img,.card img) { object-fit:cover; }
+:is(footer,.footer) { border-color:var(--sq-line)!important; color:var(--sq-muted)!important; }
+:focus-visible { outline:3px solid #366d55!important; outline-offset:3px!important; }
+body:has(.wrap header) .wrap { padding-top:clamp(14px,3vw,28px)!important; }
+.topnav a { border-radius:999px; }
+@media(max-width:740px) { :is(.hero,.section,.tool) { border-radius:16px!important; } }
