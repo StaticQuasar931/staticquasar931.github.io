@@ -402,13 +402,55 @@
         }
       }
 
+      function trackedUrl(destination, searchText, matchType) {
+        var target = new URL(destination);
+        var term = (searchText || "").trim().replace(/^\/+|\/+$/g, "");
+        try { term = decodeURIComponent(term); } catch (e) {}
+        target.searchParams.set("utm_source", "github_pages_404");
+        target.searchParams.set("utm_medium", "referral");
+        target.searchParams.set("utm_campaign", "link_recovery");
+        target.searchParams.set("utm_term", term);
+        target.searchParams.set("utm_content", matchType);
+        return target.href;
+      }
+
+      function classifyMatch(searchText, candidate) {
+        var query = (searchText || "").trim();
+        var candidateName = candidate.name || "";
+        var querySlug = query.replace(/^\/+|\/+$/g, "").replace(/[\s_]+/g, "-");
+        if (query === candidateName) return "exact_search";
+        if (query && query.toLocaleLowerCase() === candidateName.toLocaleLowerCase() && query !== candidateName) {
+          return "capitalization";
+        }
+        if (query && querySlug.toLocaleLowerCase() === candidateName.toLocaleLowerCase() && querySlug !== candidateName) {
+          return "capitalization_or_formatting";
+        }
+
+        var queryWords = tokenize(query);
+        var candidateWords = tokenize(candidateName);
+        var fuzzy = queryWords.some(function (word) {
+          return word.length >= 4 && candidateWords.some(function (candidateWord) {
+            if (word === candidateWord) return false;
+            var distance = editDistance(word, candidateWord);
+            return distance <= Math.max(1, Math.floor(Math.max(word.length, candidateWord.length) * 0.25));
+          });
+        });
+        if (fuzzy) return "spelling_correction";
+        return "partial_search";
+      }
+
       function redirectCaseOnlyMatch() {
         var requested = normalizePath(window.location.pathname);
         var match = projects.concat(sitemapPages).find(function (candidate) {
           return normalizePath(new URL(candidate.url).pathname) === requested;
         });
         if (match && new URL(match.url).pathname !== window.location.pathname) {
-          window.location.replace(match.url + window.location.search + window.location.hash);
+          var target = new URL(trackedUrl(match.url, window.location.pathname, "capitalization"));
+          new URLSearchParams(window.location.search).forEach(function (value, key) {
+            if (!key.toLocaleLowerCase().startsWith("utm_")) target.searchParams.set(key, value);
+          });
+          target.hash = window.location.hash;
+          window.location.replace(target.href);
           return true;
         }
         return false;
@@ -599,7 +641,7 @@
           var match = document.createElement("span");
           var detail = document.createElement("small");
           var metrics = document.createElement("div");
-          link.href = item.candidate.url;
+          link.href = trackedUrl(item.candidate.url, searchInput.value, classifyMatch(searchInput.value, item.candidate));
           title.textContent = item.candidate.name;
           match.className = "match-chip";
           match.textContent = matchLabel(item.score, queryWords.length);
