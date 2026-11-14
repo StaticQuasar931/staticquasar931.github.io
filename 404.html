@@ -231,17 +231,31 @@
       font-size:0.95rem;
     }
 
-    .url-search{width:min(100%,620px);margin:24px auto 0;text-align:left}
-    .url-search label{display:block;margin-bottom:8px;font-weight:800}
-    .search-row{display:flex;gap:8px}
-    .search-row input{flex:1;min-width:0;min-height:48px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);font:inherit}
-    .search-row button{min-height:48px;padding:10px 16px;border:0;border-radius:12px;background:var(--button);color:var(--button-text);font:inherit;font-weight:800;cursor:pointer}
-    .url-results{display:grid;gap:8px;margin:12px 0 0;padding:0;list-style:none}
-    .url-results a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,0.28)}
-    .url-results a:hover,.url-results a:focus-visible{border-color:var(--accent);outline:none}
-    .url-results strong,.url-results small{display:block;overflow-wrap:anywhere}
-    .url-results small,.search-status{color:var(--muted)}
-    .search-status{margin:10px 0 0;font-size:0.9rem;line-height:1.5}
+    .url-search{width:min(100%,680px);margin:28px auto 0;text-align:left;padding:22px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,0.34)}
+    body.dark-mode .url-search{background:rgba(12,17,27,0.42)}
+    .search-heading{margin:0;font-size:1.1rem;font-weight:900;letter-spacing:-0.3px}
+    .search-intro{margin:5px 0 16px;color:var(--muted);font-size:0.92rem;line-height:1.5}
+    .url-search label{display:block;margin-bottom:8px;font-weight:800;font-size:0.92rem}
+    .search-row{display:flex;gap:9px}
+    .search-row input{flex:1;min-width:0;min-height:52px;padding:12px 15px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--text);font:inherit;outline:none;transition:border-color .18s ease,box-shadow .18s ease}
+    .search-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+    .search-row button{min-height:52px;padding:12px 19px;border:0;border-radius:14px;background:var(--button);color:var(--button-text);font:inherit;font-weight:900;cursor:pointer;transition:transform .18s ease,opacity .18s ease}
+    .search-row button:hover{transform:translateY(-1px);opacity:.9}
+    .search-status{display:flex;align-items:center;gap:8px;margin:16px 0 0;color:var(--muted);font-size:0.88rem;line-height:1.5}
+    .search-status:before{content:"";width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:var(--accent)}
+    .search-stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+    .stat-chip,.match-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.76rem;font-weight:800;line-height:1.2}
+    .url-results{display:grid;gap:10px;margin:14px 0 0;padding:0;list-style:none}
+    .url-results a{display:block;padding:15px 16px;border:1px solid var(--line);border-radius:16px;background:var(--panel);transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+    .url-results a:hover,.url-results a:focus-visible{border-color:var(--accent);outline:none;transform:translateY(-1px);box-shadow:0 10px 24px rgba(15,23,42,.08)}
+    .result-topline{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .url-results strong{font-size:1rem;color:var(--text);overflow-wrap:anywhere}
+    .url-results small{display:block;margin-top:5px;color:var(--muted);font-size:.82rem;line-height:1.45;overflow-wrap:anywhere}
+    .match-chip{flex:0 0 auto;border-color:color-mix(in srgb,var(--accent) 35%,var(--line));color:var(--accent)}
+    .result-metrics{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+    .utility-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .utility-actions .button{min-height:44px;padding:11px 15px;border-radius:12px;font-size:.9rem}
+    .report-link{display:inline-block;margin-top:18px;color:var(--muted);font-weight:700;font-size:.9rem}
 
     .theme-toggle{
       position:fixed;
@@ -292,6 +306,8 @@
       }
 
       .search-row{flex-direction:column}
+      .url-search{padding:18px 15px;border-radius:18px}
+      .result-topline{align-items:flex-start}
     }
   </style>
 
@@ -340,24 +356,27 @@
         The main site is still here.
       </p>
 
-      <div class="actions">
-        <a class="button primary" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a> <a href="https://staticquasar931.github.io/game-finder.html">Game Finder</a>
-        <a class="button secondary" href="https://staticquasar931.github.io/">Homepage</a>
-      </div>
-
       <section class="url-search" aria-label="Find a page or project">
         <form id="urlSearchForm" role="search">
-          <label for="urlSearchInput">Search pages and projects</label>
+          <h3 class="search-heading">Find the page you meant</h3>
+          <p class="search-intro">Search project names, game titles, or a few words from the link. Results update as you type.</p>
+          <label for="urlSearchInput">Page or project name</label>
           <div class="search-row">
             <input id="urlSearchInput" type="search" autocomplete="off" placeholder="Try PolyTrack or another project name" />
             <button type="submit">Search</button>
           </div>
         </form>
-        <p class="search-status" id="urlSearchStatus" role="status" aria-live="polite">Loading project and page suggestions…</p>
+        <p class="search-status" id="urlSearchStatus" role="status" aria-live="polite">Checking projects and pages…</p>
+        <div class="search-stats" id="urlSearchStats" aria-label="Search statistics" hidden></div>
         <ul class="url-results" id="urlSearchResults"></ul>
       </section>
 
-      <a class="small-link" href="https://sites.google.com/view/staticquasar931/google-form">Report a broken link</a>
+      <nav class="utility-actions" aria-label="Helpful links">
+        <a class="button primary" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a>
+        <a class="button secondary" href="https://staticquasar931.github.io/game-finder.html">Game Finder</a>
+        <a class="button secondary" href="https://staticquasar931.github.io/">Homepage</a>
+      </nav>
+      <a class="report-link" href="https://sites.google.com/view/staticquasar931/google-form">Report a broken link</a>
     </section>
   
     <div class="site-social-links"><a href="https://www.instagram.com/staticquasar931/">Instagram</a> · <a href="https://www.youtube.com/@StaticQuasar931">YouTube</a></div>
@@ -371,7 +390,7 @@
       var resultsList = document.getElementById("urlSearchResults");
       var sitemapPages = [];
       var projects = [];
-      var cacheKey = "staticquasar-pages-search-v1";
+      var cacheKey = "staticquasar-pages-search-v2";
       var githubSearchUrl = "https://api.github.com/search/repositories?q=user%3AStaticQuasar931&per_page=100&sort=updated";
       var githubReposUrl = "https://api.github.com/users/StaticQuasar931/repos?per_page=100&sort=updated";
 
@@ -381,6 +400,18 @@
         } catch (e) {
           return path.replace(/\/+$/, "").toLocaleLowerCase();
         }
+      }
+
+      function redirectCaseOnlyMatch() {
+        var requested = normalizePath(window.location.pathname);
+        var match = projects.concat(sitemapPages).find(function (candidate) {
+          return normalizePath(new URL(candidate.url).pathname) === requested;
+        });
+        if (match && new URL(match.url).pathname !== window.location.pathname) {
+          window.location.replace(match.url + window.location.search + window.location.hash);
+          return true;
+        }
+        return false;
       }
 
       function editDistance(a, b) {
@@ -406,28 +437,22 @@
 
       function loadSitemap() {
         return fetch("/sitemap.xml", { cache: "no-cache" })
-        .then(function (response) {
-          if (!response.ok) throw new Error("Sitemap unavailable");
-          return response.text();
-        })
-        .then(function (xml) {
-          var doc = new DOMParser().parseFromString(xml, "application/xml");
-          sitemapPages = Array.from(doc.getElementsByTagName("loc"))
-            .map(function (node) { return node.textContent.trim(); })
-            .filter(function (url) { return url.startsWith("https://staticquasar931.github.io/"); })
-            .map(function (url) {
-              var path = new URL(url).pathname;
-              var slug = path.split("/").filter(Boolean).pop() || "StaticQuasar931 homepage";
-              return { name: slug, url: url, description: "Page on StaticQuasar931", source: "page" };
-            });
-          var wanted = normalizePath(window.location.pathname);
-          var caseMatch = sitemapPages.find(function (page) {
-            return normalizePath(new URL(page.url).pathname) === wanted;
+          .then(function (response) {
+            if (!response.ok) throw new Error("Sitemap unavailable");
+            return response.text();
+          })
+          .then(function (xml) {
+            var doc = new DOMParser().parseFromString(xml, "application/xml");
+            sitemapPages = Array.from(doc.getElementsByTagName("loc"))
+              .map(function (node) { return node.textContent.trim(); })
+              .filter(function (url) { return url.startsWith("https://staticquasar931.github.io/"); })
+              .map(function (url) {
+                var path = new URL(url).pathname;
+                var slug = path.split("/").filter(Boolean).pop() || "StaticQuasar931 homepage";
+                return { name: slug, url: url, description: "Page on StaticQuasar931", source: "page" };
+              });
+            redirectCaseOnlyMatch();
           });
-          if (caseMatch && new URL(caseMatch.url).pathname !== window.location.pathname) {
-            window.location.replace(caseMatch.url + window.location.search + window.location.hash);
-          }
-        });
       }
 
       function loadGitHubProjects() {
@@ -436,6 +461,7 @@
         var cachedProjects = cached && Array.isArray(cached.projects) ? cached.projects : [];
         if (cached && Date.now() - cached.savedAt < 24 * 60 * 60 * 1000) {
           projects = cachedProjects;
+          redirectCaseOnlyMatch();
           return Promise.resolve();
         }
 
@@ -447,10 +473,15 @@
               name: repo.name,
               url: "https://staticquasar931.github.io/" + encodeURIComponent(repo.name) + "/",
               description: repo.description || "GitHub Pages project",
+              stars: repo.stargazers_count || 0,
+              forks: repo.forks_count || 0,
+              language: repo.language || "",
+              updatedAt: repo.updated_at || "",
               source: "project"
             };
           });
           try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), projects: projects })); } catch (e) {}
+          redirectCaseOnlyMatch();
         }
 
         return fetch(githubSearchUrl, { headers: { "Accept": "application/vnd.github+json" } })
@@ -475,31 +506,62 @@
       }
 
       function scoreCandidate(queryWords, candidate) {
-        var candidateWords = tokenize(candidate.name + " " + candidate.description);
+        var nameWords = tokenize(candidate.name);
+        var descriptionWords = tokenize(candidate.description);
         var total = 0;
         var matched = 0;
         queryWords.forEach(function (word) {
-          var best = 0;
-          candidateWords.forEach(function (candidateWord) {
-            if (word === candidateWord) best = Math.max(best, 12);
-            else if (candidateWord.indexOf(word) === 0 || word.indexOf(candidateWord) === 0) best = Math.max(best, 8);
-            else if (word.length >= 4 && candidateWord.length >= 4) {
-              var distance = editDistance(word, candidateWord);
-              var threshold = Math.max(1, Math.floor(Math.max(word.length, candidateWord.length) * 0.25));
-              if (distance <= threshold) best = Math.max(best, 6 - distance);
-            }
-          });
+          function wordScore(words, exactWeight, prefixWeight, containsWeight, typoWeight) {
+            var best = 0;
+            words.forEach(function (candidateWord) {
+              if (word === candidateWord) best = Math.max(best, exactWeight);
+              else if (candidateWord.indexOf(word) === 0) best = Math.max(best, prefixWeight);
+              else if (candidateWord.indexOf(word) > 0 || word.indexOf(candidateWord) === 0) best = Math.max(best, containsWeight);
+              else if (word.length >= 4 && candidateWord.length >= 4) {
+                var distance = editDistance(word, candidateWord);
+                var threshold = Math.max(1, Math.floor(Math.max(word.length, candidateWord.length) * 0.25));
+                if (distance <= threshold) best = Math.max(best, Math.max(1, typoWeight - distance));
+              }
+            });
+            return best;
+          }
+          var best = Math.max(
+            wordScore(nameWords, 20, 14, 10, 8),
+            wordScore(descriptionWords, 5, 4, 3, 3)
+          );
           if (best > 0) matched++;
           total += best;
         });
-        return { score: total - (queryWords.length - matched) * 2, matched: matched };
+        var coverage = matched / queryWords.length;
+        return { score: (total - (queryWords.length - matched) * 3) * coverage, matched: matched, coverage: coverage };
+      }
+
+      function relativeUpdate(dateValue) {
+        if (!dateValue) return "";
+        var date = new Date(dateValue);
+        if (Number.isNaN(date.getTime())) return "";
+        var days = Math.round((date.getTime() - Date.now()) / 86400000);
+        var formatter = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+        if (Math.abs(days) >= 365) return formatter.format(Math.round(days / 365), "year");
+        if (Math.abs(days) >= 30) return formatter.format(Math.round(days / 30), "month");
+        if (Math.abs(days) >= 1) return formatter.format(days, "day");
+        var hours = Math.round((date.getTime() - Date.now()) / 3600000);
+        return formatter.format(hours, "hour");
+      }
+
+      function matchLabel(score, queryLength) {
+        if (score >= queryLength * 18) return "Best match";
+        if (score >= queryLength * 8) return "Strong match";
+        return "Possible match";
       }
 
       function renderResults(query) {
         resultsList.replaceChildren();
+        var stats = document.getElementById("urlSearchStats");
         var queryWords = tokenize(query);
         if (!queryWords.length) {
           searchStatus.textContent = "Type a project or page name to see suggestions.";
+          stats.hidden = true;
           return;
         }
 
@@ -510,38 +572,69 @@
         });
         var ranked = Array.from(unique.values()).map(function (candidate) {
           var result = scoreCandidate(queryWords, candidate);
-          return { candidate: candidate, score: result.score, matched: result.matched };
+          return { candidate: candidate, score: result.score, matched: result.matched, coverage: result.coverage };
         }).filter(function (item) { return item.matched > 0; })
           .sort(function (a, b) { return b.score - a.score || a.candidate.name.localeCompare(b.candidate.name); })
           .slice(0, 8);
 
         if (!ranked.length) {
           searchStatus.textContent = "No close matches found. Try fewer words or a shorter spelling.";
+          stats.hidden = true;
           return;
         }
-        searchStatus.textContent = "Suggested matches, ranked by how closely the names and descriptions match:";
+        searchStatus.textContent = ranked.length + (ranked.length === 1 ? " likely match" : " likely matches") + " · strongest name matches first";
+        stats.replaceChildren();
+        [ranked.length + " shown", projects.length + " Pages repos", sitemapPages.length + " site pages"].forEach(function (label) {
+          var chip = document.createElement("span");
+          chip.className = "stat-chip";
+          chip.textContent = label;
+          stats.appendChild(chip);
+        });
+        stats.hidden = false;
         ranked.forEach(function (item) {
           var li = document.createElement("li");
           var link = document.createElement("a");
+          var topLine = document.createElement("div");
           var title = document.createElement("strong");
+          var match = document.createElement("span");
           var detail = document.createElement("small");
+          var metrics = document.createElement("div");
           link.href = item.candidate.url;
           title.textContent = item.candidate.name;
+          match.className = "match-chip";
+          match.textContent = matchLabel(item.score, queryWords.length);
+          topLine.className = "result-topline";
+          topLine.appendChild(title);
+          topLine.appendChild(match);
           detail.textContent = item.candidate.source === "project"
             ? item.candidate.description + " · GitHub Pages project"
             : item.candidate.url.replace("https://staticquasar931.github.io", "");
-          link.appendChild(title);
           link.appendChild(detail);
+          link.prepend(topLine);
+          metrics.className = "result-metrics";
+          if (item.candidate.source === "project") {
+            ["★ " + item.candidate.stars.toLocaleString() + " stars", "Forks " + item.candidate.forks.toLocaleString(), item.candidate.language, item.candidate.updatedAt ? "Repo updated " + relativeUpdate(item.candidate.updatedAt) : ""]
+              .filter(Boolean).forEach(function (value) {
+                var chip = document.createElement("span");
+                chip.className = "stat-chip";
+                chip.textContent = value;
+                metrics.appendChild(chip);
+              });
+            link.appendChild(metrics);
+          } else {
+            var pageChip = document.createElement("span");
+            pageChip.className = "stat-chip";
+            pageChip.textContent = "Site page";
+            metrics.appendChild(pageChip);
+            link.appendChild(metrics);
+          }
           li.appendChild(link);
           resultsList.appendChild(li);
         });
       }
 
       searchInput.value = window.location.pathname.split("/").filter(Boolean).join(" ");
-      searchForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        renderResults(searchInput.value);
-      });
+      searchForm.addEventListener("submit", function (event) { event.preventDefault(); renderResults(searchInput.value); });
       searchInput.addEventListener("input", function () { renderResults(searchInput.value); });
 
       Promise.allSettled([loadSitemap(), loadGitHubProjects()]).then(function () {
