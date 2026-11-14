@@ -231,6 +231,18 @@
       font-size:0.95rem;
     }
 
+    .url-search{width:min(100%,620px);margin:24px auto 0;text-align:left}
+    .url-search label{display:block;margin-bottom:8px;font-weight:800}
+    .search-row{display:flex;gap:8px}
+    .search-row input{flex:1;min-width:0;min-height:48px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);font:inherit}
+    .search-row button{min-height:48px;padding:10px 16px;border:0;border-radius:12px;background:var(--button);color:var(--button-text);font:inherit;font-weight:800;cursor:pointer}
+    .url-results{display:grid;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+    .url-results a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,0.28)}
+    .url-results a:hover,.url-results a:focus-visible{border-color:var(--accent);outline:none}
+    .url-results strong,.url-results small{display:block;overflow-wrap:anywhere}
+    .url-results small,.search-status{color:var(--muted)}
+    .search-status{margin:10px 0 0;font-size:0.9rem;line-height:1.5}
+
     .theme-toggle{
       position:fixed;
       top:18px;
@@ -278,6 +290,8 @@
         top:12px;
         right:12px;
       }
+
+      .search-row{flex-direction:column}
     }
   </style>
 
@@ -327,15 +341,217 @@
       </p>
 
       <div class="actions">
-        <a class="button primary" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a> <a href="game-finder.html">Game Finder</a>
-        <a class="button secondary" href="index.html">Homepage</a>
+        <a class="button primary" href="https://sites.google.com/view/staticquasar931/gm3z">Main Games Page</a> <a href="https://staticquasar931.github.io/game-finder.html">Game Finder</a>
+        <a class="button secondary" href="https://staticquasar931.github.io/">Homepage</a>
       </div>
+
+      <section class="url-search" aria-label="Find a page or project">
+        <form id="urlSearchForm" role="search">
+          <label for="urlSearchInput">Search pages and projects</label>
+          <div class="search-row">
+            <input id="urlSearchInput" type="search" autocomplete="off" placeholder="Try PolyTrack or another project name" />
+            <button type="submit">Search</button>
+          </div>
+        </form>
+        <p class="search-status" id="urlSearchStatus" role="status" aria-live="polite">Loading project and page suggestions…</p>
+        <ul class="url-results" id="urlSearchResults"></ul>
+      </section>
 
       <a class="small-link" href="https://sites.google.com/view/staticquasar931/google-form">Report a broken link</a>
     </section>
   
     <div class="site-social-links"><a href="https://www.instagram.com/staticquasar931/">Instagram</a> · <a href="https://www.youtube.com/@StaticQuasar931">YouTube</a></div>
   </main>
+
+  <script>
+    (function () {
+      var searchForm = document.getElementById("urlSearchForm");
+      var searchInput = document.getElementById("urlSearchInput");
+      var searchStatus = document.getElementById("urlSearchStatus");
+      var resultsList = document.getElementById("urlSearchResults");
+      var sitemapPages = [];
+      var projects = [];
+      var cacheKey = "staticquasar-pages-search-v1";
+      var githubSearchUrl = "https://api.github.com/search/repositories?q=user%3AStaticQuasar931&per_page=100&sort=updated";
+      var githubReposUrl = "https://api.github.com/users/StaticQuasar931/repos?per_page=100&sort=updated";
+
+      function normalizePath(path) {
+        try {
+          return decodeURIComponent(path).replace(/\/+$/, "").toLocaleLowerCase();
+        } catch (e) {
+          return path.replace(/\/+$/, "").toLocaleLowerCase();
+        }
+      }
+
+      function editDistance(a, b) {
+        var previous = Array.from({ length: b.length + 1 }, function (_, i) { return i; });
+        for (var i = 1; i <= a.length; i++) {
+          var current = [i];
+          for (var j = 1; j <= b.length; j++) {
+            current[j] = Math.min(
+              current[j - 1] + 1,
+              previous[j] + 1,
+              previous[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+            );
+          }
+          previous = current;
+        }
+        return previous[b.length];
+      }
+
+      function tokenize(value) {
+        return value.toLocaleLowerCase().replace(/\.[a-z0-9]+$/i, "")
+          .split(/[^a-z0-9]+/).filter(function (word) { return word.length > 0; });
+      }
+
+      function loadSitemap() {
+        return fetch("/sitemap.xml", { cache: "no-cache" })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Sitemap unavailable");
+          return response.text();
+        })
+        .then(function (xml) {
+          var doc = new DOMParser().parseFromString(xml, "application/xml");
+          sitemapPages = Array.from(doc.getElementsByTagName("loc"))
+            .map(function (node) { return node.textContent.trim(); })
+            .filter(function (url) { return url.startsWith("https://staticquasar931.github.io/"); })
+            .map(function (url) {
+              var path = new URL(url).pathname;
+              var slug = path.split("/").filter(Boolean).pop() || "StaticQuasar931 homepage";
+              return { name: slug, url: url, description: "Page on StaticQuasar931", source: "page" };
+            });
+          var wanted = normalizePath(window.location.pathname);
+          var caseMatch = sitemapPages.find(function (page) {
+            return normalizePath(new URL(page.url).pathname) === wanted;
+          });
+          if (caseMatch && new URL(caseMatch.url).pathname !== window.location.pathname) {
+            window.location.replace(caseMatch.url + window.location.search + window.location.hash);
+          }
+        });
+      }
+
+      function loadGitHubProjects() {
+        var cached;
+        try { cached = JSON.parse(localStorage.getItem(cacheKey) || "null"); } catch (e) {}
+        var cachedProjects = cached && Array.isArray(cached.projects) ? cached.projects : [];
+        if (cached && Date.now() - cached.savedAt < 24 * 60 * 60 * 1000) {
+          projects = cachedProjects;
+          return Promise.resolve();
+        }
+
+        function saveRepositories(repositories) {
+          projects = repositories.filter(function (repo) {
+            return repo.has_pages && repo.name.toLocaleLowerCase() !== "staticquasar931.github.io";
+          }).map(function (repo) {
+            return {
+              name: repo.name,
+              url: "https://staticquasar931.github.io/" + encodeURIComponent(repo.name) + "/",
+              description: repo.description || "GitHub Pages project",
+              source: "project"
+            };
+          });
+          try { localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), projects: projects })); } catch (e) {}
+        }
+
+        return fetch(githubSearchUrl, { headers: { "Accept": "application/vnd.github+json" } })
+          .then(function (response) {
+            if (!response.ok) throw new Error("GitHub search unavailable");
+            return response.json();
+          })
+          .then(function (data) {
+            saveRepositories(data.items || []);
+          })
+          .catch(function () {
+            return fetch(githubReposUrl, { headers: { "Accept": "application/vnd.github+json" } })
+              .then(function (response) {
+                if (!response.ok) throw new Error("GitHub repository list unavailable");
+                return response.json();
+              })
+              .then(saveRepositories)
+              .catch(function () {
+                if (cachedProjects.length) projects = cachedProjects;
+              });
+          });
+      }
+
+      function scoreCandidate(queryWords, candidate) {
+        var candidateWords = tokenize(candidate.name + " " + candidate.description);
+        var total = 0;
+        var matched = 0;
+        queryWords.forEach(function (word) {
+          var best = 0;
+          candidateWords.forEach(function (candidateWord) {
+            if (word === candidateWord) best = Math.max(best, 12);
+            else if (candidateWord.indexOf(word) === 0 || word.indexOf(candidateWord) === 0) best = Math.max(best, 8);
+            else if (word.length >= 4 && candidateWord.length >= 4) {
+              var distance = editDistance(word, candidateWord);
+              var threshold = Math.max(1, Math.floor(Math.max(word.length, candidateWord.length) * 0.25));
+              if (distance <= threshold) best = Math.max(best, 6 - distance);
+            }
+          });
+          if (best > 0) matched++;
+          total += best;
+        });
+        return { score: total - (queryWords.length - matched) * 2, matched: matched };
+      }
+
+      function renderResults(query) {
+        resultsList.replaceChildren();
+        var queryWords = tokenize(query);
+        if (!queryWords.length) {
+          searchStatus.textContent = "Type a project or page name to see suggestions.";
+          return;
+        }
+
+        var unique = new Map();
+        projects.concat(sitemapPages).forEach(function (candidate) {
+          var key = normalizePath(new URL(candidate.url).pathname);
+          if (!unique.has(key) || candidate.source === "project") unique.set(key, candidate);
+        });
+        var ranked = Array.from(unique.values()).map(function (candidate) {
+          var result = scoreCandidate(queryWords, candidate);
+          return { candidate: candidate, score: result.score, matched: result.matched };
+        }).filter(function (item) { return item.matched > 0; })
+          .sort(function (a, b) { return b.score - a.score || a.candidate.name.localeCompare(b.candidate.name); })
+          .slice(0, 8);
+
+        if (!ranked.length) {
+          searchStatus.textContent = "No close matches found. Try fewer words or a shorter spelling.";
+          return;
+        }
+        searchStatus.textContent = "Suggested matches, ranked by how closely the names and descriptions match:";
+        ranked.forEach(function (item) {
+          var li = document.createElement("li");
+          var link = document.createElement("a");
+          var title = document.createElement("strong");
+          var detail = document.createElement("small");
+          link.href = item.candidate.url;
+          title.textContent = item.candidate.name;
+          detail.textContent = item.candidate.source === "project"
+            ? item.candidate.description + " · GitHub Pages project"
+            : item.candidate.url.replace("https://staticquasar931.github.io", "");
+          link.appendChild(title);
+          link.appendChild(detail);
+          li.appendChild(link);
+          resultsList.appendChild(li);
+        });
+      }
+
+      searchInput.value = window.location.pathname.split("/").filter(Boolean).join(" ");
+      searchForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        renderResults(searchInput.value);
+      });
+      searchInput.addEventListener("input", function () { renderResults(searchInput.value); });
+
+      Promise.allSettled([loadSitemap(), loadGitHubProjects()]).then(function () {
+        searchStatus.textContent = projects.length
+          ? "Searching GitHub Pages projects and this site's sitemap."
+          : "GitHub search is unavailable. Searching this site's sitemap instead.";
+        renderResults(searchInput.value);
+      });
+    })();
+  </script>
 
   <script>
     (function () {
